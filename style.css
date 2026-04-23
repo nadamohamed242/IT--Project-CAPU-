@@ -1,0 +1,22 @@
+nav {
+    background-color: rgb(18, 54, 185);
+    color: rgb(168, 166, 179);
+    align-items: space-evenly;
+    text-align: center;
+    border: 30px solid rgb(18, 54, 185);
+    font-size: larger;
+    gap: 70px;
+    margin-top:80px ;
+}      
+
+.a-link {
+  margin-left: 70px;
+}
+ .search {
+    display: flex;
+
+    size: 30px;
+    border:10px solid blue; 
+    border-radius:200px; 
+    justify-content: center;
+ }
