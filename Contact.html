@@ -4,21 +4,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel = "stylesheet" href="style.css">
-    <title>sora</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Shopping</title>
 </head>
 
 <body>
+    <div class="header">
+        <img class="logo" src="logo.jpeg">
+        <div class="search-box">
+            <input type="text" placeholder="What are you looking for.....?">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="top-bar">
+            <a href="#">Orders</a>
+            <span>|</span>
+            <a href="#">sign in</a>
+            <span>|</span>
+            <a href="#">sign up</a>
+            <span>|</span>
+            <a href="#">My Account</a>
+            <img class="cart" src="cart.png">
+        </div>
+    </div>
     <nav>
-        <a class="a-link" target="_blank">Home</a>
-        <a class="a-link" target="_blank">Clothes</a>
-        <a class="a-link" target="_blank">Jewelery</a>
-        <a class="a-link" target="_blank">Electronics</a>
-        <a class="a-link" target="_blank">Groceries</a>
-        <a class="a-link" target="_blank">Cleaners</a>
-        <a class="a-link" target="_blank">Supplements</a>
-        <a class="a-link" target="_blank">Contact us</a>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown-menu">
+                <a href="clothes.html">Clothes</a>
+                <ul class="dropdown-content">
+                    <li><a href="#men">Men's</a></li>
+                    <li><a href="#women">Women's</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="jewelry.html">Jewelry</a>
+                <ul class="dropdown-content">
+                    <li><a href="#rings">Rings</a></li>
+                    <li><a href="#necklaces">Necklaces</a></li>
+                    <li><a href="#bracelets">Bracelets</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="electronics.html">Electronics</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Phones</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Groceries.html">Groceries</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Dairy</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Cleaners.html">Cleaners</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones"> Toilet cleansers</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="supplements.html">Supplements</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Whey Protien</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
     </nav>
+
+    <div class="contact-section">
+        <h1 class="contact-title">Contact Us</h1>
+        <p class="contact-subtitle">We'd love to hear from you. Get in touch with us today!</p>
+
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="info-box">
+                    <h3>📍 Address</h3>
+                    <p>123 Shopping Street<br>City, Country 12345</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>📞 Phone</h3>
+                    <p>+1 (555) 123-4567<br>Mon-Fri 9AM-6PM</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>📧 Email</h3>
+                    <p>support@shop.com<br>hello@shop.com</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>🕐 Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday - Sunday: 10:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject...</option>
+                            <option value="product">Product Inquiry</option>
+                            <option value="order">Order Tracking</option>
+                            <option value="return">Return/Exchange</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required
+                            placeholder="Please type your message here..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="success-modal">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thank you for contacting us. We'll get back to you as soon as possible.</p>
+            <button onclick="closeSuccessModal()" class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Save to localStorage
+            let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+            messages.push(formData);
+            localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+            // Show success modal
+            document.getElementById('success-modal').style.display = 'block';
+
+            // Reset form
+            this.reset();
+
+            // Auto-close modal after 3 seconds
+            setTimeout(() => {
+                document.getElementById('success-modal').style.display = 'none';
+            }, 3000);
+        });
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('success-modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
