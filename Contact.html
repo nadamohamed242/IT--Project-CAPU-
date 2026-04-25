@@ -10,7 +10,7 @@
 
 <body>
     <div class="header">
-        <img class="logo" src="logo.jpeg">
+        <img class="logo" src="logo.png">
         <div class="search-box">
             <input type="text" placeholder="What are you looking for.....?">
             <span class="search-icon">🔍</span>
@@ -23,7 +23,7 @@
             <a href="#">sign up</a>
             <span>|</span>
             <a href="#">My Account</a>
-            <img class="cart" src="cart.png">
+            <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
     <nav>
@@ -163,6 +163,17 @@
             <h2>Message Sent Successfully!</h2>
             <p>Thank you for contacting us. We'll get back to you as soon as possible.</p>
             <button onclick="closeSuccessModal()" class="close-modal-btn">Close</button>
+        </div>
+    </div>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
         </div>
     </div>
 
