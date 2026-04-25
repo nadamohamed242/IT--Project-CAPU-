@@ -1,22 +1,102 @@
-nav {
-    background-color: rgb(18, 54, 185);
-    color: rgb(168, 166, 179);
-    align-items: space-evenly;
-    text-align: center;
-    border: 30px solid rgb(18, 54, 185);
-    font-size: larger;
-    gap: 70px;
-    margin-top:80px ;
-}      
-
-.a-link {
-  margin-left: 70px;
-}
- .search {
+.header {
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: blanchedalmond;
+}
 
-    size: 30px;
-    border:10px solid blue; 
-    border-radius:200px; 
-    justify-content: center;
- }
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 5px;
+    background-color: rgb(243, 189, 145);
+    border-radius: 20px;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.navbar>li {
+    position: relative;
+}
+
+.navbar a {
+    color: rgb(246, 246, 246);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: 0.7s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.dropdown-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.5);
+    min-width: 150px;
+}
+
+.dropdown-menu:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a {
+    color: rgb(156, 102, 66);
+    padding: 10px 20px;
+}
+
+.dropdown-content li a:hover {
+    background-color: rgb(200, 200, 255);
+    color: white;
+}
+
+.search-box {
+    position: relative;
+    margin: 10px;
+    width: 100%;
+    top: 5px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+}
+
+input {
+    padding: 8px 35px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.cart {
+    width: 50px;
+    height: 50px;
+    padding-left: 50px;
+    margin: 10px;
+    align-self: right;
+    mix-blend-mode: multiply;
+}
+
+.logo {
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    mix-blend-mode: multiply;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
