@@ -5,17 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shopping</title>
 </head>
 
 <body>
     <div class="header">
-        <img class="logo" src="logo.jpg">
+        <img class="logo" src="logo.png">
         <div class="search-box">
-            <input type="text" placeholder="What are you looking for...">
+            <input type="text" placeholder="What are you looking for.....?">
             <span class="search-icon">🔍</span>
         </div>
-        <img class="cart" src="cart.png">
+        <div class="top-bar">
+            <a href="#">Orders</a>
+            <span>|</span>
+            <a href="#">sign in</a>
+            <span>|</span>
+            <a href="#">sign up</a>
+            <span>|</span>
+            <a href="#">My Account</a>
+            <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
+        </div>
     </div>
     <nav>
         <ul class="navbar">
@@ -36,8 +46,6 @@
                     <li><a href="#rings">Rings</a></li>
                     <li><a href="#necklaces">Necklaces</a></li>
                     <li><a href="#bracelets">Bracelets</a></li>
-                    <li><a href="#earrings">Earrings</a></li>
-                    <li><a href="#watches">Watches</a></li>
                 </ul>
             </li>
 
@@ -76,6 +84,145 @@
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
     </nav>
+
+    <div class="banner">
+        <video autoplay muted loop playsinline>
+            <source src="banner.mp4" type="video/mp4">
+        </video>
+        <div class="banner-content">
+            <p>Discover amazing products at great prices</p>
+        </div>
+    </div>
+
+    <section class="featured-products">
+        <h2 class="featured-title">Featured Products</h2>
+        <div class="products-container">
+            <div class="product-card">
+                <img src="product1.jpg" alt="Product 1" class="product-image">
+                <h3 class="product-name">Wireless Headphones</h3>
+                <p class="product-description">High-quality sound with noise cancellation</p>
+                <div class="product-price">$99.99</div>
+                <button class="add-to-cart" data-id="1" data-name="Wireless Headphones" data-price="99.99">Add to
+                    Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product2.jpg" alt="Product 2" class="product-image">
+                <h3 class="product-name">Smart Watch</h3>
+                <p class="product-description">Track your fitness and stay connected</p>
+                <div class="product-price">$149.99</div>
+                <button class="add-to-cart" data-id="2" data-name="Smart Watch" data-price="149.99">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product3.jpg" alt="Product 3" class="product-image">
+                <h3 class="product-name">USB-C Cable</h3>
+                <p class="product-description">Fast charging and data transfer</p>
+                <div class="product-price">$19.99</div>
+                <button class="add-to-cart" data-id="3" data-name="USB-C Cable" data-price="19.99">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product4.jpg" alt="Product 4" class="product-image">
+                <h3 class="product-name">Phone Stand</h3>
+                <p class="product-description">Adjustable and stable phone holder</p>
+                <div class="product-price">$24.99</div>
+                <button class="add-to-cart" data-id="4" data-name="Phone Stand" data-price="24.99">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product5.jpg" alt="Product 5" class="product-image">
+                <h3 class="product-name">Portable Charger</h3>
+                <p class="product-description">20000mAh battery capacity</p>
+                <div class="product-price">$39.99</div>
+                <button class="add-to-cart" data-id="5" data-name="Portable Charger" data-price="39.99">Add to
+                    Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product6.jpg" alt="Product 6" class="product-image">
+                <h3 class="product-name">Screen Protector</h3>
+                <p class="product-description">Tempered glass for maximum protection</p>
+                <div class="product-price">$14.99</div>
+                <button class="add-to-cart" data-id="6" data-name="Screen Protector" data-price="14.99">Add to
+                    Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your one-stop shop for quality products across all categories. We offer the best selection and
+                    competitive prices.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 Email: support@shop.com</p>
+                <p>📱 Phone: +1 (555) 123-4567</p>
+                <p>📍 Address: 123 Main Street, City, Country</p>
+                <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
+                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
+                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
+                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms & Conditions</a> |
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
