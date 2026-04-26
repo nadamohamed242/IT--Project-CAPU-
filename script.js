@@ -163,3 +163,4 @@ class ShoppingCart {
 
 // Create global cart instance
 const cart = new ShoppingCart();
+
