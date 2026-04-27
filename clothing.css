@@ -1,0 +1,199 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; }
+
+.category-container { display: flex; width: 100%; height: 90vh; }
+
+.category-card {
+    flex: 1; position: relative; display: flex;
+    align-items: center; justify-content: center;
+    text-decoration: none; background-size: cover;
+    background-position: center; overflow: hidden;
+    flex-shrink:0;
+    width:150px
+}
+
+.category-card::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: background 0.4s ease-in-out;
+}
+.category-card:hover::before { background: rgba(0, 0, 0, 0.4); }
+.category-title {
+    position: relative; z-index: 2; color: white;
+    font-size: 2.5rem; font-weight: bold; letter-spacing: 2px;
+    text-transform: uppercase; transform: translateY(15px);
+    opacity: 0.8; transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, letter-spacing 0.4s ease-in-out;
+}
+
+.category-card:hover .category-title {
+    transform: translateY(0); opacity: 1; letter-spacing: 6px;
+}
+
+.bg-woman { background-image: url('clothing images/pexels-nazar-aslan-443954785-30478841.jpg'); }
+.bg-man { background-image: url('clothing images/pexels-jean-daniel-7959943.jpg'); }
+.bg-kids { background-image: url('clothing images/pexels-shkrabaanthony-6261894.jpg'); }
+
+@media (max-width: 768px) {
+    .category-container { flex-direction: column; height: auto; }
+    .category-card { height: 350px; }
+}
+/*Mgemyy 25/4/2026 */
+.fashion-section {
+    padding: 50px 0;
+    background-color: #fafafa;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 60px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #111;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0;
+    position: relative;
+    padding-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45px;
+    height: 3px;
+    background-color: #c48b59;
+}
+
+.see-all-link {
+    color: #c48b59;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.see-all-link:hover {
+    color: #111;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.horizontal-scroll {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: calc(100% - 120px);
+    padding-bottom: 20px;
+    scrollbar-width: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    min-width: 160px;
+    flex-shrink: 0;
+    transition: 0.3s ease;
+}
+
+.scroll-item:hover {
+    transform: translateY(-5px);
+}
+
+.image-box {
+    width: 160px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scroll-item span {
+    color: #555;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #333;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-btn:hover {
+    background: #f0f0f0;
+}
+
+#left-btn {
+    left: 10px;
+}
+
+#right-btn {
+    right: 10px;
+}
+/* new discound place */ 
+/*Mgemyy 26/4/2026*/
+.banner-btn {
+    background-color: #111;
+    color: #e8dcc7;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+.banner-btn:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-2px);
+}

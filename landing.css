@@ -1,0 +1,197 @@
+/*24/4/2026*/
+.category-hub {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 10%;
+    background-color: #1a1a1a;
+}
+.category-item {
+    text-align: center;
+    cursor: pointer;
+}
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    border: 2px solid transparent;
+}
+.circle:hover {
+    transform: scale(1.1);
+    border-color: #e8dcc7;
+}
+/* --- NEW LAYOUT SECTIONS --- */
+/* Mgemyy 26/4/2026*/
+.Shopping {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+.Shopping a {
+    background-color: #e8dcc7;
+    color: #111;
+    text-decoration: none;
+    padding: 15px 50px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: pulse-glow 2.5s infinite ease-in-out;
+    transition: 0.3s;
+}
+
+@keyframes pulse-glow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(232, 220, 199, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(232, 220, 199, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(232, 220, 199, 0.2);
+    }
+}
+.Shopping a:hover {
+    background-color: white;
+    transform: scale(1.1);
+    animation-play-state: paused;
+}
+.amazon-banner {
+    width: 100%;
+    margin: 0 auto 10px auto;
+    height: 350px;
+    background-color: #fce1c1;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.banner-text { padding: 40px; flex: 1; color: #111; }
+.banner-image { flex: 1; height: 100%; }
+.banner-image img { width: 100%; height: 100%; object-fit: cover; }
+.second-banner {
+    width: 100%; 
+    height: 400px; 
+    margin: 10px auto; 
+    display: flex; 
+    background-color: #f7f7f7; 
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.second-banner .banner-text {
+    flex: 1.5;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #111; 
+}
+.second-banner .banner-text h1 {
+    font-size: 3rem; 
+    margin: 10px 0;
+    color: #111;
+}
+
+.second-banner .banner-text h3 {
+    color: #555;
+    letter-spacing: 2px;
+}
+
+.second-btn {
+    background-color: #ff4757; 
+    color: white;
+}
+
+.second-btn:hover {
+    background-color: #ff6b81;
+    color: white;
+}
+.carousel-wrapper {
+    overflow: hidden; 
+    width: 100%;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 30px;
+    width: max-content; 
+    animation: auto-scroll 15s linear infinite; 
+}
+.marquee-content:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+@keyframes auto-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+.scroll-item p {
+    font-size: 1.3rem; 
+    font-weight: 600; 
+    color: #e8dcc7; 
+    margin-top: 15px;
+    margin-bottom: 0;
+    text-align: center; 
+    letter-spacing: 1px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+/* --- NEW HERO VIDEO BANNER --- */
+.hero-video-banner {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 400px;
+    overflow: hidden;
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video-banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;
+}
+
+.hero-video-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: -1;
+}
+
+.video-overlay {
+    text-align: center;
+    color: white;
+    z-index: 1; 
+}
+.video-overlay h1 {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: #e8dcc7;
+}
+.video-overlay p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
