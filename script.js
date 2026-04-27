@@ -132,7 +132,7 @@ class ShoppingCart {
                     price: parseFloat(btn.dataset.price)
                 };
                 this.add(item);
-                
+
                 // Optional: Automatically close product modal when added to cart
                 document.getElementById('product-modal').style.display = 'none';
             }
@@ -161,7 +161,7 @@ class ShoppingCart {
         // ==========================================
         const productModal = document.getElementById('product-modal');
         const productCloseBtn = document.querySelector('.product-close');
-        
+
         // Grab the elements inside the popup that we need to change
         const modalImg = document.getElementById('modal-product-img');
         const modalTitle = document.getElementById('modal-product-title');
@@ -212,7 +212,7 @@ class ShoppingCart {
         window.addEventListener('click', (event) => {
             const cartModal = document.getElementById('cart-modal');
             const prodModal = document.getElementById('product-modal');
-            
+
             if (event.target === cartModal) {
                 cartModal.style.display = 'none';
             }
@@ -225,4 +225,3 @@ class ShoppingCart {
 
 // Create global cart instance
 const cart = new ShoppingCart();
-
