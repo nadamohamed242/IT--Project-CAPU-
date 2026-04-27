@@ -75,7 +75,7 @@ class ShoppingCart {
             html += `
                 <tr style="border-bottom: 1px solid #ddd;">
                     <td style="padding: 10px;">${item.name}</td>
-                    <td style="text-align: center;">$${item.price}</td>
+                    <td style="text-align: center;">$${item.price.toFixed(2)}</td>
                     <td style="text-align: center;">
                         <input type="number" value="${item.quantity}" min="1" 
                                onchange="cart.updateQuantity(${item.id}, this.value)" 
@@ -109,7 +109,8 @@ class ShoppingCart {
             color: white;
             padding: 15px 20px;
             border-radius: 4px;
-            z-index: 1000;
+            z-index: 3000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             animation: slideIn 0.3s ease-in-out;
         `;
         document.body.appendChild(notification);
@@ -121,7 +122,7 @@ class ShoppingCart {
 
     // Initialize event listeners
     initializeEventListeners() {
-        // Add to cart button click
+        // Add to cart button click (Works for grid items AND the modal button!)
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('add-to-cart')) {
                 const btn = e.target;
@@ -131,10 +132,15 @@ class ShoppingCart {
                     price: parseFloat(btn.dataset.price)
                 };
                 this.add(item);
+                
+                // Optional: Automatically close product modal when added to cart
+                document.getElementById('product-modal').style.display = 'none';
             }
         });
 
-        // Cart icon click
+        // ==========================================
+        // CART MODAL LOGIC
+        // ==========================================
         const cartIcon = document.getElementById('cart-icon');
         if (cartIcon) {
             cartIcon.addEventListener('click', () => {
@@ -143,19 +149,75 @@ class ShoppingCart {
             });
         }
 
-        // Close modal
-        const closeBtn = document.querySelector('.close');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
+        const cartCloseBtn = document.querySelector('.cart-close');
+        if (cartCloseBtn) {
+            cartCloseBtn.addEventListener('click', () => {
                 document.getElementById('cart-modal').style.display = 'none';
             });
         }
 
-        // Close modal when clicking outside
+        // ==========================================
+        // PRODUCT DETAILS MODAL LOGIC
+        // ==========================================
+        const productModal = document.getElementById('product-modal');
+        const productCloseBtn = document.querySelector('.product-close');
+        
+        // Grab the elements inside the popup that we need to change
+        const modalImg = document.getElementById('modal-product-img');
+        const modalTitle = document.getElementById('modal-product-title');
+        const modalPrice = document.getElementById('modal-product-price');
+        const modalDesc = document.getElementById('modal-product-description');
+        const modalAddToCartBtn = document.getElementById('modal-add-to-cart');
+
+        // Listen for clicks on product images or titles
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('product-img') || e.target.classList.contains('product-title')) {
+                // Find the main card wrapper that holds the data
+                const card = e.target.closest('.product-card');
+                if (!card) return;
+
+                // Extract the data from the card
+                const id = card.getAttribute('data-id');
+                const name = card.getAttribute('data-name');
+                const price = card.getAttribute('data-price');
+                const image = card.getAttribute('data-image');
+                const description = card.getAttribute('data-description');
+
+                // Populate the popup with the data
+                modalImg.src = image;
+                modalTitle.textContent = name;
+                modalPrice.textContent = `$${price}`;
+                modalDesc.textContent = description;
+
+                // Update the hidden data tags on the popup's "Add to Cart" button!
+                modalAddToCartBtn.setAttribute('data-id', id);
+                modalAddToCartBtn.setAttribute('data-name', name);
+                modalAddToCartBtn.setAttribute('data-price', price);
+
+                // Show the popup
+                productModal.style.display = 'block';
+            }
+        });
+
+        // Close Product Details Modal
+        if (productCloseBtn) {
+            productCloseBtn.addEventListener('click', () => {
+                productModal.style.display = 'none';
+            });
+        }
+
+        // ==========================================
+        // CLOSE MODALS BY CLICKING OUTSIDE
+        // ==========================================
         window.addEventListener('click', (event) => {
-            const modal = document.getElementById('cart-modal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
+            const cartModal = document.getElementById('cart-modal');
+            const prodModal = document.getElementById('product-modal');
+            
+            if (event.target === cartModal) {
+                cartModal.style.display = 'none';
+            }
+            if (event.target === prodModal) {
+                prodModal.style.display = 'none';
             }
         });
     }
