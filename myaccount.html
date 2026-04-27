@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Account - Shopping</title>
+    <style>
+        .account-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .account-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #f67b29;
+            padding-bottom: 20px;
+        }
+
+        .account-header h2 {
+            color: #eb6426;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .not-logged-in {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .not-logged-in p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .login-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #f67b29;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e85a0f;
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 2px solid #f67b29;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f67b29;
+            color: white;
+        }
+
+        .account-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .account-section {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #f67b29;
+        }
+
+        .account-section h3 {
+            color: #eb6426;
+            font-size: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .account-section h3 i {
+            font-size: 24px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: #333;
+            font-size: 16px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-small {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .btn-edit {
+            background-color: #f67b29;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background-color: #e85a0f;
+        }
+
+        .btn-signout {
+            background-color: #f8d7da;
+            color: #842029;
+            border: 2px solid #f5c6cb;
+        }
+
+        .btn-signout:hover {
+            background-color: #f5c6cb;
+        }
+
+        .order-history {
+            grid-column: 1 / -1;
+        }
+
+        .order-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #f67b29;
+        }
+
+        .order-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .no-orders {
+            text-align: center;
+            color: #999;
+            padding: 20px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .account-container {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            .account-header h2 {
+                font-size: 24px;
+            }
+
+            .account-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-small {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .login-buttons {
+                flex-direction: column;
+            }
+
+            .login-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img class="logo" src="logo.png">
+        <div class="search-box">
+            <span class="search-icon"><i class="fa fa-search"></i></span>
+            <input type="text" placeholder="What are you looking for.....?">
+        </div>
+        <div class="top-bar">
+            <a href="index.html">Home</a>
+            <span>|</span>
+            <a href="signin.html">sign in</a>
+            <span>|</span>
+            <a href="signup.html">sign up</a>
+            <span>|</span>
+            <a href="myaccount.html">My Account</a>
+        </div>
+    </div>
+
+    <div class="account-container">
+        <div class="account-header">
+            <h2>My Account</h2>
+            <p id="account-subtitle"></p>
+        </div>
+
+        <!-- Not Logged In View -->
+        <div id="not-logged-in" class="not-logged-in" style="display: none;">
+            <p>You are not currently signed in</p>
+            <div class="login-buttons">
+                <a href="signin.html" class="btn btn-primary">Sign In</a>
+                <a href="signup.html" class="btn btn-secondary">Create Account</a>
+            </div>
+        </div>
+
+        <!-- Logged In View -->
+        <div id="logged-in" style="display: none;">
+            <div class="account-content">
+                <!-- Profile Information -->
+                <div class="account-section">
+                    <h3><i class="fa fa-user"></i> Profile Information</h3>
+                    <div class="info-item">
+                        <div class="info-label">Full Name</div>
+                        <div class="info-value" id="profile-name"></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Email Address</div>
+                        <div class="info-value" id="profile-email"></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Phone Number</div>
+                        <div class="info-value" id="profile-phone"></div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-small btn-edit" onclick="editProfile()">Edit Profile</button>
+                        <button class="btn-small btn-signout" onclick="signOut()">Sign Out</button>
+                    </div>
+                </div>
+
+                <!-- Account Settings -->
+                <div class="account-section">
+                    <h3><i class="fa fa-cog"></i> Account Settings</h3>
+                    <div class="info-item">
+                        <div class="info-label">Account Status</div>
+                        <div class="info-value" style="color: #4CAF50;">Active</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Member Since</div>
+                        <div class="info-value" id="member-since"></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Last Login</div>
+                        <div class="info-value" id="last-login"></div>
+                    </div>
+                </div>
+
+                <!-- Order History -->
+                <div class="account-section order-history">
+                    <h3><i class="fa fa-shopping-bag"></i> Order History</h3>
+                    <div id="order-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your one-stop shop for quality products across all categories.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signin.html">Sign In</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="myaccount.html">My Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        function checkLoginStatus() {
+            const user = localStorage.getItem('currentUser');
+            const notLoggedInDiv = document.getElementById('not-logged-in');
+            const loggedInDiv = document.getElementById('logged-in');
+
+            if (!user) {
+                notLoggedInDiv.style.display = 'block';
+                loggedInDiv.style.display = 'none';
+                return;
+            }
+
+            const userData = JSON.parse(user);
+            notLoggedInDiv.style.display = 'none';
+            loggedInDiv.style.display = 'block';
+
+            // Display profile information
+            document.getElementById('account-subtitle').textContent = `Welcome, ${userData.name}!`;
+            document.getElementById('profile-name').textContent = userData.name || 'N/A';
+            document.getElementById('profile-email').textContent = userData.email || 'N/A';
+            document.getElementById('profile-phone').textContent = userData.phone || 'Not provided';
+
+            // Display account info
+            const memberSince = userData.signin_time || new Date().toLocaleString();
+            document.getElementById('member-since').textContent = memberSince;
+            document.getElementById('last-login').textContent = new Date().toLocaleString();
+
+            // Display cart as order history
+            displayOrderHistory();
+        }
+
+        function displayOrderHistory() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderList = document.getElementById('order-list');
+
+            if (cart.length === 0) {
+                orderList.innerHTML = '<div class="no-orders">No orders yet. Start shopping!</div>';
+                return;
+            }
+
+            let html = '';
+            cart.forEach((item, index) => {
+                html += `
+                    <div class="order-item">
+                        <strong>Order #${index + 1}: ${item.name}</strong>
+                        <p>Quantity: ${item.quantity}</p>
+                        <p>Price: $${(item.price * item.quantity).toFixed(2)}</p>
+                    </div>
+                `;
+            });
+            orderList.innerHTML = html;
+        }
+
+        function editProfile() {
+            alert('Edit profile feature coming soon!');
+        }
+
+        function signOut() {
+            if (confirm('Are you sure you want to sign out?')) {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Load on page load
+        window.addEventListener('load', checkLoginStatus);
+    </script>
+</body>
+
+</html>

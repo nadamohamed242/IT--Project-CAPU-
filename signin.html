@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Sign In - Shopping</title>
+    <style>
+        .signin-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgb(234, 174, 117), rgb(209, 143, 88));
+        }
+
+        .signin-box {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .signin-box h2 {
+            text-align: center;
+            color: #eb6426;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .signin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #f67b29;
+            box-shadow: 0 0 10px rgba(246, 123, 41, 0.3);
+        }
+
+        .signin-btn {
+            padding: 12px;
+            background-color: #f67b29;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .signin-btn:hover {
+            background-color: #e85a0f;
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(232, 90, 15, 0.3);
+        }
+
+        .welcome-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-message .success-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        .welcome-message h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .welcome-message p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #f67b29;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            background-color: #e85a0f;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img class="logo" src="logo.png"></a>
+        <div class="search-box">
+            <span class="search-icon"><i class="fa fa-search"></i></span>
+            <input type="text" placeholder="What are you looking for.....?">
+        </div>
+        <div class="top-bar">
+            <a href="index.html">Home</a>
+            <span>|</span>
+            <a href="signin.html">sign in</a>
+            <span>|</span>
+            <a href="signup.html">sign up</a>
+            <span>|</span>
+            <a href="myaccount.html">My Account</a>
+        </div>
+    </div>
+    <div class="signin-container">
+        <!-- Sign In Form -->
+        <div id="signin-form-box" class="signin-box">
+            <a href="index.html"><img class="signlogo" src="logo.png"></a>
+            <h2>Welcome Back</h2>
+            <form class="signin-form" id="signin-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <button type="submit" class="signin-btn">Sign In</button>
+            </form>
+        </div>
+
+        <!-- Welcome Message -->
+        <div id="welcome-box" class="welcome-message">
+            <div class="success-icon">✓</div>
+            <h2>Welcome <span id="user-name"></span>!</h2>
+            <p>You are successfully signed in</p>
+            <a href="index.html" class="home-btn">Go to Home</a>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
