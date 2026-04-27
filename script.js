@@ -222,6 +222,208 @@ class ShoppingCart {
         });
     }
 }
-
 // Create global cart instance
 const cart = new ShoppingCart();
+
+document.getElementById('signin-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Get user name from input
+    const userName = document.getElementById('name').value;
+    const userEmail = document.getElementById('email').value;
+
+    // Save to localStorage
+    localStorage.setItem('currentUser', JSON.stringify({
+        name: userName,
+        email: userEmail,
+        signin_time: new Date().toLocaleString()
+    }));
+
+    // Hide form, show welcome message
+    document.getElementById('signin-form-box').style.display = 'none';
+    document.getElementById('welcome-box').style.display = 'block';
+    document.getElementById('user-name').textContent = userName;
+
+    // Auto redirect to home after 3 seconds
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 3000);
+});
+
+// Check if user is already signed in
+window.addEventListener('load', () => {
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+        const userData = JSON.parse(user);
+        document.getElementById('signin-form-box').style.display = 'none';
+        document.getElementById('welcome-box').style.display = 'block';
+        document.getElementById('user-name').textContent = userData.name;
+    }
+});
+
+window.onload = function () {
+    // Removes the specific 'cart' key from storage
+    localStorage.removeItem('currentUser');
+};
+
+
+//sign up
+document.getElementById('signup-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Get form data
+    const fullName = document.getElementById('fullname').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmpassword').value;
+
+    // Validate passwords match
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+
+    // Save user data to localStorage
+    const newUser = {
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        signup_time: new Date().toLocaleString()
+    };
+
+    // Get existing users or create new array
+    let users = JSON.parse(localStorage.getItem('allUsers')) || [];
+    users.push(newUser);
+    localStorage.setItem('allUsers', JSON.stringify(users));
+
+    // Set current user as signed in
+    localStorage.setItem('currentUser', JSON.stringify({
+        name: fullName,
+        email: email
+    }));
+
+    // Hide form, show welcome message
+    document.getElementById('signup-form-box').style.display = 'none';
+    document.getElementById('welcome-box').style.display = 'block';
+    document.getElementById('user-name').textContent = fullName;
+
+    // Auto redirect to home after 3 seconds
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 3000);
+});
+
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Get form data
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toLocaleString()
+    };
+
+    // Save to localStorage
+    let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+    messages.push(formData);
+    localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+    // Show success modal
+    document.getElementById('success-modal').style.display = 'block';
+
+    // Reset form
+    this.reset();
+
+    // Auto-close modal after 3 seconds
+    setTimeout(() => {
+        document.getElementById('success-modal').style.display = 'none';
+    }, 3000);
+});
+
+function closeSuccessModal() {
+    document.getElementById('success-modal').style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', function (event) {
+    const modal = document.getElementById('success-modal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+});
+
+
+//my account
+
+
+
+// Check if user is logged in
+function checkLoginStatus() {
+    const user = localStorage.getItem('currentUser');
+    const notLoggedInDiv = document.getElementById('not-logged-in');
+    const loggedInDiv = document.getElementById('logged-in');
+
+    if (!user) {
+        notLoggedInDiv.style.display = 'block';
+        loggedInDiv.style.display = 'none';
+        return;
+    }
+
+    const userData = JSON.parse(user);
+    notLoggedInDiv.style.display = 'none';
+    loggedInDiv.style.display = 'block';
+
+    // Display profile information
+    document.getElementById('account-subtitle').textContent = `Welcome, ${userData.name}!`;
+    document.getElementById('profile-name').textContent = userData.name || 'N/A';
+    document.getElementById('profile-email').textContent = userData.email || 'N/A';
+    document.getElementById('profile-phone').textContent = userData.phone || 'Not provided';
+
+    // Display account info
+    const memberSince = userData.signin_time || new Date().toLocaleString();
+    document.getElementById('member-since').textContent = memberSince;
+    document.getElementById('last-login').textContent = new Date().toLocaleString();
+
+    // Display cart as order history
+    displayOrderHistory();
+}
+
+function displayOrderHistory() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const orderList = document.getElementById('order-list');
+
+    if (cart.length === 0) {
+        orderList.innerHTML = '<div class="no-orders">No orders yet. Start shopping!</div>';
+        return;
+    }
+
+    let html = '';
+    cart.forEach((item, index) => {
+        html += `
+                    <div class="order-item">
+                        <strong>Order #${index + 1}: ${item.name}</strong>
+                        <p>Quantity: ${item.quantity}</p>
+                        <p>Price: $${(item.price * item.quantity).toFixed(2)}</p>
+                    </div>
+                `;
+    });
+    orderList.innerHTML = html;
+}
+
+function editProfile() {
+    alert('Edit profile feature coming soon!');
+}
+
+function signOut() {
+    if (confirm('Are you sure you want to sign out?')) {
+        localStorage.removeItem('currentUser');
+        window.location.href = 'index.html';
+    }
+}
+
+// Load on page load
+window.addEventListener('load', checkLoginStatus);
