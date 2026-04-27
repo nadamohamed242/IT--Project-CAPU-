@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Shopping</title>
+</head>
+
+<body>
+    <div class="header">
+        <img class="logo" src="logo.jpeg">
+        <div class="search-box">
+            <span class="search-icon"><i class="fa fa-search"></i></span>
+            <input type="text" placeholder="What are you looking for.....?">
+        </div>
+        <div class="top-bar">
+            <a href="#">Orders</a>
+            <span>|</span>
+            <a href="#">sign in</a>
+            <span>|</span>
+            <a href="#">sign up</a>
+            <span>|</span>
+            <a href="#">My Account</a>
+            <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
+        </div>
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown-menu">
+                <a href="clothes.html">Clothes</a>
+                <ul class="dropdown-content">
+                    <li><a href="#men">Men's</a></li>
+                    <li><a href="#women">Women's</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="jewelry.html">Jewelry</a>
+                <ul class="dropdown-content">
+                   <li><a href="womenjewelry.html">Women's Jewelry</a></li>
+                    <li><a href="menjewelry.html">Men's Jewelry</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="electronics.html">Electronics</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Phones</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Groceries.html">Groceries</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Dairy</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Cleaners.html">Cleaners</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones"> Toilet cleansers</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="supplements.html">Supplements</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Whey Protien</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">
+        <h2>Bracelets Collection</h2>
+    </div>
+
+    <div class="product-container">
+        
+        <div class="product-card" data-id="1" data-name="Sleek Chain Bracelet" data-price="120" data-image="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/5935/96434/115101300022180-1__85205.1768479182.jpg" data-description="This sleek and delicate chain bracelet featuring a smooth, straight design with subtle textured accents that enhance its elegant appearance. Its minimalist style makes it a versatile accessory, perfect for adding a touch of sophistication to any outfit, whether casual or formal.">
+            <img src="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/5935/96434/115101300022180-1__85205.1768479182.jpg" alt="Sleek Chain Bracelet" class="product-img">
+            <h4 class="product-title">Sleek Chain Bracelet</h4>
+            <p class="price">120 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="1" data-name="Sleek Chain Bracelet" data-price="120">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-id="2" data-name="Butterfly Enamel Coated Chain Bracelet" data-price="250" data-image="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/2819/94147/113101800122191-1__53813.1768478162.jpg" data-description="Add carefree beauty and sophistication to your wrist with this stunning butterfly braceleT. Elegant golden charms and graceful enamel-coated colored butterflies adorn this stunning bracelet cast . We love this piece with casual denim, a feminine blouse, or a chic suit.">
+            <img src="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/2819/94147/113101800122191-1__53813.1768478162.jpg" alt="Butterfly Enamel Coated Chain Bracelet" class="product-img">
+            <h4 class="product-title">Butterfly Enamel Coated Chain Bracelet</h4>
+            <p class="price">250 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="2" data-name="Butterfly Enamel Coated Chain Bracelet" data-price="250">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-id="3" data-name="Links Enamel Coated Chain Bracelet" data-price="85" data-image="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3438/95041/113101301282201-1__51419.1768478583.jpg" data-description="It boasts an exquisite alternating arrangement of sequins and oval-shaped links, with an enamel-coated accent adding a playful pop of color to the mix. As it concludes either side of the bracelet features a sleek rectangle-shaped link and pear-shaped frame adorned with intricate details, making it a perfect accessory to accentuate your style with a touch of elegance and individuality.">
+            <img src="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3438/95041/113101301282201-1__51419.1768478583.jpg" alt="Links Enamel Coated Chain Bracelet" class="product-img">
+            <h4 class="product-title">Links Enamel Coated Chain Bracelet</h4>
+            <p class="price">85 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="3" data-name="Links Enamel Coated Chain Bracelet" data-price="85">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-id="4" data-name="Star Enamel Coated Chain Bracelet" data-price="199" data-image="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/2671/94314/113101300882201-1__45379.1768478250.jpg" data-description="Shine like the star that you are by wearing this charming enamel coated chain bracelet. This feminine bracelet features a baby blue enamel circle charm and white enamel star charm on a lovely oval link chain. We predict you'll reach for this stylish bracelet to add a pop of color and fun to casual and workday outfits.">
+            <img src="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/2671/94314/113101300882201-1__45379.1768478250.jpg" alt="Star Enamel Coated Chain Bracelet" class="product-img">
+            <h4 class="product-title">Star Enamel Coated Chain Bracelet</h4>
+            <p class="price">199 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="4" data-name="Star Enamel Coated Chain Bracelet" data-price="199">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="5" data-name="Links Chain Bracelet" data-price="300" data-image="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/2633/94954/113106501252201-1__67443.1768478557.jpg" data-description="Complement your wardrobe with the elegant look of this shimmering disc bracelet . This stylish bracelet features bold chain links with flat gold disc charms in various sizes that dangle along the center. This is a fabulous everyday look to wear to work and for fancy social events.">
+            <img src="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/2633/94954/113106501252201-1__67443.1768478557.jpg" alt="Links Chain Bracelet" class="product-img">
+            <h4 class="product-title">Links Chain Bracelet</h4>
+            <p class="price">300 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="5" data-name="Links Chain Bracelet" data-price="300">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="6" data-name="Interlocking Chain Bracelet " data-price="240" data-image="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/5877/96704/115101300062180-1__31330.1768479282.jpg" data-description="Invest in timeless elegance with this exquisite piece.This bold chain bracelet is crafted featuring interlocking links that create a distinctive, sleek, and sophisticated design. The bracelet’s modern yet timeless appeal makes it the perfect accessory for both casual and formal occasions, adding a stylish touch to any outfit.">
+            <img src="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/5877/96704/115101300062180-1__31330.1768479282.jpg" alt="Interlocking Chain Bracelet " class="product-img">
+            <h4 class="product-title">Interlocking Chain Bracelet </h4>
+            <p class="price">240 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="6" data-name="Interlocking Chain Bracelet " data-price="240">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="7" data-name="Detailed Links Chain Bracelet" data-price="180" data-image="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/5875/96739/114101300142180-1__03954.1768479317.jpg" data-description="Invest in timeless elegance with this exquisite piece .This delicate and classic chain bracelet featuring finely detailed links that create a smooth and refined design. Its subtle yet sophisticated appeal makes it the perfect accessory for both casual and formal occasions, adding a refined touch of luxury to your style.">
+            <img src="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/5875/96739/114101300142180-1__03954.1768479317.jpg" alt="Detailed Links Chain Bracelet" class="product-img">
+            <h4 class="product-title">Detailed Links Chain Bracelet</h4>
+            <p class="price">180 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="7" data-name="Detailed Links Chain Bracelet" data-price="180">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="8" data-name="Faceted Links Chain Bracelet" data-price="220" data-image="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/7556/99806/115101400082190-1__54066.1773739799.jpg" data-description="Elegance found in quiet precision. This chain bracelet features a refined sequence of faceted rectangular links that create a delicate shimmer with every movement. The slender design wraps the wrist with effortless sophistication, reflecting a modern sense of style that values subtle detail. A timeless gold piece that complements everyday elegance and remains a meaningful investment to treasure.">
+            <img src="https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/7556/99806/115101400082190-1__54066.1773739799.jpg" alt="Faceted Links Chain Bracelet" class="product-img">
+            <h4 class="product-title">Faceted Links Chain Bracelet</h4>
+            <p class="price">220 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="8" data-name="Faceted Links Chain Bracelet" data-price="220">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your one-stop shop for quality products across all categories. We offer the best selection and competitive prices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 Email: support@shop.com</p>
+                <p>📱 Phone: +1 (555) 123-4567</p>
+                <p>📍 Address: 123 Main Street, City, Country</p>
+                <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
+                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
+                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
+                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms & Conditions</a> |
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close cart-close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close product-close">&times;</span>
+            <div class="product-details-container">
+                <div class="product-details-image">
+                    <img id="modal-product-img" src="" alt="Product Image">
+                </div>
+                <div class="product-details-info">
+                    <h2 id="modal-product-title">Product Title</h2>
+                    <p id="modal-product-price" class="price">$0.00</p>
+                    <p id="modal-product-description">Product description goes here.</p>
+                    <br>
+                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name="" data-price="">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
