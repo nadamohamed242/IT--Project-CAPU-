@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="jewelry.css">
+    <link rel="stylesheet" href="global.css">
     <title>Shopping</title>
 </head>
 
@@ -43,9 +45,8 @@
             <li class="dropdown-menu">
                 <a href="jewelry.html">Jewelry</a>
                 <ul class="dropdown-content">
-                    <li><a href="#rings">Rings</a></li>
-                    <li><a href="#necklaces">Necklaces</a></li>
-                    <li><a href="#bracelets">Bracelets</a></li>
+                    <li><a href="womenjewelry.html">Women's Jewelry</a></li>
+                    <li><a href="menjewelry.html">Men's Jewelry</a></li>
                 </ul>
             </li>
 
@@ -85,88 +86,49 @@
         </ul>
     </nav>
 
-    <div class="banner">
-        <video autoplay muted loop playsinline>
-            <source src="banner.mp4" type="video/mp4">
-        </video>
-        <div class="banner-content">
-            <p>Discover amazing products at great prices</p>
-        </div>
+    <div class="page-title">
+        <h2>Explore Our Watches</h2>
     </div>
 
-    <section class="featured-products">
-        <h2 class="featured-title">Featured Products</h2>
-        <div class="products-container">
-            <div class="product-card">
-                <img src="product1.jpg" alt="Product 1" class="product-image">
-                <h3 class="product-name">Wireless Headphones</h3>
-                <p class="product-description">High-quality sound with noise cancellation</p>
-                <div class="product-price">$99.99</div>
-                <button class="add-to-cart" data-id="1" data-name="Wireless Headphones" data-price="99.99">Add to
-                    Cart</button>
-            </div>
+    <div class="product-container">
 
-            <div class="product-card">
-                <img src="product2.jpg" alt="Product 2" class="product-image">
-                <h3 class="product-name">Smart Watch</h3>
-                <p class="product-description">Track your fitness and stay connected</p>
-                <div class="product-price">$149.99</div>
-                <button class="add-to-cart" data-id="2" data-name="Smart Watch" data-price="149.99">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="product3.jpg" alt="Product 3" class="product-image">
-                <h3 class="product-name">USB-C Cable</h3>
-                <p class="product-description">Fast charging and data transfer</p>
-                <div class="product-price">$19.99</div>
-                <button class="add-to-cart" data-id="3" data-name="USB-C Cable" data-price="19.99">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="product4.jpg" alt="Product 4" class="product-image">
-                <h3 class="product-name">Phone Stand</h3>
-                <p class="product-description">Adjustable and stable phone holder</p>
-                <div class="product-price">$24.99</div>
-                <button class="add-to-cart" data-id="4" data-name="Phone Stand" data-price="24.99">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="product5.jpg" alt="Product 5" class="product-image">
-                <h3 class="product-name">Portable Charger</h3>
-                <p class="product-description">20000mAh battery capacity</p>
-                <div class="product-price">$39.99</div>
-                <button class="add-to-cart" data-id="5" data-name="Portable Charger" data-price="39.99">Add to
-                    Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="product6.jpg" alt="Product 6" class="product-image">
-                <h3 class="product-name">Screen Protector</h3>
-                <p class="product-description">Tempered glass for maximum protection</p>
-                <div class="product-price">$14.99</div>
-                <button class="add-to-cart" data-id="6" data-name="Screen Protector" data-price="14.99">Add to
-                    Cart</button>
-            </div>
+        <div class="product-card" data-id="1" data-name="Perfume" data-price="120.00" data-image="product1.jpg"
+            data-description="Elegant and luxurious perfume with a long-lasting fragrance. Perfect for everyday wear or special occasions with a sophisticated blend of floral and woody notes.">
+            <img src="product1.jpg" alt="Perfume" class="product-img">
+            <h4 class="product-title">Perfume</h4>
+            <p class="price">$120.00</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="1" data-name="Perfume" data-price="120.00">Add to
+                Cart</button>
         </div>
-    </section>
 
-    <h2><i>Recommended For you</i></h2>
+        <div class="product-card" data-id="2" data-name="Classic Watch" data-price="250.00" data-image="product2.jpg"
+            data-description="Timeless and elegant classic watch with precision movement. Features a stainless steel band, water-resistant design, and a dial that complements any style perfectly.">
+            <img src="product2.jpg" alt="Classic Watch" class="product-img">
+            <h4 class="product-title">Classic Watch</h4>
+            <p class="price">$250.00</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="2" data-name="Classic Watch" data-price="250.00">Add to
+                Cart</button>
+        </div>
 
-    <div class="scroll-container">
-        <div class="card"><img class="card-image" src="product1.jpg"></div>
-        <div class="card"><img class="card-image" src="product6.jpg"></div>
-        <div class="card"><img class="card-image" src="product3.jpg"></div>
-        <div class="card"><img class="card-image" src="product4.jpg"></div>
-        <div class="card"><img class="card-image" src="product5.jpg"></div>
-        <div class="card"><img class="card-image" src="product6.jpg"></div>
-        <div class="card"><img class="card-image" src="product1.jpg"></div>
-        <div class="card"><img class="card-image" src="product3.jpg"></div>
-        <div class="card"><img class="card-image" src="product6.jpg"></div>
-        <div class="card"><img class="card-image" src="product5.jpg"></div>
-        <div class="card"><img class="card-image" src="product4.jpg"></div>
+        <div class="product-card" data-id="3" data-name="Furniture" data-price="85.00" data-image="product3.jpg"
+            data-description="Premium quality furniture piece with modern minimalist design. Durable construction with sleek finish, perfect for contemporary home decor.">
+            <img src="product3.jpg" alt="Furniture" class="product-img">
+            <h4 class="product-title">Furniture</h4>
+            <p class="price">$85.00</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="3" data-name="Furniture" data-price="85.00">Add to
+                Cart</button>
+        </div>
+
+        <div class="product-card" data-id="4" data-name="Creatine" data-price="199.00" data-image="product4.jpg"
+            data-description="High-quality creatine monohydrate supplement for muscle strength and performance. Pure powder form, micronized for better absorption and enhanced athletic performance.">
+            <img src="product4.jpg" alt="Creatine" class="product-img">
+            <h4 class="product-title">Creatine</h4>
+            <p class="price">$199.00</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="4" data-name="Creatine" data-price="199.00">Add to
+                Cart</button>
+        </div>
+
     </div>
-
-
 
     <footer class="footer">
         <div class="footer-container">
@@ -175,21 +137,16 @@
                 <p>Your one-stop shop for quality products across all categories. We offer the best selection and
                     competitive prices.</p>
             </div>
-
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="clothes.html">Clothes</a></li>
-                    <li><a href="clothes.html">Jewelry</a></li>
-                    <li><a href="clothes.html">Electronics</a></li>
-                    <li><a href="clothes.html">Groceries</a></li>
-                    <li><a href="clothes.html">Cleaners</a></li>
-                    <li><a href="clothes.html">Supplements</a></li>
-                    <li><a href="clothes.html">Contact Us</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Gift Cards</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Customer Service</h3>
                 <ul>
@@ -200,7 +157,6 @@
                     <li><a href="#">Track Order</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <p>📧 Email: support@shop.com</p>
@@ -208,7 +164,6 @@
                 <p>📍 Address: 123 Main Street, City, Country</p>
                 <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
             </div>
-
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-links">
@@ -219,7 +174,6 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
             <div class="footer-links">
@@ -230,15 +184,33 @@
         </div>
     </footer>
 
-    <!-- Cart Modal -->
     <div id="cart-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close cart-close">&times;</span>
             <h2>Shopping Cart</h2>
             <div id="cart-items"></div>
             <div class="cart-summary">
                 <h3>Total: $<span id="cart-total">0.00</span></h3>
                 <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close product-close">&times;</span>
+            <div class="product-details-container">
+                <div class="product-details-image">
+                    <img id="modal-product-img" src="" alt="Product Image">
+                </div>
+                <div class="product-details-info">
+                    <h2 id="modal-product-title">Product Title</h2>
+                    <p id="modal-product-price" class="price">$0.00</p>
+                    <p id="modal-product-description">Product description goes here.</p>
+                    <br>
+                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name=""
+                        data-price="">Add to Cart</button>
+                </div>
             </div>
         </div>
     </div>
