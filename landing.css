@@ -246,3 +246,27 @@
     background-size: cover;
     background-position: center;
 }
+/***************WOMAN*******************/
+.women-tshirts-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1200');
+    background-size: cover;
+    background-position: center 20%;
+}
+
+.women-pants-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/3324647/pexels-photo-3324647.jpeg?auto=compress&cs=tinysrgb&w=1200');
+    background-size: cover;
+    background-position: center;
+}
+
+.women-shoes-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/3380805/pexels-photo-3380805.jpeg?auto=compress&cs=tinysrgb&w=1200');
+    background-size: cover;
+    background-position: center 60%;
+}
+
+.women-fragrances-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/17662135/pexels-photo-17662135.jpeg?auto=compress&cs=tinysrgb&w=1200');
+    background-size: cover;
+    background-position: center;
+}
