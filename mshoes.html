@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's shoes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="clothing.css">
     <link rel="stylesheet" href="landing.css">
-    <title>ShopIT</title>
 </head>
 
 <body>
@@ -40,7 +40,6 @@
                     <li><a href="#kids">Kids</a></li>
                 </ul>
             </li>
-
             <li class="dropdown-menu">
                 <a href="jewelry.html">Jewelry</a>
                 <ul class="dropdown-content">
@@ -84,17 +83,59 @@
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
     </nav>
-    <div class="category-container">
-        <a href="woman.html" class="category-card bg-woman">
-            <span class="category-title">Woman</span>
-        </a>
-        <a href="man.html" class="category-card bg-man">
-            <span class="category-title">Man</span>
-        </a>
-        <a href="kids.html" class="category-card bg-kids">
-            <span class="category-title">Kids</span>
-        </a>
-    </div>
+    <main class="category-page">
+        <div class="page-header shoes-banner">
+            <h1>Men's Footwear</h1>
+            <p>Step up your style with our premium collection of everyday sneakers, formal oxfords, and versatile
+                boots.</p>
+        </div>
+
+        <div class="product-container">
+
+            <div class="product-card" data-id="301" data-name="Classic White Sneakers" data-price="85.00"
+                data-image="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"
+                data-description="Clean and minimal white sneakers. The ultimate versatile shoe for any casual outfit.">
+                <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500" alt="White Sneakers"
+                    class="product-img">
+                <h4 class="product-title">Classic White Sneakers</h4>
+                <p class="price">$85.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="301" data-name="Classic White Sneakers"
+                    data-price="85.00">Add to Cart</button>
+            </div>
+            <div class="product-card" data-id="302" data-name="Athletic Running Shoes" data-price="110.00"
+                data-image="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500"
+                data-description="Lightweight and breathable athletic sneakers designed for maximum comfort and performance.">
+                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500" alt="Running Shoes"
+                    class="product-img">
+                <h4 class="product-title">Athletic Running Shoes</h4>
+                <p class="price">$110.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="302" data-name="Athletic Running Shoes"
+                    data-price="110.00">Add to Cart</button>
+            </div>
+            <div class="product-card" data-id="303" data-name="Classic Leather Oxfords" data-price="120.00"
+                data-image="https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?w=500"
+                data-description="Premium crafted leather oxford shoes. A must-have for your formal and professional wardrobe.">
+                <img src="https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?w=500" alt="Leather Oxfords"
+                    class="product-img">
+                <h4 class="product-title">Classic Leather Oxfords</h4>
+                <p class="price">$120.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="303" data-name="Classic Leather Oxfords"
+                    data-price="120.00">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="304" data-name="Suede Chelsea Boots" data-price="95.00"
+                data-image="https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=500"
+                data-description="Timeless suede Chelsea boots in a rich brown tone. Perfect for elevating your smart-casual look.">
+                <img src="https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=500" alt="Chelsea Boots"
+                    class="product-img">
+                <h4 class="product-title">Suede Chelsea Boots</h4>
+                <p class="price">$95.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="304" data-name="Suede Chelsea Boots"
+                    data-price="95.00">Add to Cart</button>
+            </div>
+
+        </div>
+    </main>
     <!--Footer----------->
     <footer class="footer">
         <div class="footer-container">
@@ -149,7 +190,6 @@
             </div>
         </div>
     </footer>
-
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>

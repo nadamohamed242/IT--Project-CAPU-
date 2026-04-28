@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Fragrances</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="clothing.css">
     <link rel="stylesheet" href="landing.css">
-    <title>ShopIT</title>
 </head>
 
 <body>
@@ -84,17 +84,57 @@
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
     </nav>
-    <div class="category-container">
-        <a href="woman.html" class="category-card bg-woman">
-            <span class="category-title">Woman</span>
-        </a>
-        <a href="man.html" class="category-card bg-man">
-            <span class="category-title">Man</span>
-        </a>
-        <a href="kids.html" class="category-card bg-kids">
-            <span class="category-title">Kids</span>
-        </a>
-    </div>
+    <main class="category-page">
+        <div class="page-header fragrances-banner">
+            <h1>Men's Fragrances</h1>
+            <p>Discover our exclusive collection of premium perfumes, featuring rich oriental blends, fresh aquatic
+                notes, and warm vanilla undertones.</p>
+        </div>
+
+        <div class="product-container">
+
+            <div class="product-card" data-id="401" data-name="Royal Kingdom Elixir" data-price="85.00"
+                data-image="https://images.pexels.com/photos/1961795/pexels-photo-1961795.jpeg?auto=compress&cs=tinysrgb&w=500"
+                data-description="A bold Middle Eastern inspired cologne. Features deep woody notes balanced with a warm, masculine vanilla finish.">
+                <img src="https://images.pexels.com/photos/1961795/pexels-photo-1961795.jpeg?auto=compress&cs=tinysrgb&w=500"
+                    alt="Dark Cologne Bottle" class="product-img">
+                <h4 class="product-title">Royal Kingdom Elixir</h4>
+                <p class="price">$85.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="401" data-name="Royal Kingdom Elixir"
+                    data-price="85.00">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="402" data-name="Azure Aqua Cologne" data-price="65.00"
+                data-image="https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=500"
+                data-description="An intense and fresh aquatic fragrance for men. Perfect for everyday wear with a sharp, energetic projection.">
+                <img src="https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=500"
+                    alt="Blue Cologne" class="product-img">
+                <h4 class="product-title">Azure Aqua Cologne</h4>
+                <p class="price">$65.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="402" data-name="Azure Aqua Cologne"
+                    data-price="65.00">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="403" data-name="Midnight Leather Absolute" data-price="95.00"
+                data-image="https://images.pexels.com/photos/1190829/pexels-photo-1190829.jpeg?auto=compress&cs=tinysrgb&w=500"
+                data-description="A purely masculine scent featuring rich leather, smoked spices, and dark amber. Designed for the modern gentleman.">
+                <img src="https://images.pexels.com/photos/1190829/pexels-photo-1190829.jpeg?auto=compress&cs=tinysrgb&w=500"
+                    alt="Black Perfume Bottle" class="product-img">
+                <h4 class="product-title">Midnight Leather</h4>
+                <p class="price">$95.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="403" data-name="Midnight Leather Absolute"
+                    data-price="95.00">Add to Cart</button>
+            </div>
+            <div class="product-card" data-id="404" data-name="Spiced Tobacco & Vanilla" data-price="75.00"
+                data-image="https://images.pexels.com/photos/4465121/pexels-photo-4465121.jpeg?auto=compress&cs=tinysrgb&w=500"
+                data-description="A highly attractive men's fragrance blending sweet pipe tobacco with spicy cinnamon and smooth vanilla.">
+                <img src="https://images.pexels.com/photos/4465121/pexels-photo-4465121.jpeg?auto=compress&cs=tinysrgb&w=500"
+                    alt="Elegant Men's Perfume" class="product-img">
+                <h4 class="product-title">Spiced Tobacco</h4>
+                <p class="price">$75.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="404" data-name="Spiced Tobacco & Vanilla"
+                    data-price="75.00">
+    </main>
     <!--Footer----------->
     <footer class="footer">
         <div class="footer-container">
@@ -149,7 +189,6 @@
             </div>
         </div>
     </footer>
-
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>

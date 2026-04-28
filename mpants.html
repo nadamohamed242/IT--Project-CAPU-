@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Pants</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="clothing.css">
     <link rel="stylesheet" href="landing.css">
-    <title>ShopIT</title>
 </head>
 
 <body>
@@ -84,17 +84,59 @@
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
     </nav>
-    <div class="category-container">
-        <a href="woman.html" class="category-card bg-woman">
-            <span class="category-title">Woman</span>
-        </a>
-        <a href="man.html" class="category-card bg-man">
-            <span class="category-title">Man</span>
-        </a>
-        <a href="kids.html" class="category-card bg-kids">
-            <span class="category-title">Kids</span>
-        </a>
-    </div>
+    <main class="category-page">
+        <div class="page-header pants-banner">
+            <h1>Men's Pants & Denim</h1>
+            <p>Discover our versatile collection of premium jeans, chinos, and trousers crafted for everyday comfort and
+                style.</p>
+        </div>
+        <div class="product-container">
+
+            <div class="product-card" data-id="201" data-name="Slim Fit Chinos" data-price="45.00"
+                data-image="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500"
+                data-description="Classic sand-colored chinos with a modern slim fit. Perfect for semi-formal or casual smart looks.">
+                <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500" alt="Sand Chinos"
+                    class="product-img">
+                <h4 class="product-title">Slim Fit Chinos</h4>
+                <p class="price">$45.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="201" data-name="Slim Fit Chinos"
+                    data-price="45.00">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="202" data-name="Classic Blue Jeans" data-price="55.00"
+                data-image="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500"
+                data-description="Essential straight-cut blue denim jeans. Durable fabric with a timeless wash for everyday wear.">
+                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500" alt="Blue Jeans"
+                    class="product-img">
+                <h4 class="product-title">Classic Blue Jeans</h4>
+                <p class="price">$55.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="202" data-name="Classic Blue Jeans"
+                    data-price="55.00">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="203" data-name="Textured Corduroy Pants" data-price="60.00"
+                data-image="https://images.unsplash.com/photo-1555689502-c4b22d76c56f?w=500"
+                data-description="Premium corduroy pants in a rich earth tone. Perfect for an elevated smart-casual wardrobe.">
+                <img src="https://images.unsplash.com/photo-1555689502-c4b22d76c56f?w=500" alt="Corduroy Pants"
+                    class="product-img">
+                <h4 class="product-title">Textured Corduroy Pants</h4>
+                <p class="price">$60.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="203" data-name="Textured Corduroy Pants"
+                    data-price="60.00">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="204" data-name="Breathable Linen Trousers" data-price="48.00"
+                data-image="https://images.unsplash.com/photo-1594938291221-94f18cbb5660?w=500"
+                data-description="Lightweight and breathable linen trousers. Ideal for warm weather, offering both comfort and style.">
+                <img src="https://images.unsplash.com/photo-1594938291221-94f18cbb5660?w=500" alt="Linen Trousers"
+                    class="product-img">
+                <h4 class="product-title">Breathable Linen Trousers</h4>
+                <p class="price">$48.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="204" data-name="Breathable Linen Trousers"
+                    data-price="48.00">Add to Cart</button>
+            </div>
+        </div>
+    </main>
     <!--Footer----------->
     <footer class="footer">
         <div class="footer-container">
@@ -149,7 +191,6 @@
             </div>
         </div>
     </footer>
-
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
