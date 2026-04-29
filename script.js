@@ -29,6 +29,13 @@ class ShoppingCart {
         return cart;
     }
 
+    // Clear entire cart
+    clearCart() {
+        localStorage.setItem(this.storageKey, JSON.stringify([]));
+        this.displayCartItems();
+        this.showNotification('Cart cleared successfully!');
+    }
+
     // Increase quantity
     updateQuantity(itemId, quantity) {
         let cart = this.getCart();
@@ -156,6 +163,16 @@ class ShoppingCart {
             });
         }
 
+        // Clear cart button
+        const clearCartBtn = document.querySelector('.clear-cart-btn');
+        if (clearCartBtn) {
+            clearCartBtn.addEventListener('click', () => {
+                {
+                    this.clearCart();
+                }
+            });
+        }
+
         // ==========================================
         // PRODUCT DETAILS MODAL LOGIC
         // ==========================================
@@ -224,62 +241,53 @@ class ShoppingCart {
 }
 // Create global cart instance
 const cart = new ShoppingCart();
-//Mgemyy
-// Get the form first
-const signinForm = document.getElementById('signin-form');
 
-if (signinForm) {
-    signinForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+document.getElementById('signin-form').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        // Get user name from input
-        const userName = document.getElementById('name').value;
-        const userEmail = document.getElementById('email').value;
+    // Get user name from input
+    const userName = document.getElementById('name').value;
+    const userEmail = document.getElementById('email').value;
 
-        // Save to localStorage
-        localStorage.setItem('currentUser', JSON.stringify({
-            name: userName,
-            email: userEmail,
-            signin_time: new Date().toLocaleString()
-        }));
+    // Save to localStorage
+    localStorage.setItem('currentUser', JSON.stringify({
+        name: userName,
+        email: userEmail,
+        signin_time: new Date().toLocaleString()
+    }));
 
-        // Hide form, show welcome message
-        document.getElementById('signin-form-box').style.display = 'none';
-        document.getElementById('welcome-box').style.display = 'block';
-        document.getElementById('user-name').textContent = userName;
-        
-        // Auto redirect to home after 3 seconds
-        setTimeout(() => {
-            window.location.href = 'index.html'; 
-        }, 3000);
-    });
-} // <--- This closing bracket is what was missing before!
-//Mgemyy
-// --- 2. CHECK IF ALREADY SIGNED IN ---
+    // Hide form, show welcome message
+    document.getElementById('signin-form-box').style.display = 'none';
+    document.getElementById('welcome-box').style.display = 'block';
+    document.getElementById('user-name').textContent = userName;
+
+    // Auto redirect to home after 3 seconds
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 3000);
+});
+
+// Check if user is already signed in
 window.addEventListener('load', () => {
     const user = localStorage.getItem('currentUser');
     if (user) {
         const userData = JSON.parse(user);
-        
-        // Grab the elements
-        const signinBox = document.getElementById('signin-form-box');
-        const welcomeBox = document.getElementById('welcome-box');
-        const userNameDisplay = document.getElementById('user-name');
-
-        // Only change their style if they actually exist on the current page!
-        if (signinBox) signinBox.style.display = 'none';
-        if (welcomeBox) welcomeBox.style.display = 'block';
-        if (userNameDisplay) userNameDisplay.textContent = userData.name;
+        document.getElementById('signin-form-box').style.display = 'none';
+        document.getElementById('welcome-box').style.display = 'block';
+        document.getElementById('user-name').textContent = userData.name;
     }
 });
 
+window.onload = function () {
+    // Removes the specific 'cart' key from storage
+    localStorage.removeItem('currentUser');
+};
+
 
 //sign up
-const signupForm = document.getElementById('signup-form');
+document.getElementById('signup-form').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-if (signupForm) {
-    signupForm.addEventListener('submit', function (e) {
-        e.preventDefault();
     // Get form data
     const fullName = document.getElementById('fullname').value;
     const email = document.getElementById('email').value;
@@ -366,8 +374,12 @@ window.addEventListener('click', function (event) {
 });
 
 
-//my account
 
+//deals section
+function scrollDeals(direction) {
+    const track = document.getElementById('dealsTrack');
+    track.scrollBy({ left: direction * 480, behavior: 'smooth' });
+}
 
 
 // Check if user is logged in
@@ -435,4 +447,67 @@ function signOut() {
 }
 
 // Load on page load
-window.addEventListener('load', checkLoginStatus);}
+window.addEventListener('load', checkLoginStatus);
+
+/* ========== THEME MANAGER ========== */
+class ThemeManager {
+    constructor() {
+        this.storageKey = 'theme';
+        this.darkThemeClass = 'dark-theme';
+        this.initializeTheme();
+        this.attachEventListeners();
+    }
+
+    initializeTheme() {
+        // Get saved theme from localStorage or default to light
+        const savedTheme = localStorage.getItem(this.storageKey) || 'light';
+        this.applyTheme(savedTheme);
+    }
+
+    attachEventListeners() {
+        // Try to find and attach listeners to all theme-toggle buttons
+        const toggleButtons = document.querySelectorAll('#theme-toggle');
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.toggleTheme();
+            });
+        });
+    }
+
+    toggleTheme() {
+        const currentTheme = localStorage.getItem(this.storageKey) || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        localStorage.setItem(this.storageKey, newTheme);
+        this.applyTheme(newTheme);
+    }
+
+    applyTheme(theme) {
+        const body = document.body;
+        const toggleButtons = document.querySelectorAll('#theme-toggle');
+
+        if (theme === 'dark') {
+            body.classList.add(this.darkThemeClass);
+            toggleButtons.forEach(btn => {
+                btn.innerHTML = '<i class="fa fa-sun-o"></i>';
+                btn.title = 'Switch to Light Theme';
+            });
+        } else {
+            body.classList.remove(this.darkThemeClass);
+            toggleButtons.forEach(btn => {
+                btn.innerHTML = '<i class="fa fa-moon-o"></i>';
+                btn.title = 'Switch to Dark Theme';
+            });
+        }
+    }
+}
+
+// Initialize theme manager
+let themeManager;
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        themeManager = new ThemeManager();
+    });
+} else {
+    themeManager = new ThemeManager();
+}
