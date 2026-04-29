@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>My Account - Shopping</title>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
     <style>
         .account-container {
             max-width: 1000px;
@@ -232,7 +242,7 @@
 <body>
     <div class="header">
         <img class="logo" src="logo.png">
-        <div class="search-box">
+        <div class="search-box auth-page-search">
             <span class="search-icon"><i class="fa fa-search"></i></span>
             <input type="text" placeholder="What are you looking for.....?">
         </div>
@@ -244,6 +254,9 @@
             <a href="signup.html">sign up</a>
             <span>|</span>
             <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
         </div>
     </div>
 
