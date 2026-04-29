@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sign In - Shopping</title>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
     <style>
         .signin-container {
             display: flex;
@@ -142,7 +152,7 @@
 <body>
     <div class="header">
         <a href="index.html"><img class="logo" src="logo.png"></a>
-        <div class="search-box">
+        <div class="search-box auth-page-search">
             <span class="search-icon"><i class="fa fa-search"></i></span>
             <input type="text" placeholder="What are you looking for.....?">
         </div>
@@ -154,8 +164,143 @@
             <a href="signup.html">sign up</a>
             <span>|</span>
             <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
         </div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown-menu">
+                <a href="clothes.html">Clothes</a>
+                <ul class="dropdown-content">
+                    <li><a href="#men">Men's</a></li>
+                    <li><a href="#women">Women's</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="jewelry.html">Jewelry</a>
+                <ul class="dropdown-content">
+                    <li><a href="womenjewelry.html">Women's Jewelry</a></li>
+                    <li><a href="menjewelry.html">Men's Jewelry</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="electronics.html">Electronics</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Phones</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Groceries.html">Groceries</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Dairy</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Cleaners.html">Cleaners</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones"> Toilet cleansers</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="supplements.html">Supplements</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Whey Protien</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+
     </div>
+    <style>
+        #menu-toggle {
+            display: none;
+        }
+
+        /* 3. The Hamburger Icon */
+        .hamburger {
+            display: block;
+            padding: 20px;
+            font-size: 20px;
+            align-self: center;
+            cursor: pointer;
+            background: #fefcfa;
+            color: rgb(242, 91, 4);
+            margin: 20px;
+        }
+
+        /* 4. The Menu (Hidden by default) */
+        .menu {
+            display: flex;
+            flex-direction: column;
+            /* This stacks them in a column */
+            width: fit-content;
+            /* This removes the unused space on the right */
+            padding: 0;
+            margin: 0;
+            background-color: #fb7f03;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background: #fffffe;
+            max-height: 0;
+            /* Use height to hide it */
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            top: 60px;
+            /* Adjust based on your header height */
+            right: 0;
+            /* Pins it exactly to the right edge */
+        }
+
+        .menu li {
+            list-style: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.9);
+        }
+
+        .menu li a {
+            display: block;
+            padding: 15px 30px;
+            /* Gives the links a larger clickable area */
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 5px;
+            padding: 15px 20px;
+            color: rgb(248, 112, 8);
+            text-decoration: none;
+            border-bottom: 1px solid #2d1501;
+        }
+
+        .menu li a:hover {
+            transform: scale(1.5);
+            box-shadow: 10px 5px 20px rgba(222, 124, 59, 0.9);
+        }
+
+        /* 5. THE MAGIC: When checkbox is checked, show the menu */
+        #menu-toggle:checked~.menu {
+            margin-top: 50px;
+            margin: 20px;
+            max-height: 100%;
+            position: absolute;
+
+            /* Adjust based on menu size */
+        }
+    </style>
     <div class="signin-container">
         <!-- Sign In Form -->
         <div id="signin-form-box" class="signin-box">
