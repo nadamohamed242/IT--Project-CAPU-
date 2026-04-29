@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shopping</title>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -24,6 +34,9 @@
             <a href="signup.html">sign up</a>
             <span>|</span>
             <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
             <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
@@ -58,7 +71,7 @@
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="groceries.html">Groceries</a>
+                <a href="Groceries.html">Groceries</a>
                 <ul class="dropdown-content">
                     <li><a href="#phones">Dairy</a></li>
                     <li><a href="#laptops">Laptops</a></li>
@@ -66,7 +79,7 @@
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="cleaners.html">Cleaners</a>
+                <a href="Cleaners.html">Cleaners</a>
                 <ul class="dropdown-content">
                     <li><a href="#phones"> Toilet cleansers</a></li>
                     <li><a href="#laptops">Laptops</a></li>
@@ -81,7 +94,7 @@
                     <li><a href="#tablets">Tablets</a></li>
                 </ul>
             </li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
         </ul>
     </nav>
 
