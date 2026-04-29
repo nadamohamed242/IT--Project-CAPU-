@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shopping</title>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -24,19 +34,21 @@
             <a href="signup.html">Sign up</a>
             <span>|</span>
             <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
             <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
     <nav>
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
-
             <li class="dropdown-menu">
                 <a href="clothes.html">Clothes</a>
                 <ul class="dropdown-content">
-                    <li><a href="man.html">Men's</a></li>
-                    <li><a href="woman.html">Women's</a></li>
-                    <li><a href="kids.html">Kids</a></li>
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#kids">Kids</a></li>
                 </ul>
             </li>
 
@@ -53,7 +65,7 @@
                 <ul class="dropdown-content">
                     <li><a href="#phones">Phones</a></li>
                     <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="#tablets">Headsets</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
@@ -65,9 +77,9 @@
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="Cleaners.html">Cleaners</a>
+                <a href="Cleaners.html">Furniture</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones"> Toilet cleansers</a></li>
+                    <li><a href="#phones"> beds</a></li>
                     <li><a href="#laptops">Laptops</a></li>
                     <li><a href="#tablets">Tablets</a></li>
                 </ul>
@@ -76,83 +88,214 @@
                 <a href="supplements.html">Supplements</a>
                 <ul class="dropdown-content">
                     <li><a href="#phones">Whey Protien</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="#laptops">Protein bars</a></li>
+                    <li><a href="#tablets">Creatine</a></li>
                 </ul>
             </li>
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
     </nav>
+    <div class="hero">
+        <div class="hero-text">
+            <span class="hero-badge-top">New</span>
+            <h1>All your essentials<br>in one place</h1>
+            <div class="hero-badge-bottom">
+                Everyday<br>Essentials
+            </div>
+        </div>
+        <div class="product-container">
+            <div class="product-card" data-id="910" data-name="Perfume" data-price="120.00" data-image="product1.jpg"
+                data-description="Elegant and luxurious perfume with a long-lasting fragrance. Perfect for everyday wear or special occasions with a sophisticated blend of floral and woody notes.">
+                <img src="product1.jpg" alt="Perfume" class="product-img">
+                <h4 class="product-title">Perfume</h4>
+                <p class="price">$120.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="910" data-name="Perfume" data-price="120.00">Add to
+                    Cart</button>
+            </div>
 
-    <div class="page-title">
-        <h2>Featured Products</h2>
+            <div class="product-card" data-id="911" data-name="Classic Watch" data-price="950.00"
+                data-image="product9.jpg"
+                data-description="Timeless and elegant classic watch with precision movement. Features a stainless steel band, water-resistant design, and a dial that complements any style perfectly.">
+                <img src="product2.jpg" alt="Classic Watch" class="product-img">
+                <h4 class="product-title">Classic Watch</h4>
+                <p class="price">$250.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="911" data-name="Classic Watch"
+                    data-price="250.00">Add to
+                    Cart</button>
+            </div>
+
+            <div class="product-card" data-id="912" data-name="Furniture" data-price="85.00" data-image="product3.jpg"
+                data-description="Premium quality furniture piece with modern minimalist design. Durable construction with sleek finish, perfect for contemporary home decor.">
+                <img src="product3.jpg" alt="Furniture" class="product-img">
+                <h4 class="product-title">Furniture</h4>
+                <p class="price">$85.00</p>
+                <button class="add-to-cart-btn add-to-cart" data-id="912" data-name="Furniture" data-price="85.00">Add
+                    to
+                    Cart</button>
+            </div>
+        </div>
     </div>
 
-    <div class="product-container">
+    <!-- Deals section -->
+    <div class="deals-section">
 
-        <div class="product-card" data-id="1" data-name="Perfume" data-price="120.00" data-image="product1.jpg"
-            data-description="Elegant and luxurious perfume with a long-lasting fragrance. Perfect for everyday wear or special occasions with a sophisticated blend of floral and woody notes.">
-            <img src="product1.jpg" alt="Perfume" class="product-img">
-            <h4 class="product-title">Perfume</h4>
-            <p class="price">$120.00</p>
-            <button class="add-to-cart-btn add-to-cart" data-id="1" data-name="Perfume" data-price="120.00">Add to
-                Cart</button>
-        </div>
-
-        <div class="product-card" data-id="2" data-name="Classic Watch" data-price="250.00" data-image="product2.jpg"
-            data-description="Timeless and elegant classic watch with precision movement. Features a stainless steel band, water-resistant design, and a dial that complements any style perfectly.">
-            <img src="product2.jpg" alt="Classic Watch" class="product-img">
-            <h4 class="product-title">Classic Watch</h4>
-            <p class="price">$250.00</p>
-            <button class="add-to-cart-btn add-to-cart" data-id="2" data-name="Classic Watch" data-price="250.00">Add to
-                Cart</button>
+        <!-- Orange Header -->
+        <div class="deals-header">
+            <div class="deals-header-top">
+                <h2>Welcome Deals | Below 699 EGP </h2>
+            </div>
+            <p>Pst..Get Free delivery on first order*</p>
         </div>
 
-        <div class="product-card" data-id="3" data-name="Furniture" data-price="85.00" data-image="product3.jpg"
-            data-description="Premium quality furniture piece with modern minimalist design. Durable construction with sleek finish, perfect for contemporary home decor.">
-            <img src="product3.jpg" alt="Furniture" class="product-img">
-            <h4 class="product-title">Furniture</h4>
-            <p class="price">$85.00</p>
-            <button class="add-to-cart-btn add-to-cart" data-id="3" data-name="Furniture" data-price="85.00">Add to
-                Cart</button>
-        </div>
+        <!-- Cards Track -->
+        <div class="deals-track-wrapper">
+            <button class="arrow-btn arrow-left" onclick="scrollDeals(-1)">&#8249;</button>
 
-        <div class="product-card" data-id="4" data-name="Creatine" data-price="199.00" data-image="product4.jpg"
-            data-description="High-quality creatine monohydrate supplement for muscle strength and performance. Pure powder form, micronized for better absorption and enhanced athletic performance.">
-            <img src="product4.jpg" alt="Creatine" class="product-img">
-            <h4 class="product-title">Creatine</h4>
-            <p class="price">$199.00</p>
-            <button class="add-to-cart-btn add-to-cart" data-id="4" data-name="Creatine" data-price="199.00">Add to
-                Cart</button>
-        </div>
+            <div class="deals-track" id="dealsTrack">
 
-        <div class="product-card" data-id="4" data-name="Creatine" data-price="199.00" data-image="product4.jpg"
-            data-description="High-quality creatine monohydrate supplement for muscle strength and performance. Pure powder form, micronized for better absorption and enhanced athletic performance.">
-            <img src="product4.jpg" alt="Creatine" class="product-img">
-            <h4 class="product-title">Creatine</h4>
-            <p class="price">$199.00</p>
-            <button class="add-to-cart-btn add-to-cart" data-id="4" data-name="Creatine" data-price="199.00">Add to
-                Cart</button>
-        </div>
-        <div class="product-card" data-id="4" data-name="Creatine" data-price="199.00" data-image="product4.jpg"
-            data-description="High-quality creatine monohydrate supplement for muscle strength and performance. Pure powder form, micronized for better absorption and enhanced athletic performance.">
-            <img src="product4.jpg" alt="Creatine" class="product-img">
-            <h4 class="product-title">Creatine</h4>
-            <p class="price">$199.00</p>
-            <button class="add-to-cart-btn add-to-cart" data-id="4" data-name="Creatine" data-price="199.00">Add to
-                Cart</button>
-        </div>
-        <div class="product-card" data-id="4" data-name="Creatine" data-price="199.00" data-image="product4.jpg"
-            data-description="High-quality creatine monohydrate supplement for muscle strength and performance. Pure powder form, micronized for better absorption and enhanced athletic performance.">
-            <img src="product4.jpg" alt="Creatine" class="product-img">
-            <h4 class="product-title">Creatine</h4>
-            <p class="price">$199.00</p>
-            <button class="add-to-cart-btn add-to-cart" data-id="4" data-name="Creatine" data-price="199.00">Add to
-                Cart</button>
+                <div class="deal-card">
+                    <img src="product1.jpg" alt="Creatine Monohydrate">
+                    <p class="product-name">Limitless Alpha Creatine Monohydrate – Muscle Strength & Performance</p>
+                    <div class="deal-meta">
+                        <span class="discount-badge">15% off</span>
+                        <span class="limited-deal">Limited time deal</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="current-price"><sup>EGP</sup><span class="big">586</span><sup>00</sup></span>
+                        <span class="original-price">EGP 690.00</span>
+                    </div>
+                    <button class="add-to-cart-btn add-to-cart" data-id="901" data-name="Creatine"
+                        data-price="85.00">Add
+                        to
+                        Cart</button>
+                </div>
+
+                <div class="deal-card">
+                    <img src="product2.jpg" alt="iLOCK Power Strip 5">
+                    <p class="product-name">ILOCK power strip, 5 outlets with surge protection and USB ports</p>
+                    <div class="deal-meta">
+                        <span class="discount-badge">21% off</span>
+                        <span class="limited-deal">Limited time deal</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="current-price"><sup>EGP</sup><span class="big">229</span><sup>00</sup></span>
+                        <span class="original-price">EGP 290.00</span>
+                    </div>
+                    <button class="add-to-cart-btn add-to-cart" data-id="902" data-name="Power Strip"
+                        data-price="85.00">Add
+                        to
+                        Cart</button>
+                </div>
+
+                <div class="deal-card">
+                    <img src="product3.jpg" alt="Facial Tissues">
+                    <p class="product-name">White Flexi Facial Tissues – 500 sheets, soft and hypoallergenic Facial
+                        Tissues Facial Tissues</p>
+                    <div class="deal-meta">
+                        <span class="discount-badge">23% off</span>
+                        <span class="limited-deal">Limited time deal</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="current-price"><sup>EGP</sup><span class="big">175</span><sup>20</sup></span>
+                        <span class="original-price">EGP 227.00</span>
+                    </div>
+                    <button class="add-to-cart-btn add-to-cart" data-id="903" data-name="Facial Tissues"
+                        data-price="85.00">Add
+                        to
+                        Cart</button>
+                </div>
+
+                <div class="deal-card">
+                    <img src="product4.jpg" alt="iLOCK Power Strip Universal">
+                    <p class="product-name">iLOCK power strip 5 universal outlets, child-safe with overload protection
+                    </p>
+                    <div class="deal-meta">
+                        <span class="discount-badge">16% off</span>
+                        <span class="limited-deal">Limited time deal</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="current-price"><sup>EGP</sup><span class="big">269</span><sup>00</sup></span>
+                        <span class="original-price">EGP 318.93</span>
+                    </div>
+                    <button class="add-to-cart-btn add-to-cart" data-id="904" data-name="outlets" data-price="85.00">Add
+                        to
+                        Cart</button>
+                </div>
+
+                <div class="deal-card">
+                    <img src="product5.jpg" alt="Ludwik Dishwasher Tablets">
+                    <p class="product-name">Ludwik All-In-One Mint Dishwasher Tablets – 60 tablets, removes grease</p>
+                    <div class="deal-meta">
+                        <span class="discount-badge">15% off</span>
+                        <span class="limited-deal">Limited time deal</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="current-price"><sup>EGP</sup><span class="big">426</span><sup>00</sup></span>
+                        <span class="original-price">EGP 504.00</span>
+                    </div>
+                    <button class="add-to-cart-btn add-to-cart" data-id="905" data-name="dishwasher"
+                        data-price="85.00">Add
+                        to
+                        Cart</button>
+                </div>
+
+                <div class="deal-card">
+                    <img src="product6.jpg" alt="G-Power Strip">
+                    <p class="product-name">G-Power WS344 Power Strip – 4 outlets, 3 USB ports, 2m cable 2m cable 2m
+                        cable</p>
+                    <div class="deal-meta">
+                        <span class="discount-badge">18% off</span>
+                        <span class="limited-deal">Limited time deal</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="current-price"><sup>EGP</sup><span class="big">199</span><sup>00</sup></span>
+                        <span class="original-price">EGP 243.51</span>
+                    </div>
+                    <button class="add-to-cart-btn add-to-cart" data-id="906" data-name="Gpower" data-price="85.00">Add
+                        to
+                        Cart</button>
+                </div>
+
+                <div class="deal-card">
+                    <img src="product8.jpg" alt="Protein Bar">
+                    <p class="product-name">Quest Nutrition Protein Bar – Chocolate Chip Cookie Dough, 12 bars</p>
+                    <div class="deal-meta">
+                        <span class="discount-badge">20% off</span>
+                        <span class="limited-deal">Limited time deal</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="current-price"><sup>EGP</sup><span class="big">349</span><sup>00</sup></span>
+                        <span class="original-price">EGP 436.00</span>
+                    </div>
+                    <button class="add-to-cart-btn add-to-cart" data-id="907" data-name="protien bar"
+                        data-price="85.00">Add
+                        to
+                        Cart</button>
+                </div>
+
+                <div class="deal-card">
+                    <img src="product7.jpg" alt="Laundry Detergent">
+                    <p class="product-name">Ariel Automatic Laundry Detergent Powder – 4kg, fresh scent formula</p>
+                    <div class="deal-meta">
+                        <span class="discount-badge">12% off</span>
+                        <span class="limited-deal">Limited time deal</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="current-price"><sup>EGP</sup><span class="big">289</span><sup>00</sup></span>
+                        <span class="original-price">EGP 328.00</span>
+                    </div>
+                    <button class="add-to-cart-btn add-to-cart" data-id="908" data-name="detergent"
+                        data-price="85.00">Add
+                        to
+                        Cart</button>
+                </div>
+
+            </div>
+
+            <button class="arrow-btn arrow-right" onclick="scrollDeals(1)">&#8250;</button>
         </div>
 
     </div>
-
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
@@ -214,6 +357,23 @@
             <div id="cart-items"></div>
             <div class="cart-summary">
                 <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="clear-cart-btn">Clear Cart</button>
+                <style>
+                    .clear-cart-btn {
+                        background-color: #cc0000;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        margin-top: 8px;
+                    }
+
+                    .clear-cart-btn:hover {
+                        background-color: #aa0000;
+                    }
+                </style>
                 <button class="checkout-btn">Proceed to Checkout</button>
             </div>
         </div>
@@ -237,7 +397,6 @@
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
