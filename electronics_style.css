@@ -1,0 +1,420 @@
+/*FINAL CUSTOM BANNER*/
+
+/* 1. Outer Wrapper - Stretches to the edges of your menu */
+.slideshow-wrapper {
+    max-width: 94%;      /* Adjust this % to align perfectly with your menu buttons */
+    margin: 15px auto;   /* Small gap between the menu and the banner */
+    padding: 0;
+}
+
+/* 2. The Container - Fixed shape to match your drawing */
+.main-slideshow-container {
+    position: relative;
+    width: 100%;
+    
+    /* We use a specific height so it fits the 'compact' look of your lines */
+    height: 480px;       
+    
+    background-color: #000; /* Black background so if there is a gap, it looks intentional */
+    border-radius: 30px; 
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+}
+
+/* 3. The Moving Reel */
+.main-slideshow-reel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+/* 4. IMAGE SETTINGS - Fill the banner perfectly */
+.slide img {
+    width: 100%;
+    height: 100%;
+    
+    /* 'cover' ensures NO white spaces inside the banner */
+    object-fit: cover; 
+    
+    /* This ensures the center of the image is always visible */
+    object-position: center; 
+    
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* 5. Navigation Arrows - Modern Styling */
+.ss-prev, .ss-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3); /* Light circles for dark photos */
+    color: #000;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.ss-prev { left: 20px; }
+.ss-next { right: 20px; }
+.ss-prev:hover, .ss-next:hover { background: rgba(255, 255, 255, 0.8); }
+
+
+
+
+/*ADD TO CART BUTTON*/
+.add-to-cart {
+    /* 1. Width: 90% looks better than 100% for a "medium" feel */
+    width: 90%; 
+    display: block;
+    margin: 15px auto 0; /* Centers it with space above */
+    
+    /* 2. Medium Padding: Not too tall, not too short */
+    padding: 10px 0; 
+    
+    /* 3. Balanced Font: Bold but not huge */
+    font-size: 14px;
+    font-weight: 600; 
+    
+    /* 4. Rounded & Clean */
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.add-to-cart:hover {
+    background-color: #e67e22; /* Your Orange */
+    opacity: 0.9;
+}
+
+/*SALE TAG*/
+.sale-tag {
+    /* 1. Positioning: Pins it to the top-right of the card */
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    
+    /* 2. Modern Orange Styling */
+    background-color: #ff9f43; /* A vibrant, modern tech-orange */
+    color: white;
+    padding: 5px 14px;
+    border-radius: 20px; /* Modern pill shape */
+    
+    /* 3. Typography */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* 4. Effects */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 159, 67, 0.3);
+    z-index: 10;
+}
+
+/* Cleaning up the inner text */
+.sale-tag h4 {
+    color: white;
+    margin: 0; /* Removes extra spacing that breaks the pill shape */
+    font-size: inherit;
+}
+
+/* Modern Hover: Slight glow and lift */
+.sale-tag:hover {
+    background-color: #e67e22; /* Darker orange on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 159, 67, 0.5);
+}
+
+
+
+/* SHOPIT SCOPED BANNER STYLES */
+
+.shopit-split-banner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%; /* Makes it responsive to the screen */
+    max-width: 1400px; /* Made it significantly wider */
+    margin: 60px auto; /* More breathing room */
+    background-color: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    /* Layered, soft shadow for a professional 3D feel */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06), 0 5px 15px rgba(0,0,0,0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Dynamic Hover Lift */
+.shopit-split-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+}
+
+/* Left Section */
+.shopit-banner-left {
+    flex: 1;
+    min-width: 350px;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* The Orange Box - Upgraded with a gradient */
+.shopit-orange-box {
+    background: linear-gradient(135deg, #f26522 0%, #d35400 100%);
+    padding: 30px 40px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px; /* Keeps the text from stretching too far on ultrawide screens */
+    box-shadow: 0 10px 20px rgba(242, 101, 34, 0.2); /* Subtle orange glow */
+}
+
+.shopit-offer-text {
+    color: #ffffff !important;
+    font-size: 2.4rem !important; /* Slightly larger */
+    font-weight: 900 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    font-family: 'Georgia', serif !important;
+    text-transform: none !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Adds crispness to the text */
+}
+
+/* Action Area */
+.shopit-terms {
+    font-size: 13px;
+    color: #888;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Fixed Shop Now Button */
+.shopit-black-btn {
+    display: inline-block;
+    background-color: #1a1a1a !important; /* Rich black */
+    color: #ffffff !important;
+    padding: 15px 50px;
+    border-radius: 30px; /* Modern pill shape */
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    border: none;
+}
+
+.shopit-black-btn:hover {
+    background-color: #f26522 !important; /* Turns brand orange on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(242, 101, 34, 0.3);
+}
+
+.shopit-legal-arabic {
+    font-size: 12px;
+    color: #a0a0a0;
+    direction: rtl;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 400px;
+}
+
+/* Right Image Section */
+.shopit-banner-right {
+    flex: 1.2; /* Gives the image slightly more space than the text */
+    min-width: 350px;
+    overflow: hidden; /* Required for the zoom effect */
+}
+
+.shopit-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease; /* Smooth, slow zoom */
+}
+
+/* Dynamic Image Zoom on Hover */
+.shopit-split-banner:hover .shopit-hero-img {
+    transform: scale(1.04);
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 900px) {
+    .shopit-split-banner {
+        flex-direction: column;
+        margin: 20px auto;
+        border-radius: 16px;
+    }
+    .shopit-banner-right {
+        height: 300px;
+    }
+    .shopit-offer-text {
+        font-size: 1.8rem !important;
+    }
+    .shopit-banner-left {
+        padding: 40px 20px;
+    }
+}
+
+
+
+/*WEARABLES BANNER STYLES */
+
+.shopit-wearables-banner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto; /* Same breathing room as TV section */
+    background-color: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    /* Soft professional shadow */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* LEFT CONTENT: Gray background to make it look 'designed' */
+.banner-left-content {
+    flex: 1;
+    min-width: 400px;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spreads content vertically to fill space */
+    align-items: center;
+    text-align: center;
+    background-color: #fcfcfc; /* Very subtle gray to contrast with the image */
+}
+
+.exclusive-tag {
+    font-size: 13px;
+    color: #f26522; /* BRAND ORANGE */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* The Main Headline */
+.main-offer {
+    margin-bottom: 25px;
+}
+
+.wearable-headline {
+    color: #242830; /* Main text color */
+    font-size: 2.5rem; /* Large and clean */
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+    max-width: 450px;
+}
+
+/* Features: These are essential for filling the 'empty' middle space */
+.wearable-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.wear-feat {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    background: #ffffff;
+    padding: 10px 15px;
+    border-radius: 50px; /* Pill shape */
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.wear-feat span {
+    color: #f26522; /* ORANGE ICON */
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Shop Now Button: Modern Orange Pill Shape */
+.btn-shop-orange {
+    display: inline-block;
+    background-color: #f26522; /* Rich Brand Orange */
+    color: #ffffff;
+    padding: 18px 60px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-shop-orange:hover {
+    background-color: #d35400; /* Darker orange on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(242, 101, 34, 0.3);
+}
+
+/* RIGHT IMAGE AREA: Minimal layout */
+.banner-right-visual {
+    flex: 1.2;
+    min-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-wearable-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease; /* Smooth hover zoom */
+}
+
+/* Simple Modern Hover Effect */
+.shopit-wearables-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+}
+
+.shopit-wearables-banner:hover .hero-wearable-img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .shopit-wearables-banner { flex-direction: column-reverse; margin: 20px auto; }
+    .banner-right-visual { height: 300px; }
+    .wearable-headline { font-size: 1.8rem; }
+    .banner-left-content { padding: 40px 20px; }
+}
+
+
+/*SMART TABLETS BANNER STYLES*/
