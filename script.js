@@ -241,7 +241,7 @@ if (signinForm) {
             name: userName,
             email: userEmail,
             signin_time: new Date().toLocaleString()
-        }));
+        }));//end mg
 
         // Hide form, show welcome message
         document.getElementById('signin-form-box').style.display = 'none';
@@ -254,13 +254,11 @@ if (signinForm) {
         }, 3000);
     });
 } // <--- This closing bracket is what was missing before!
-//Mgemyy
 // --- 2. CHECK IF ALREADY SIGNED IN ---
 window.addEventListener('load', () => {
     const user = localStorage.getItem('currentUser');
     if (user) {
         const userData = JSON.parse(user);
-        
         // Grab the elements
         const signinBox = document.getElementById('signin-form-box');
         const welcomeBox = document.getElementById('welcome-box');
@@ -280,6 +278,7 @@ const signupForm = document.getElementById('signup-form');
 if (signupForm) {
     signupForm.addEventListener('submit', function (e) {
         e.preventDefault();
+        //end Mgemyy
     // Get form data
     const fullName = document.getElementById('fullname').value;
     const email = document.getElementById('email').value;
