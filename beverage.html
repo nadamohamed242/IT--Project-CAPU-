@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="grocery.css">
+    <title>Shopping</title>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img class="logo" src="logo.png"></a>
+        <div class="search-box">
+            <span class="search-icon"><i class="fa fa-search"></i></span>
+            <input type="text" placeholder="What are you looking for.....?">
+        </div>
+        <div class="top-bar">
+            <a href="index.html">Home</a>
+            <span>|</span>
+            <a href="signin.html">Sign in</a>
+            <span>|</span>
+            <a href="signup.html">Sign up</a>
+            <span>|</span>
+            <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
+            <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
+        </div>
+    </div>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown-menu">
+                <a href="clothes.html">Clothes</a>
+                <ul class="dropdown-content">
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="jewelry.html">Jewelry</a>
+                <ul class="dropdown-content">
+                    <li><a href="womenjewelry.html">Women's Jewelry</a></li>
+                    <li><a href="menjewelry.html">Men's Jewelry</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="electronics.html">Electronics</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Phones</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Headsets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="../groceries.html">Groceries</a>
+                <ul class="dropdown-content">
+                        <li><a href="essentail.html">Grocery Essentials</a></li>
+                        <li><a href="dairy.html">Dairy & Eggs</a></li>
+                        <li><a href="frozen.html">Frozen Food</a></li>
+                        <li><a href="beverage.html">Beverages</a></li>
+                        <li><a href="vegan.html">Vegeterian products</a></li>
+                        <li><a href="vegetables.html">Vegetables & Fruits</a></li>
+                        <li><a href="snacks.html">Snacks & Chocolate</a></li> 
+                        <li><a href="bakery.html">Bakery & Pastry</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Cleaners.html">Furniture</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones"> beds</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="supplements.html">Supplements</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Whey Protien</a></li>
+                    <li><a href="#laptops">Protein bars</a></li>
+                    <li><a href="#tablets">Creatine</a></li>
+                </ul>
+            </li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">
+        <h2>Beverages</h2>
+<div class="product-container">
+      <div class="product-card">
+        <img src="../groceries/product1b.jpg" alt="V Cola">
+        <h4>V Cola </h4>
+        <p class="price">14.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="607" data-name="V Cola" data-price="14.00">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product2b.jpg" alt="Mix chocolate milk">
+        <h4>Mix chocolate milk</h4>
+        <p class="price">11.45 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="608" data-name="Mix chocolate milk" data-price="11.45">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product3b.jpg" alt="Sun Top Mixed Berry Flavour Juice">
+        <h4>Sun Top Mixed Berry Flavour Juice</h4>
+        <p class="price">13.49 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="609" data-name="Sun Top Mixed Berry Flavour Juice" data-price="13.49">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product5b.jpg" alt="Natural Anise Herbs">
+        <h4>Natural Anise Herbs 12 bags</h4>
+        <p class="price">14.99 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="610" data-name="Natural Anise Herbs" data-price="14.99">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product6b.jpg" alt="GREEN TEA">
+        <h4>GREEN TEA 100 bags</h4>
+        <p class="price">107.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="611" data-name="GREEN TEA" data-price="107.00">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product7b.jpg" alt="Black Tea">
+        <h4>Black Tea 50 bags</h4>
+        <p class="price">46.45 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="612" data-name="Black Tea" data-price="46.45">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product4b.jpg" alt="Dream Choco">
+        <h4>Dream Choco 60g</h4>
+        <p class="price">23.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="613" data-name="Dream Choco" data-price="23.00">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product11b.jpg" alt="High Cofee Mix 3 In 1">
+        <h4>High Cofee Mix 3 In 1 (12 bags)</h4>
+        <p class="price">74.95 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="614" data-name="High Cofee Mix 3 In 1" data-price="74.95">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product8b.jpg" alt="Cappuccino Mocha">
+        <h4>Cappuccino Mocha 8 bags</h4>
+        <p class="price">71.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="615" data-name="Cappuccino Mocha" data-price="71.00">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product10b.jpg" alt="Instant Coffee">
+        <h4>Instant Coffee 200g</h4>
+        <p class="price">295.99 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="616" data-name="Instant Coffee" data-price="295.99">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product9b.jpg" alt="Light Roast Regular Blend">
+        <h4>Light Roast Regular Blend 250g</h4>
+        <p class="price">175.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="617" data-name="Light Roast Regular Blend" data-price="175.00">Add to Cart</button>
+    </div>
+</div>
+
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your one-stop shop for quality products across all categories. We offer the best selection and
+                    competitive prices.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 Email: support@shop.com</p>
+                <p>📱 Phone: +1 (555) 123-4567</p>
+                <p>📍 Address: 123 Main Street, City, Country</p>
+                <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
+                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
+                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
+                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms & Conditions</a> |
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

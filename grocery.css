@@ -1,0 +1,148 @@
+/*global style for 8 sections*/
+.page-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #333;
+}
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    width: 260px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-img, .product-title {
+    cursor: pointer;
+}
+
+.product-title:hover {
+    color: #d4af37;
+}
+
+.product-card h4 {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.product-card .price {
+    color: #d4af37; 
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.add-to-cart-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #d4af37; 
+}
+/*style of essentail page*/
+.sectionG {
+    text-align: center;
+    width: 100%;
+
+ h3 {
+    display: inline-block;
+    background-color: #f0d7c2;
+    padding: 5px 15px;
+    color: #e9873d;
+    border-radius: 15px;
+}
+}
+/*style of groceries page*/
+.heroSection {
+    position: relative;
+    width:100%;
+    height: 400px;
+    overflow: hidden;
+}
+.vidG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+#groceries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    gap: 20px;
+    padding: 20px 20px;
+    margin: 0  20px 0 150px; 
+}
+.g-card {
+    display: block;
+    width: 22%; 
+    min-width: 300px;
+    text-decoration: none;
+    color: #333; 
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px; 
+    overflow: hidden; 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.g-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+.g-card img {
+     width: 100%;
+    height: 300px;
+    object-fit: cover; 
+    border-bottom: 1px solid #eaeaea;
+    transition: transform 0.4s ease;
+}
+.g-card:hover img {
+    transform: scale(1.1);
+}
+.g-card h3 {
+     margin: 15px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s ease; 
+}
+.g-card:hover h3 {
+     color: #d4af37; 
+}
