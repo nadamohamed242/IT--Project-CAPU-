@@ -2796,6 +2796,10 @@ body.dark-theme table {
     border-color: #444;
 }
 
+body.dark-theme .product-details tr td {
+  color: white;
+ }
+
 body.dark-theme th,
 body.dark-theme td {
     border-color: #444;
