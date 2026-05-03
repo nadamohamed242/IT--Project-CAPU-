@@ -321,3 +321,29 @@ body { font-family: Arial, sans-serif; }
     color: black;
     transform: translateY(-2px);
 }
+/* dark theme edit*/
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3, 
+body.dark-theme p, 
+body.dark-theme .mc-card {
+    color: white;
+}
+body.dark-theme {
+    color: white; 
+}
+body.dark-theme {
+    background-color: #121212; 
+    color: #ffffff;
+}
+
+
+body.dark-theme .mc-card {
+    background-color: #000000;
+    color:black;
+}
+
+body.dark-theme .men-categories {
+    background-color: transparent;
+    color:black;
+}
