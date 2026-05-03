@@ -2669,6 +2669,10 @@ body.dark-theme .search-icon {
     color: #888;
 }
 
+body.dark-theme .category-grid {
+    background-color: rgb(61, 52, 52);
+}
+
 body.dark-theme .hero {
     background-color: #2a2a2a;
 }
