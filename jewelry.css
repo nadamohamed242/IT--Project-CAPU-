@@ -212,23 +212,6 @@ p {
     color: #f0f0f0;
 }
 
-.shop-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #d4af37;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.shop-btn:hover {
-    background-color: #d4af37;
-    color: #fff;
-}
-
 /* =========================================
    6. INDIVIDUAL PRODUCT CARDS (Watches, Rings)
    ========================================= */
