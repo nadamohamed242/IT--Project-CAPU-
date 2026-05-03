@@ -8,40 +8,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="jewelry.css">
     <link rel="stylesheet" href="electronics_style.css">
-    <title>Shopping</title>
+  <title>Shopping</title>
+    <style>
+        #main-nav {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal by default */
+            gap: 20px;
+            padding: 15px;
+            transition: 0.3s;
+            right: 0px;
+            justify-content: center;
+        }
+
+        /* 2. The Toggle Class */
+        /* We use the #main-nav ID here to ensure higher "specificity" */
+        #main-nav.nav-vertical {
+            flex-direction: column;
+            /* Switches to Vertical */
+            width: fit-content;
+        }
+
+        button {
+            right: 0px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
 </head>
- 
+
 <body>
     <div class="header">
-        <img class="logo" src="logo.jpeg">
+        <a href="index.html"><img class="logo" src="logo.jpeg"></a>
         <div class="search-box">
             <span class="search-icon"><i class="fa fa-search"></i></span>
             <input type="text" placeholder="What are you looking for.....?">
         </div>
         <div class="top-bar">
-            <a href="#">Orders</a>
+            <a href="index.html">Home</a>
             <span>|</span>
-            <a href="#">Sign in</a>
+            <a href="signin.html">Sign in</a>
             <span>|</span>
-            <a href="#">Sign up</a>
+            <a href="signup.html">Sign up</a>
             <span>|</span>
-            <a href="#">My Account</a>
+            <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
             <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
-    <nav>
+    <nav id="main-nav">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
-
             <li class="dropdown-menu">
                 <a href="clothes.html">Clothes</a>
                 <ul class="dropdown-content">
-                    <li><a href="#men">Men's</a></li>
-                    <li><a href="#women">Women's</a></li>
-                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="man.html">Men</a></li>
+                    <li><a href="woman.html">Women</a></li>
+                    <li><a href="#kids.html">Kids</a></li>
                 </ul>
             </li>
-
             <li class="dropdown-menu">
                 <a href="jewelry.html">Jewelry</a>
                 <ul class="dropdown-content">
@@ -63,34 +101,41 @@
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="Groceries.html">Groceries</a>
+                <a href="groceries.html">Groceries</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Dairy</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="essentail.html">Grocery Essentials</a></li>
+                    <li><a href="dairy.html">Dairy & Eggs</a></li>
+                    <li><a href="frozen.html">Frozen Food</a></li>
+                    <li><a href="bakery.html">Beverages</a></li>
+                    <li><a href="vegan.html">Vegeterian products</a></li>
+                    <li><a href="vegetables.html">Vegetables & Fruits</a></li>
+                    <li><a href="snacks.html">Snacks & Chocolate</a></li>
+                    <li><a href="bakery.html">Bakery & Pastry</a></li>
                 </ul>
-            </li>
             <li class="dropdown-menu">
                 <a href="Furniture.html">Furniture</a>
                 <ul class="dropdown-content">
-                   <li><a href="bedroom.html"> Bedrooms</a></li>
+                    <li><a href="bedroom.html"> Bedrooms</a></li>
                     <li><a href="livingroom.html">Living Rooms</a></li>
                     <li><a href="outdoors.html">Outdoors</a></li>
                     <li><a href="diningroom.html">Dining Rooms</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="supplements.html">Supplements</a>
+                <a href="main.html">Supplements</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Whey Protien</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="protein.html">Protein</a></li>
+                    <li><a href="snacks.html">Snacks</a></li>
+                    <li><a href="creatine.html">Creatine</a></li>
+                    <li><a href="amino.html">Amino</a></li>
+                    <li><a href="mass-gainer.html">Mass gainer</a></li>
+                    <li><a href="pre-workout.html">Pre Workout</a></li>
                 </ul>
             </li>
-            <li><a href="contact us.html">Contact Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
+        <button id="menu-btn">Click to Toggle Layout</button>
     </nav>
-
 <!--MAIN BODY--> 
 <!--SLIDESHOW BANNER-->
 <div class="slideshow-wrapper">
