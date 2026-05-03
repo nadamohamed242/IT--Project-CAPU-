@@ -2646,6 +2646,17 @@ body.dark-theme .dropdown-menu .dropdown-content {
     border-color: #ff9800;
 }
 
+body.dark-theme .page-buttons{
+    background-color: #2a2a2a;
+    color:white;
+    border-color: #2a2a2a;
+}
+body.dark-theme .page-buttons:hover{
+    background-color: #725f5f;
+    color:rgb(230, 224, 224);
+    border-color: #725f5f;
+}
+
 body.dark-theme .dropdown-content li a {
     color: #e0e0e0;
 }
