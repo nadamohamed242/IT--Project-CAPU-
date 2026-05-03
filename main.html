@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Shopping</title>
+    <style>
+        #main-nav {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal by default */
+            gap: 20px;
+            padding: 15px;
+            transition: 0.3s;
+            right: 0px;
+            justify-content: center;
+        }
+
+        /* 2. The Toggle Class */
+        /* We use the #main-nav ID here to ensure higher "specificity" */
+        #main-nav.nav-vertical {
+            flex-direction: column;
+            /* Switches to Vertical */
+            width: fit-content;
+        }
+
+        button {
+            right: 0px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img class="logo" src="logo.jpeg"></a>
+        <div class="search-box">
+            <span class="search-icon"><i class="fa fa-search"></i></span>
+            <input type="text" placeholder="What are you looking for.....?">
+        </div>
+        <div class="top-bar">
+            <a href="index.html">Home</a>
+            <span>|</span>
+            <a href="signin.html">Sign in</a>
+            <span>|</span>
+            <a href="signup.html">Sign up</a>
+            <span>|</span>
+            <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
+            <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
+        </div>
+    </div>
+    <nav id="main-nav">
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown-menu">
+                <a href="clothes.html">Clothes</a>
+                <ul class="dropdown-content">
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="jewelry.html">Jewelry</a>
+                <ul class="dropdown-content">
+                    <li><a href="womenjewelry.html">Women's Jewelry</a></li>
+                    <li><a href="menjewelry.html">Men's Jewelry</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-menu">
+                <a href="electronics.html">Electronics</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Phones</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Headsets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Groceries.html">Groceries</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Dairy</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="Cleaners.html">Furniture</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones"> beds</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu">
+                <a href="supplements.html">Supplements</a>
+                <ul class="dropdown-content">
+                    <li><a href="#phones">Whey Protien</a></li>
+                    <li><a href="#laptops">Protein bars</a></li>
+                    <li><a href="#tablets">Creatine</a></li>
+                </ul>
+            </li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+        <button id="menu-btn">Click to Toggle Layout</button>
+    </nav>
+
+<section class="supplements">
+
+    <div class="page-title" id="categories-section">
+        <h2>Shop by Category</h2>
+    </div>
+
+    <div class="promo-banner">
+        <div class="banner-text">
+            <h2>Power Up Your Training!</h2>
+            <p>Discover our wide range of supplements to reach your fitness goals.</p>
+            <a href="#categories-section" class="banner-btn" style="text-decoration: none; display: inline-block;">Explore Categories</a>
+        </div>
+        <div class="banner-image">
+            <img src="images/categories/banner.png" alt="Promo Supplement">
+        </div>
+    </div>
+
+    <div class="product-container">
+
+        <a href="protein.html" class="product-card" style="text-decoration: none; display: block;">
+            <img src="images/categories/protein.png" alt="Whey Protein" class="product-img">
+            <h4 class="product-title">Whey Protein</h4>
+        </a>
+
+        <a href="creatin.html" class="product-card" style="text-decoration: none; display: block;">
+            <img src="images/categories/creatine.png" alt="Creatine" class="product-img">
+            <h4 class="product-title">Creatine</h4>
+        </a>
+
+        <a href="pre-workout.html" class="product-card" style="text-decoration: none; display: block;">
+            <img src="images/categories/pre workout.png" alt="Pre Workout" class="product-img">
+            <h4 class="product-title">Pre-Workout</h4>
+        </a>
+
+        <a href="amino.html" class="product-card" style="text-decoration: none; display: block;">
+            <img src="images/categories/Amino.png" alt="Amino Acids" class="product-img">
+            <h4 class="product-title">Amino Acids</h4>
+        </a>
+
+        <a href="mass-gainer.html" class="product-card" style="text-decoration: none; display: block;">
+            <img src="images/categories/mass gainer.png" alt="Mass Gainer" class="product-img">
+            <h4 class="product-title">Mass Gainer</h4>
+        </a>
+
+        <a href="snacks.html" class="product-card" style="text-decoration: none; display: block;">
+            <img src="images/categories/snacks.png" alt="Snacks" class="product-img">
+            <h4 class="product-title">Snacks</h4>
+        </a>
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+ <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close cart-close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Total: EGP <span id="cart-total">0.00</span></h3>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close product-close">&times;</span>
+            <div class="product-details-container">
+                <div class="product-details-image">
+                    <img id="modal-product-img" src="" alt="Product Image">
+                </div>
+                <div class="product-details-info">
+                    <h2 id="modal-product-title"></h2>
+                    <p id="modal-product-price" class="price"></p>
+                    <p id="modal-product-description"></p>
+                    <br>
+                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name="" data-price="">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+    </body>
+</html>
