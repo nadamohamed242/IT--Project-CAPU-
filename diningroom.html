@@ -2,45 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charSet="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="furniturestyle.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shopping</title>
+    <style>
+        #main-nav {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal by default */
+            gap: 20px;
+            padding: 15px;
+            transition: 0.3s;
+            right: 0px;
+            justify-content: center;
+        }
+
+        /* 2. The Toggle Class */
+        /* We use the #main-nav ID here to ensure higher "specificity" */
+        #main-nav.nav-vertical {
+            flex-direction: column;
+            /* Switches to Vertical */
+            width: fit-content;
+        }
+
+        button {
+            right: 0px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body>
- 
-     <div class="header">
-        <img class="logo" src="logo.jpeg">
+    <div class="header">
+        <a href="index.html"><img class="logo" src="logo.jpeg"></a>
         <div class="search-box">
             <span class="search-icon"><i class="fa fa-search"></i></span>
             <input type="text" placeholder="What are you looking for.....?">
         </div>
         <div class="top-bar">
-            <a href="#">Orders</a>
+            <a href="index.html">Home</a>
             <span>|</span>
-            <a href="#">sign in</a>
+            <a href="signin.html">Sign in</a>
             <span>|</span>
-            <a href="#">sign up</a>
+            <a href="signup.html">Sign up</a>
             <span>|</span>
-            <a href="#">My Account</a>
-            <img class="cart" src="https://github.com/nadamohamed242/IT--Project-CAPU-/blob/main/cart.png?raw=true" id="cart-icon" style="cursor: pointer;">
+            <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
+            <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
-    <nav>
+    <nav id="main-nav">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
-
             <li class="dropdown-menu">
                 <a href="clothes.html">Clothes</a>
                 <ul class="dropdown-content">
-                    <li><a href="#men">Men's</a></li>
-                    <li><a href="#women">Women's</a></li>
-                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="man.html">Men</a></li>
+                    <li><a href="woman.html">Women</a></li>
+                    <li><a href="#kids.html">Kids</a></li>
                 </ul>
             </li>
-
             <li class="dropdown-menu">
                 <a href="jewelry.html">Jewelry</a>
                 <ul class="dropdown-content">
@@ -52,47 +90,58 @@
             <li class="dropdown-menu">
                 <a href="electronics.html">Electronics</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Phones</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="phones.html">Phones</a></li>
+                    <li><a href="laptops&pcs.html">Laptops & PCs</a></li>
+                    <li><a href="smarttablets.html">Smart Tablets</a></li>
+                    <li><a href="smartTVs.html">Smart TVs</a></li>
+                    <li><a href="gamingarea.html">Gaming Area</a></li>
+                    <li><a href="wearables.html">Wearables</a></li>
+                    <li><a href="mobile&laptopaccessories.html">Mobile & Laptop Accessories</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
                 <a href="Groceries.html">Groceries</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Dairy</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="essentail.html">Grocery Essentials</a></li>
+                    <li><a href="dairy.html">Dairy & Eggs</a></li>
+                    <li><a href="frozen.html">Frozen Food</a></li>
+                    <li><a href="bakery.html">Beverages</a></li>
+                    <li><a href="vegan.html">Vegeterian products</a></li>
+                    <li><a href="vegetables.html">Vegetables & Fruits</a></li>
+                    <li><a href="snacks.html">Snacks & Chocolate</a></li>
+                    <li><a href="bakery.html">Bakery & Pastry</a></li>
                 </ul>
-            </li>
             <li class="dropdown-menu">
                 <a href="Furniture.html">Furniture</a>
                 <ul class="dropdown-content">
-                    <li><a href="bedroom.html"> Bed Rooms</a></li>
+                    <li><a href="bedroom.html"> Bedrooms</a></li>
                     <li><a href="livingroom.html">Living Rooms</a></li>
                     <li><a href="outdoors.html">Outdoors</a></li>
                     <li><a href="diningroom.html">Dining Rooms</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="supplements.html">Supplements</a>
+                <a href="main.html">Supplements</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Whey Protien</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="protein.html">Protien</a></li>
+                    <li><a href="snacks.html">Snacks</a></li>
+                    <li><a href="creatine.html">Creatine</a></li>
+                    <li><a href="amino.html">Amino</a></li>
+                    <li><a href="mass-gainer.html">Mass gainer</a></li>
+                    <li><a href="pre-workout.html">Pre Workout</a></li>
                 </ul>
             </li>
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
+        <button id="menu-btn">Click to Toggle Layout</button>
     </nav>
-     
      <div class="page-title">
         <h2>Dining Room Collection</h2>
     </div>
 
     <div class="product-container">
         
-        <div class="product-card" data-id="1" data-name="HFD-074001000" data-price="78000" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_4.38.07_pm_2_.jpeg" data-description="This avant-garde dining Room masterfully blends Japandi minimalism with bold architectural shapes, featuring a striking pedestal table and sculptural T-back chairs. The monochrome palette is softened by rich textures, organic arched cabinetry, and floor-to-ceiling windows that invite the outdoors in. It’s a sophisticated, light-filled sanctuary designed for those who view interior design as a form of high art.">
+        <div class="product-card" data-id="5024" data-name="HFD-074001000" data-price="78000" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_4.38.07_pm_2_.jpeg" data-description="This avant-garde dining Room masterfully blends Japandi minimalism with bold architectural shapes, featuring a striking pedestal table and sculptural T-back chairs. The monochrome palette is softened by rich textures, organic arched cabinetry, and floor-to-ceiling windows that invite the outdoors in. It’s a sophisticated, light-filled sanctuary designed for those who view interior design as a form of high art.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_4.38.07_pm_2_.jpeg" alt="HFD-074001000" class="product-img">
             <h4 class="product-title">HFD-074001000</h4>
             <p class="price">78,000 EGP</p>
@@ -122,10 +171,10 @@
                 <td>87</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="1" data-name="HFD-074001000" data-price="78000">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5024" data-name="HFD-074001000" data-price="78000">Add to Cart</button>
         </div>
 
-        <div class="product-card" data-id="2" data-name="HFD-074002000" data-price="79600" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-23_at_4.06.49_pm.jpeg" data-description="Exude effortless glamour with this luxurious contemporary dining suite, where shimmering gold accents meet soft, organic curves. The pristine white table and plush, rounded chairs sit beautifully against a backdrop of fluted wall panels and amber-tinted glass cabinetry. Bathed in natural light, this space offers a warm, high-end aesthetic that turns every meal into a refined, boutique experience.">
+        <div class="product-card" data-id="5025" data-name="HFD-074002000" data-price="79600" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-23_at_4.06.49_pm.jpeg" data-description="Exude effortless glamour with this luxurious contemporary dining suite, where shimmering gold accents meet soft, organic curves. The pristine white table and plush, rounded chairs sit beautifully against a backdrop of fluted wall panels and amber-tinted glass cabinetry. Bathed in natural light, this space offers a warm, high-end aesthetic that turns every meal into a refined, boutique experience.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-23_at_4.06.49_pm.jpeg" alt="HFD-074002000" class="product-img">
             <h4 class="product-title">HFD-074002000</h4>
             <p class="price">79,600 EGP</p>
@@ -155,10 +204,10 @@
                 <td>80</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="2" data-name="HFD-074002000" data-price="79600">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5025" data-name="HFD-074002000" data-price="79600">Add to Cart</button>
         </div>
 
-        <div class="product-card" data-id="3" data-name="LF-D005200" data-price="101450" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-03-29_at_3.40.17_pm.jpeg" data-description="Indulge in a penthouse living aesthetic with this organic-modern dining collection, featuring a stunning marble-top table and matching upholstered bench. The rich wood frames and curved chairs harmonize beautifully with the textured wall paneling and neutral accents for a look that is both grounded and grand. Perfectly suited for expansive views, this Set brings a sense of serene, high-end comfort to the heart of your home.">
+        <div class="product-card" data-id="5026" data-name="LF-D005200" data-price="101450" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-03-29_at_3.40.17_pm.jpeg" data-description="Indulge in a penthouse living aesthetic with this organic-modern dining collection, featuring a stunning marble-top table and matching upholstered bench. The rich wood frames and curved chairs harmonize beautifully with the textured wall paneling and neutral accents for a look that is both grounded and grand. Perfectly suited for expansive views, this Set brings a sense of serene, high-end comfort to the heart of your home.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-03-29_at_3.40.17_pm.jpeg" alt="LF-D005200" class="product-img">
             <h4 class="product-title">LF-D005200</h4>
             <p class="price">101,450 EGP</p>
@@ -188,10 +237,10 @@
                 <td>82</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="3" data-name="LF-D005200" data-price="101450">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5026" data-name="LF-D005200" data-price="101450">Add to Cart</button>
         </div>
 
-        <div class="product-card" data-id="4" data-name="LF-D002300" data-price="135750" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_3.48.57_pm.jpeg" data-description="Discover the height of dining sophistication with this exquisite 8-seater ensemble, featuring a stunning marble-top table supported by a sculptural, interlocking wooden base. The gracefully curved armchairs and warm neutral palette blend seamlessly with fluted wall textures and expansive garden views to create a truly tranquil atmosphere. Elevate your hosting game with a Set that combines architectural artistry with unparalleled comfort.">
+        <div class="product-card" data-id="5027" data-name="LF-D002300" data-price="135750" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_3.48.57_pm.jpeg" data-description="Discover the height of dining sophistication with this exquisite 8-seater ensemble, featuring a stunning marble-top table supported by a sculptural, interlocking wooden base. The gracefully curved armchairs and warm neutral palette blend seamlessly with fluted wall textures and expansive garden views to create a truly tranquil atmosphere. Elevate your hosting game with a Set that combines architectural artistry with unparalleled comfort.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_3.48.57_pm.jpeg" alt="LF-D002300" class="product-img">
             <div class="sale-tag">
                 <h4>Sale!</h4>
@@ -224,9 +273,9 @@
                 <td>80</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="4" data-name="LF-D0001300" data-price="135750">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5027" data-name="LF-D0001300" data-price="135750">Add to Cart</button>
         </div>
-        <div class="product-card" data-id="5" data-name="Links Chain Bracelet" data-price="106850" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/l/f/lf-d0001300.jpg" data-description="Make a grand statement with this expansive, luxury dining Set featuring a magnificent smoked-glass oval table and plush, channel-tufted tub chairs. The sophisticated interplay of charcoal and cream upholstery, accented by elegant gold-tipped legs and ornate wall decor, creates an atmosphere of pure opulence. Perfect for high-capacity entertaining, this Set transforms your dining area into a high-end gala space that exudes modern glamour.">
+        <div class="product-card" data-id="5028" data-name="Links Chain Bracelet" data-price="106850" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/l/f/lf-d0001300.jpg" data-description="Make a grand statement with this expansive, luxury dining Set featuring a magnificent smoked-glass oval table and plush, channel-tufted tub chairs. The sophisticated interplay of charcoal and cream upholstery, accented by elegant gold-tipped legs and ornate wall decor, creates an atmosphere of pure opulence. Perfect for high-capacity entertaining, this Set transforms your dining area into a high-end gala space that exudes modern glamour.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/l/f/lf-d0001300.jpg" alt="LF-D0001300" class="product-img">
             <div class="sale-tag">
                 <h4>Sale!</h4>
@@ -259,9 +308,9 @@
                 <td>80</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="5" data-name="LF-D0001300" data-price="106850">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5028" data-name="LF-D0001300" data-price="106850">Add to Cart</button>
         </div>
-        <div class="product-card" data-id="6" data-name="LF-D000510" data-price="115890" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-22_at_12.24.44_pm.jpeg" data-description="Experience the pinnacle of executive elegance with this majestic dining suite, featuring a dark, fluted pedestal table and velvet-upholstered chairs with a unique sculptural silhouette. The sophisticated taupe and black palette, grounded by a plush silk-wash rug and accented by striking gold décor, creates a space that is as much a gallery as it is a home. Turn every dinner into a prestigious event with this masterclass in modern luxury and refined taste.">
+        <div class="product-card" data-id="5029" data-name="LF-D000510" data-price="115890" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-22_at_12.24.44_pm.jpeg" data-description="Experience the pinnacle of executive elegance with this majestic dining suite, featuring a dark, fluted pedestal table and velvet-upholstered chairs with a unique sculptural silhouette. The sophisticated taupe and black palette, grounded by a plush silk-wash rug and accented by striking gold décor, creates a space that is as much a gallery as it is a home. Turn every dinner into a prestigious event with this masterclass in modern luxury and refined taste.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-22_at_12.24.44_pm.jpeg" alt="LF-D000510" class="product-img">
             
             <h4 class="product-title">LF-D000510</h4>
@@ -292,9 +341,9 @@
                 <td>84</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="6" data-name="LF-D000510" data-price="115890">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5029" data-name="LF-D000510" data-price="115890">Add to Cart</button>
         </div>
-        <div class="product-card" data-id="7" data-name="NUBI A428 - DN-RECT" data-price="40690" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_3.28.15_pm.jpeg" data-description="
+        <div class="product-card" data-id="5030" data-name="NUBI A428 - DN-RECT" data-price="40690" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_3.28.15_pm.jpeg" data-description="
 Embrace the heart of the home with this charming modern farmhouse dining Set, featuring a weathered gray finish and a classic pedestal base. The ladder-back chairs with dark cushioned seats offer a perfect blend of rustic character and contemporary comfort, all illuminated by a striking wagon-wheel chandelier. Complete with a matching sideboard and arched mirror, this collection creates a warm, inviting space for timeless family gatherings and cozy Sunday brunches.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_3.28.15_pm.jpeg" alt="NUBI A428 - DN-RECT" class="product-img">
              <div class="sale-tag">
@@ -328,9 +377,9 @@ Embrace the heart of the home with this charming modern farmhouse dining Set, fe
                 <td>90</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="7" data-name="NUBI A428 - DN-RECT" data-price="40690">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5030" data-name="NUBI A428 - DN-RECT" data-price="40690">Add to Cart</button>
         </div>
-        <div class="product-card" data-id="8" data-name="RIEN Dining Room Set" data-price="48500" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/r/i/rien-dn-beauty-5.png" data-description="
+        <div class="product-card" data-id="5031" data-name="RIEN Dining Room Set" data-price="48500" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/r/i/rien-dn-beauty-5.png" data-description="
 Create a serene and sophisticated dining sanctuary with this light oak-finished table and matching cream parson chairs. The clean, minimalist lines are beautifully complemented by a geometric rug and a delicate globe pendant light, making it the perfect choice for those who love a bright, airy aesthetic. Effortlessly elegant and timeless, this set brings a sense of calm and modern refinement to every meal.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/r/i/rien-dn-beauty-5.png" alt="RIEN Dining Room Set" class="product-img">
             <div class="sale-tag">
@@ -364,7 +413,7 @@ Create a serene and sophisticated dining sanctuary with this light oak-finished 
                 <td>80</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="8" data-name="RIEN Dining Room Set" data-price="48500">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5031" data-name="RIEN Dining Room Set" data-price="48500">Add to Cart</button>
         </div>
 
     </div>

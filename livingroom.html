@@ -4,43 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="furniturestyle.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shopping</title>
+    <style>
+        #main-nav {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal by default */
+            gap: 20px;
+            padding: 15px;
+            transition: 0.3s;
+            right: 0px;
+            justify-content: center;
+        }
+
+        /* 2. The Toggle Class */
+        /* We use the #main-nav ID here to ensure higher "specificity" */
+        #main-nav.nav-vertical {
+            flex-direction: column;
+            /* Switches to Vertical */
+            width: fit-content;
+        }
+
+        button {
+            right: 0px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body>
- 
-     <div class="header">
-        <img class="logo" src="logo.jpeg">
+    <div class="header">
+        <a href="index.html"><img class="logo" src="logo.jpeg"></a>
         <div class="search-box">
             <span class="search-icon"><i class="fa fa-search"></i></span>
             <input type="text" placeholder="What are you looking for.....?">
         </div>
         <div class="top-bar">
-            <a href="#">Orders</a>
+            <a href="index.html">Home</a>
             <span>|</span>
-            <a href="#">sign in</a>
+            <a href="signin.html">Sign in</a>
             <span>|</span>
-            <a href="#">sign up</a>
+            <a href="signup.html">Sign up</a>
             <span>|</span>
-            <a href="#">My Account</a>
-            <img class="cart" src="https://github.com/nadamohamed242/IT--Project-CAPU-/blob/main/cart.png?raw=true" id="cart-icon" style="cursor: pointer;">
+            <a href="myaccount.html">My Account</a>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fa fa-moon-o"></i>
+            </button>
+            <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
-    <nav>
+    <nav id="main-nav">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
-
             <li class="dropdown-menu">
                 <a href="clothes.html">Clothes</a>
                 <ul class="dropdown-content">
-                    <li><a href="#men">Men's</a></li>
-                    <li><a href="#women">Women's</a></li>
-                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="man.html">Men</a></li>
+                    <li><a href="woman.html">Women</a></li>
+                    <li><a href="#kids.html">Kids</a></li>
                 </ul>
             </li>
-
             <li class="dropdown-menu">
                 <a href="jewelry.html">Jewelry</a>
                 <ul class="dropdown-content">
@@ -52,47 +90,58 @@
             <li class="dropdown-menu">
                 <a href="electronics.html">Electronics</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Phones</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="phones.html">Phones</a></li>
+                    <li><a href="laptops&pcs.html">Laptops & PCs</a></li>
+                    <li><a href="smarttablets.html">Smart Tablets</a></li>
+                    <li><a href="smartTVs.html">Smart TVs</a></li>
+                    <li><a href="gamingarea.html">Gaming Area</a></li>
+                    <li><a href="wearables.html">Wearables</a></li>
+                    <li><a href="mobile&laptopaccessories.html">Mobile & Laptop Accessories</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
                 <a href="Groceries.html">Groceries</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Dairy</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="essentail.html">Grocery Essentials</a></li>
+                    <li><a href="dairy.html">Dairy & Eggs</a></li>
+                    <li><a href="frozen.html">Frozen Food</a></li>
+                    <li><a href="bakery.html">Beverages</a></li>
+                    <li><a href="vegan.html">Vegeterian products</a></li>
+                    <li><a href="vegetables.html">Vegetables & Fruits</a></li>
+                    <li><a href="snacks.html">Snacks & Chocolate</a></li>
+                    <li><a href="bakery.html">Bakery & Pastry</a></li>
                 </ul>
-            </li>
             <li class="dropdown-menu">
                 <a href="Furniture.html">Furniture</a>
                 <ul class="dropdown-content">
-                    <li><a href="bedroom.html"> Bed Rooms</a></li>
+                    <li><a href="bedroom.html"> Bedrooms</a></li>
                     <li><a href="livingroom.html">Living Rooms</a></li>
                     <li><a href="outdoors.html">Outdoors</a></li>
                     <li><a href="diningroom.html">Dining Rooms</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="supplements.html">Supplements</a>
+                <a href="main.html">Supplements</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Whey Protien</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="protein.html">Protien</a></li>
+                    <li><a href="snacks.html">Snacks</a></li>
+                    <li><a href="creatine.html">Creatine</a></li>
+                    <li><a href="amino.html">Amino</a></li>
+                    <li><a href="mass-gainer.html">Mass gainer</a></li>
+                    <li><a href="pre-workout.html">Pre Workout</a></li>
                 </ul>
             </li>
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
+        <button id="menu-btn">Click to Toggle Layout</button>
     </nav>
-     
      <div class="page-title">
         <h2>Living Room Collection</h2>
     </div>
 
     <div class="product-container">
         
-        <div class="product-card" data-id="1" data-name="AE-8055-13-34-75" data-price="57650" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/a/e/ae-8055-13-34-75.jpg" data-description="Experience the perfect fusion of contemporary elegance and deep-seated luxury in this sun-drenched, open-concept sanctuary. Anchored by a sprawling, textured sectional and refined architectural accents, every detail is curated for high-end entertaining and effortless relaxation. It’s more than just a living room—it’s a masterclass in sophisticated, modern comfort.">
+        <div class="product-card" data-id="5016" data-name="AE-8055-13-34-75" data-price="57650" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/a/e/ae-8055-13-34-75.jpg" data-description="Experience the perfect fusion of contemporary elegance and deep-seated luxury in this sun-drenched, open-concept sanctuary. Anchored by a sprawling, textured sectional and refined architectural accents, every detail is curated for high-end entertaining and effortless relaxation. It’s more than just a living room—it’s a masterclass in sophisticated, modern comfort.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/a/e/ae-8055-13-34-75.jpg" alt="AE-8055-13-34-75" class="product-img">
             <div class="sale-tag">
                 <h4>Sale!</h4>
@@ -113,7 +162,7 @@
                 <td>360</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="1" data-name="AE-8055-13-34-75" data-price="57650">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5016" data-name="AE-8055-13-34-75" data-price="57650">Add to Cart</button>
         </div>
 
         <div class="product-card" data-id="2" data-name="AE-7030-32-34-11" data-price="49000" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-23_at_12.49.40_pm.jpeg" data-description="A perfect blend of modern comfort and clean elegance. This spacious corner sofa in soft grey creates a warm, inviting feel, while the sleek black coffee table adds a stylish contrast. Natural light fills the room through large windows, highlighting the open, airy design. Finished with a textured rug and subtle décor, this living room is made for relaxing, hosting, and truly feeling at home.">
@@ -134,10 +183,10 @@
                 <td>340</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="2" data-name="AE-7030-32-34-11" data-price="49000">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5017" data-name="AE-7030-32-34-11" data-price="49000">Add to Cart</button>
         </div>
 
-        <div class="product-card" data-id="3" data-name="HFL-074001500" data-price="76900" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-22_at_3.47.26_pm.jpeg" data-description="Elevate your home with this striking collection of channel-tufted seating, featuring a bold navy focal point paired with sophisticated cream accents. The sculptural S shaped coffee table and vintage-inspired rug ground the space, blending mid-century charm with ultra-modern textures. It’s a curated, high-style retreat designed for those who want their living room to be a true conversation piece.">
+        <div class="product-card" data-id="5018" data-name="HFL-074001500" data-price="76900" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-22_at_3.47.26_pm.jpeg" data-description="Elevate your home with this striking collection of channel-tufted seating, featuring a bold navy focal point paired with sophisticated cream accents. The sculptural S shaped coffee table and vintage-inspired rug ground the space, blending mid-century charm with ultra-modern textures. It’s a curated, high-style retreat designed for those who want their living room to be a true conversation piece.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-22_at_3.47.26_pm.jpeg" alt="HFL-074001500" class="product-img">
             <h4 class="product-title">HFL-074001500</h4>
             <p class="price">76,900 EGP</p>
@@ -155,10 +204,10 @@
                 <td>294</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="3" data-name="HFL-074001500" data-price="76900">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5018" data-name="HFL-074001500" data-price="76900">Add to Cart</button>
         </div>
 
-        <div class="product-card" data-id="4" data-name="HFL-087000200-11-32" data-price="36750" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-16_at_5.55.36_pm.jpeg" data-description="Discover the ultimate blend of versatility and style with this chic, cream-toned sectional that effortlessly doubles as a luxurious daybed. Its clean lines and plush accent pillows are perfectly complemented by a bold geometric rug, creating a cozy yet modern focal point for any light-filled space. Designed for those who value both aesthetic beauty and everyday functionality, this is the centerpiece your home deserves.">
+        <div class="product-card" data-id="5019" data-name="HFL-087000200-11-32" data-price="36750" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-16_at_5.55.36_pm.jpeg" data-description="Discover the ultimate blend of versatility and style with this chic, cream-toned sectional that effortlessly doubles as a luxurious daybed. Its clean lines and plush accent pillows are perfectly complemented by a bold geometric rug, creating a cozy yet modern focal point for any light-filled space. Designed for those who value both aesthetic beauty and everyday functionality, this is the centerpiece your home deserves.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-16_at_5.55.36_pm.jpeg" alt="HFL-087000200-11-32" class="product-img">
             <div class="sale-tag">
                 <h4>Sale!</h4>
@@ -179,9 +228,9 @@
                 <td>356</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="4" data-name="HFL-087000200-11-32" data-price="36750">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5019" data-name="HFL-087000200-11-32" data-price="36750">Add to Cart</button>
         </div>
-        <div class="product-card" data-id="5" data-name="HFL-087000100-66-57" data-price="45100" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-02-11_at_7.03.55_pm_3_.jpeg" data-description="
+        <div class="product-card" data-id="5020" data-name="HFL-087000100-66-57" data-price="45100" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-02-11_at_7.03.55_pm_3_.jpeg" data-description="
 Transform your living space with this expansive, cream-toned corner sectional that balances cozy comfort with a clean, contemporary aesthetic. Featuring soft earth-toned accent pillows and unique sage green detailing, it offers a versatile and inviting foundation for any modern home. Its generous proportions and plush cushioning make it the perfect retreat for both quiet relaxation and stylish social gatherings.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-02-11_at_7.03.55_pm_3_.jpeg" alt="HFL-087000100-66-57" class="product-img">
             <h4 class="product-title">HFL-087000100-66-57</h4>
@@ -200,9 +249,9 @@ Transform your living space with this expansive, cream-toned corner sectional th
                 <td>313</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="5" data-name="HFL-087000100-66-57" data-price="45100">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5020" data-name="HFL-087000100-66-57" data-price="45100">Add to Cart</button>
         </div>
-        <div class="product-card" data-id="6" data-name="HFL-0735000-3+2+1" data-price="74650" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-21_at_3.29.34_pm.jpeg" data-description="
+        <div class="product-card" data-id="5021" data-name="HFL-0735000-3+2+1" data-price="74650" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-21_at_3.29.34_pm.jpeg" data-description="
 Step into the future of luxury with this avant-garde, cloud-like modular sofa that redefines modern comfort through its bold, sculptural curves. The high-contrast palette of cream bouclé and striking black-and-white geometric patterns creates a high-fashion atmosphere that is both playful and profoundly sophisticated. Anchored by a sleek marble-topped coffee table and floor-to-ceiling city views, this space is the ultimate statement in high-end, contemporary living.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-21_at_3.29.34_pm.jpeg" alt="HFL-0735000-3+2+1" class="product-img">
             <div class="sale-tag">
@@ -218,15 +267,15 @@ Step into the future of luxury with this avant-garde, cloud-like modular sofa th
                 <th>Width</th>
             </tr>
          <tr>
-                <td>Shape</td>
-                <td>232</td>
-                <td>160</td>
-                <td>342</td>
+             <td>Shape</td>
+             <td>232</td>
+             <td>160</td>
+             <td>342</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="6" data-name="HFL-0735000-3+2+1" data-price="74650">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5021" data-name="HFL-0735000-3+2+1" data-price="74650">Add to Cart</button>
         </div>
-        <div class="product-card" data-id="7" data-name="HFL-074001700" data-price="42690" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-23_at_5.22.15_pm_1_.jpeg" data-description="Immerse yourself in a masterclass of organic modernism, where sculptural, channel-tufted seating meets the warmth of natural wood accents. This light-drenched sanctuary pairs a sophisticated charcoal and cream palette with lush greenery to create an atmosphere of serene, high-end tranquility. It’s a curated retreat designed for those who demand both cutting-edge style and unparalleled relaxation.">
+        <div class="product-card" data-id="5022" data-name="HFL-074001700" data-price="42690" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-23_at_5.22.15_pm_1_.jpeg" data-description="Immerse yourself in a masterclass of organic modernism, where sculptural, channel-tufted seating meets the warmth of natural wood accents. This light-drenched sanctuary pairs a sophisticated charcoal and cream palette with lush greenery to create an atmosphere of serene, high-end tranquility. It’s a curated retreat designed for those who demand both cutting-edge style and unparalleled relaxation.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-23_at_5.22.15_pm_1_.jpeg" alt="HFL-074001700" class="product-img">
             <h4 class="product-title">HFL-074001700</h4>
             <p class="price">42,690 EGP</p>
@@ -244,9 +293,9 @@ Step into the future of luxury with this avant-garde, cloud-like modular sofa th
                 <td>350</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="7" data-name="HFL-074001700" data-price="42690">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5022" data-name="HFL-074001700" data-price="42690">Add to Cart</button>
         </div>
-        <div class="product-card" data-id="8" data-name="AE-9021-13-34S-57-29LZ" data-price="54450" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_10.49.26_am.jpeg" data-description="Create a serene, sun-drenched oasis with this multifunctional sand-colored sectional that features integrated cupholders and a spacious storage chaise. The harmonious blend of warm wood accents, minimalist art, and floor-to-ceiling garden views crafts a perfectly balanced, organic modern aesthetic. It’s a sophisticated and practical retreat designed for those who want their home to feel like a high-end breath of fresh air.">
+        <div class="product-card" data-id="5023" data-name="AE-9021-13-34S-57-29LZ" data-price="54450" data-image="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_10.49.26_am.jpeg" data-description="Create a serene, sun-drenched oasis with this multifunctional sand-colored sectional that features integrated cupholders and a spacious storage chaise. The harmonious blend of warm wood accents, minimalist art, and floor-to-ceiling garden views crafts a perfectly balanced, organic modern aesthetic. It’s a sophisticated and practical retreat designed for those who want their home to feel like a high-end breath of fresh air.">
             <img src="https://hubfurniture.com.eg/media/catalog/product/cache/981fa98ffe98a167eb72dc3911db74af/w/h/whatsapp_image_2026-04-27_at_10.49.26_am.jpeg" alt="AE-9021-13-34S-57-29LZ" class="product-img">
             <div class="sale-tag">
                 <h4>Sale!</h4>
@@ -267,7 +316,7 @@ Step into the future of luxury with this avant-garde, cloud-like modular sofa th
                 <td>320</td>
             </tr>
         </table>
-            <button class="add-to-cart-btn add-to-cart" data-id="8" data-name="AE-9021-13-34S-57-29LZ" data-price="54450">Add to Cart</button>
+            <button class="add-to-cart-btn add-to-cart" data-id="5023" data-name="AE-9021-13-34S-57-29LZ" data-price="54450">Add to Cart</button>
         </div>
 
     </div>
