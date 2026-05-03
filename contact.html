@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shopping</title>
+    <style>
+        #main-nav {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal by default */
+            gap: 20px;
+            padding: 15px;
+            transition: 0.3s;
+            right: 0px;
+            justify-content: center;
+        }
+
+        /* 2. The Toggle Class */
+        /* We use the #main-nav ID here to ensure higher "specificity" */
+        #main-nav.nav-vertical {
+            flex-direction: column;
+            /* Switches to Vertical */
+            width: fit-content;
+        }
+
+        button {
+            right: 0px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
     <script>
         // Apply saved theme immediately before page renders
         (function () {
@@ -40,7 +67,7 @@
             <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
-    <nav>
+    <nav id="main-nav">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
 
@@ -96,6 +123,7 @@
             </li>
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
+        <button id="menu-btn">Click to Toggle Layout</button>
     </nav>
 
     <div class="contact-section">

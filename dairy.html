@@ -4,37 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="jewelry.css">
+    <link rel="stylesheet" href="grocery.css">
     <title>Shopping</title>
-    <style>
-        #main-nav {
-            display: flex;
-            flex-direction: row;
-            /* Horizontal by default */
-            gap: 20px;
-            padding: 15px;
-            transition: 0.3s;
-            right: 0px;
-            justify-content: center;
-        }
-
-        /* 2. The Toggle Class */
-        /* We use the #main-nav ID here to ensure higher "specificity" */
-        #main-nav.nav-vertical {
-            flex-direction: column;
-            /* Switches to Vertical */
-            width: fit-content;
-        }
-
-        button {
-            right: 0px;
-            margin-bottom: 10px;
-            padding: 10px;
-            cursor: pointer;
-        }
-    </style>
     <script>
         // Apply saved theme immediately before page renders
         (function () {
@@ -49,7 +22,7 @@
 
 <body>
     <div class="header">
-        <a href="index.html"><img class="logo" src="logo.jpeg"></a>
+        <a href="index.html"><img class="logo" src="logo.png"></a>
         <div class="search-box">
             <span class="search-icon"><i class="fa fa-search"></i></span>
             <input type="text" placeholder="What are you looking for.....?">
@@ -68,7 +41,7 @@
             <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
-    <nav id="main-nav">
+    <nav>
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown-menu">
@@ -96,12 +69,17 @@
                     <li><a href="#tablets">Headsets</a></li>
                 </ul>
             </li>
-            <li class="dropdown-menu">
-                <a href="Groceries.html">Groceries</a>
+             <li class="dropdown-menu">
+                <a href="../groceries.html">Groceries</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Dairy</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="essentail.html">Grocery Essentials</a></li>
+                    <li><a href="dairy.html">Dairy & Eggs</a></li>
+                    <li><a href="frozen.html">Frozen Food</a></li>
+                    <li><a href="beverage.html">Beverages</a></li>
+                    <li><a href="vegan.html">Vegeterian products</a></li>
+                    <li><a href="vegetables.html">Vegetables & Fruits</a></li>
+                    <li><a href="snacks.html">Snacks & Chocolate</a></li> 
+                    <li><a href="bakery.html">Bakery & Pastry</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
@@ -122,75 +100,87 @@
             </li>
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
-        <button id="menu-btn">Click to Toggle Layout</button>
     </nav>
 
-    <div class="css-hero-slider">
- 
-        <div class="css-slide">
-            <img src="https://images.pexels.com/photos/29080968/pexels-photo-29080968.jpeg" alt="Women's Necklaces">
-            <div class="slide-content">
-                <h2>Elegant Necklaces</h2>
-                <p>Find the perfect statement piece for any occasion.</p>
-            </div>
-        </div>
-
-        <div class="css-slide">
-            <img src="https://images.pexels.com/photos/34341284/pexels-photo-34341284.jpeg" alt="Men's Watches">
-            <div class="slide-content">
-                <h2>Luxury Watches</h2>
-                <p>Command the room with precision and style.</p>
-            </div>
-        </div>
-
-        <div class="css-slide">
-            <img src="https://images.pexels.com/photos/27308773/pexels-photo-27308773.jpeg" alt="Women's Rings">
-            <div class="slide-content">
-                <h2>Timeless Rings</h2>
-                <p>Crafted to capture your unforgettable moments.</p>
-            </div>
-        </div>
-
-        <div class="css-slide">
-            <img src="https://images.pexels.com/photos/28938210/pexels-photo-28938210.jpeg" alt="Men's Chains">
-            <div class="slide-content">
-                <h2>Bold Chains</h2>
-                <p>Strong, durable, and unshakeably masculine.</p>
-            </div>
-        </div>
-
-        <div class="css-slide">
-            <img src="https://images.pexels.com/photos/9987796/pexels-photo-9987796.jpeg" alt="Women's Bracelets">
-            <div class="slide-content">
-                <h2>Beautiful Bracelets</h2>
-                <p>Add a touch of brilliant sparkle to your wrist.</p>
-            </div>
-        </div>
-
-        <div class="css-slide">
-            <img src="https://images.pexels.com/photos/6404217/pexels-photo-6404217.jpeg" alt="Men's Rings">
-            <div class="slide-content">
-                <h2>Signature Rings</h2>
-                <p>A classic mark of absolute distinction.</p>
-            </div>
-        </div>
-
-    </div>
     <div class="page-title">
-        <h1>Jewelry</h1>
-        <p>Discover our exquisite collection of jewelry, where timeless elegance meets modern design. From sparkling necklaces to intricate bracelets, our jewelry pieces are crafted to perfection, adding a touch of sophistication to any outfit. Whether you're looking for a statement piece or a delicate accessory, our jewelry selection offers something for every style and occasion. Explore our range and find the perfect piece to express your unique personality and elevate your look.</p>
+        <h2>Dairy & Eggs</h2>
+    </div>
+    <div class="product-container">
+        <div class="product-card">
+            <img src="../groceries/product2D.jpg" alt="Milk">
+            <h4>Milk 1L</h4>
+            <p class="price">53.95 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="618" data-name="milk" data-price="53.95">Add to Cart</button>
+         </div>
+         <div class="product-card">
+            <img src="../groceries/product3D.jpg" alt="Fresh labneh">
+            <h4>Fresh Labneh 250g</h4>
+            <p class="price">200.00 EGP</p>
+             <button class="add-to-cart-btn add-to-cart" data-id="619" data-name="Fresh labneh" data-price="200.00">Add to Cart</button>
         </div>
-        <div class="category-container">
-            <a href="womenjewelry.html" class="category-card">
-            <img src="https://images.unsplash.com/photo-1731406322264-dac59f83828b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjBqZXdlbHJ5fGVufDB8fDB8fHww" alt="womensjewelry">
-            <h3>Women's Jewelry</h3>
-        </a>
-        <a href="menjewelry.html" class="category-card">
-            <img src="https://media.istockphoto.com/id/500873190/photo/suave-modern-man-in-casual-style.webp?a=1&b=1&s=612x612&w=0&k=20&c=mfmD5JFqdd45MYrxLzwoNl3BIVkn9WSias5hMmDKgMg=" alt="mensjewelry">
-            <h3>Men's Jewelry</h3>
-        </a>
+        <div class="product-card">
+            <img src="../groceries/product7D.jpg" alt="spreadable cream cheese">
+            <h4>Spreadable Cream Cheese 500g</h4>
+            <p class="price">470.00 EGP</p>
+            <button class="add-to-cart-btn add-to-cart" data-id="620" data-name="spreadable cream cheese" data-price="470.00">Add to Cart</button>
         </div>
-          <footer class="footer">
+        <div class="product-card">
+             <img src="../groceries/product5D.jpg" alt="Feta cheese">
+             <h4>Feta Cheese 250g</h4>
+             <p class="price">165.00 EGP</p>
+             <button class="add-to-cart-btn add-to-cart" data-id="621" data-name="Feta cheese" data-price="165.00">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="../groceries/product8D.jpg" alt="Cream cheese">
+         <h4>Cream Cheese 108g</h4>
+           <p class="price">150.00 EGP</p>
+             <button class="add-to-cart-btn add-to-cart" data-id="622" data-name="Cream cheese" data-price="150.00">Add to Cart</button>
+        </div>
+        <div class="product-card">
+        <img src="../groceries/product11D.avif" alt="mozzarella">
+        <h4>Mozzarella Cheese 200g</h4>
+        <p class="price">78.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="623" data-name="mozzarella" data-price="78.00">Add to Cart</button>
+    </div>
+        <div class="product-card">
+            <img src="../groceries/product1D.jpg" alt="Condensed milk">
+            <h4>Condensed Milk 387g</h4>
+            <p class="price">104.20 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="624" data-name="Condensed milk" data-price="104.20">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product6D.jpg" alt="Cooking cream">
+        <h4>Cooking Cream 200g</h4>
+        <p class="price">140.00 EGP</p>  
+        <button class="add-to-cart-btn add-to-cart" data-id="625" data-name="Cooking cream" data-price="140.00">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product12D.avif" alt="Blueberry Greek Style Yoghurt">
+        <h4>Blueberry Greek Style Yoghurt 150g</h4>
+        <p class="price">44.45 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="700" data-name="Blueberry Greek Style Yoghurt" data-price="44.45">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="../groceries/product9D.avif" alt="gishta">
+        <h4>Gishta 100g</h4>
+        <p class="price">25.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="626" data-name="gishta" data-price="25.00">Add to Cart</button>
+    </div>
+     <div class="product-card">
+        <img src="../groceries/product4D.jpg" alt="unsalted batter">
+        <h4>Unsalted Batter 100g</h4>
+        <p class="price">249.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="627" data-name="unsalted batter" data-price="249.00">Add to Cart</button>
+    </div>
+     <div class="product-card">
+        <img src="../groceries/product10D.jpeg" alt="Eggs">
+        <h4>Eggs</h4>
+        <p class="price">171.95 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="628" data-name="Eggs" data-price="171.95">Add to Cart</button>
+    </div>
+</div>
+
+     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>About Us</h3>
@@ -263,5 +253,5 @@
     </div>
 
     <script src="script.js"></script>
-    </body>
-    </html>
+</body>
+</html>
