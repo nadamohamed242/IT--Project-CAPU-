@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shopping</title>
+    <style>
+        #main-nav {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal by default */
+            gap: 20px;
+            padding: 15px;
+            transition: 0.3s;
+            right: 0px;
+            justify-content: center;
+        }
+
+        /* 2. The Toggle Class */
+        /* We use the #main-nav ID here to ensure higher "specificity" */
+        #main-nav.nav-vertical {
+            flex-direction: column;
+            /* Switches to Vertical */
+            width: fit-content;
+        }
+
+        button {
+            right: 0px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
     <script>
         // Apply saved theme immediately before page renders
         (function () {
@@ -40,7 +67,7 @@
             <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
-    <nav>
+    <nav id="main-nav">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown-menu">
@@ -94,6 +121,7 @@
             </li>
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
+        <button id="menu-btn">Click to Toggle Layout</button>
     </nav>
     <div class="hero">
         <div class="hero-text">
@@ -155,7 +183,8 @@
 
                 <div class="deal-card">
                     <img src="product1.jpg" alt="Creatine Monohydrate">
-                    <p class="product-name">Limitless Alpha Creatine Monohydrate – Muscle Strength & Performance</p>
+                    <p class="product-name" data-id="910" data-name="Perfume">Limitless Alpha Creatine Monohydrate –
+                        Muscle Strength & Performance</p>
                     <div class="deal-meta">
                         <span class="discount-badge">15% off</span>
                         <span class="limited-deal">Limited time deal</span>
@@ -172,7 +201,8 @@
 
                 <div class="deal-card">
                     <img src="product2.jpg" alt="iLOCK Power Strip 5">
-                    <p class="product-name">ILOCK power strip, 5 outlets with surge protection and USB ports</p>
+                    <p class="product-name" data-id="902" data-name="Power Strip">ILOCK power strip, 5 outlets with
+                        surge protection and USB ports</p>
                     <div class="deal-meta">
                         <span class="discount-badge">21% off</span>
                         <span class="limited-deal">Limited time deal</span>
@@ -189,7 +219,8 @@
 
                 <div class="deal-card">
                     <img src="product3.jpg" alt="Facial Tissues">
-                    <p class="product-name">White Flexi Facial Tissues – 500 sheets, soft and hypoallergenic Facial
+                    <p class="product-name" data-id="903" data-name="Facial Tissues">White Flexi Facial Tissues – 500
+                        sheets, soft and hypoallergenic Facial
                         Tissues Facial Tissues</p>
                     <div class="deal-meta">
                         <span class="discount-badge">23% off</span>
@@ -207,7 +238,8 @@
 
                 <div class="deal-card">
                     <img src="product4.jpg" alt="iLOCK Power Strip Universal">
-                    <p class="product-name">iLOCK power strip 5 universal outlets, child-safe with overload protection
+                    <p class="product-name" data-id="904" data-name="Power Strip">iLOCK power strip 5 universal outlets,
+                        child-safe with overload protection
                     </p>
                     <div class="deal-meta">
                         <span class="discount-badge">16% off</span>
@@ -224,7 +256,8 @@
 
                 <div class="deal-card">
                     <img src="product5.jpg" alt="Ludwik Dishwasher Tablets">
-                    <p class="product-name">Ludwik All-In-One Mint Dishwasher Tablets – 60 tablets, removes grease</p>
+                    <p class="product-name" data-id="905" data-name="Dishwasher Tablets">Ludwik All-In-One Mint
+                        Dishwasher Tablets – 60 tablets, removes grease</p>
                     <div class="deal-meta">
                         <span class="discount-badge">15% off</span>
                         <span class="limited-deal">Limited time deal</span>
@@ -241,7 +274,8 @@
 
                 <div class="deal-card">
                     <img src="product6.jpg" alt="G-Power Strip">
-                    <p class="product-name">G-Power WS344 Power Strip – 4 outlets, 3 USB ports, 2m cable 2m cable 2m
+                    <p class="product-name" data-id="906" data-name="Power Strip">G-Power WS344 Power Strip – 4 outlets,
+                        3 USB ports, 2m cable 2m cable 2m
                         cable</p>
                     <div class="deal-meta">
                         <span class="discount-badge">18% off</span>
@@ -258,7 +292,8 @@
 
                 <div class="deal-card">
                     <img src="product8.jpg" alt="Protein Bar">
-                    <p class="product-name">Quest Nutrition Protein Bar – Chocolate Chip Cookie Dough, 12 bars</p>
+                    <p class="product-name" data-id="907" data-name="Protein Bar">Quest Nutrition Protein Bar –
+                        Chocolate Chip Cookie Dough, 12 bars</p>
                     <div class="deal-meta">
                         <span class="discount-badge">20% off</span>
                         <span class="limited-deal">Limited time deal</span>
@@ -296,60 +331,6 @@
         </div>
 
     </div>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Your one-stop shop for quality products across all categories. We offer the best selection and
-                    competitive prices.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Best Sellers</a></li>
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Customer Service</h3>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Track Order</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>📧 Email: support@shop.com</p>
-                <p>📱 Phone: +1 (555) 123-4567</p>
-                <p>📍 Address: 123 Main Street, City, Country</p>
-                <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
-                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
-                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
-                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a> |
-                <a href="#">Terms & Conditions</a> |
-                <a href="#">Sitemap</a>
-            </div>
-        </div>
-    </footer>
-
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
@@ -397,7 +378,60 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <script src="script.js"></script>
 </body>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Your one-stop shop for quality products across all categories. We offer the best selection and
+                competitive prices.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="myaccount.html">My Account</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Track Order</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>📧 Email: support@shop.com</p>
+            <p>📱 Phone: +1 (555) 123-4567</p>
+            <p>📍 Address: 123 Main Street, City, Country</p>
+            <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
+                <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
+                <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Sitemap</a>
+        </div>
+    </div>
+</footer>
 
 </html>
