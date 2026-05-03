@@ -331,6 +331,22 @@
 
             /* Adjust based on menu size */
         }
+
+        body.dark-theme .signup-container {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .menu li a {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .hamburger {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .menu {
+            background-color: #2a2a2a;
+        }
     </style>
 
     <div class="signup-container">
@@ -341,28 +357,33 @@
             <form class="signup-form" id="signup-form">
                 <div class="form-group">
                     <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+                    <input type="text" id="name" name="fullname" placeholder="Enter your full name">
+                    <span class="error-msg" id="name-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <span class="error-msg" id="email-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    <span class="error-msg" id="phone-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Create a password">
+                    <input type="password" id="password" name="password" placeholder="Create a password">
+                    <span class="error-msg" id="password-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="confirmpassword">Confirm Password</label>
-                    <input type="password" id="confirmpassword" name="confirmpassword" required
+                    <input type="password" id="confirmpassword" name="confirmpassword"
                         placeholder="Confirm your password">
+                    <span class="error-msg" id="confirmpassword-error"></span>
                 </div>
 
                 <button type="submit" class="signup-btn">Create Account</button>
@@ -397,5 +418,57 @@
 
     <script src="script.js"></script>
 </body>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Your one-stop shop for quality products across all categories. We offer the best selection and
+                competitive prices.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="myaccount.html">My Account</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Track Order</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>📧 Email: support@shop.com</p>
+            <p>📱 Phone: +1 (555) 123-4567</p>
+            <p>📍 Address: 123 Main Street, City, Country</p>
+            <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
+                <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
+                <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Sitemap</a>
+        </div>
+    </div>
+</footer>
 
 </html>
