@@ -291,14 +291,40 @@
             box-shadow: 10px 5px 20px rgba(222, 124, 59, 0.9);
         }
 
-        /* 5. THE MAGIC: When checkbox is checked, show the menu */
         #menu-toggle:checked~.menu {
             margin-top: 50px;
             margin: 20px;
             max-height: 100%;
             position: absolute;
+        }
 
-            /* Adjust based on menu size */
+        body.dark-theme .signin-container {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .menu li a {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .hamburger {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .menu {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .welcome-message {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .success-icon {
+            color: #f57c02;
+        }
+
+        body.dark-theme .p1,
+        body.dark-theme .wel {
+            color: white;
         }
     </style>
     <div class="signin-container">
@@ -309,12 +335,14 @@
             <form class="signin-form" id="signin-form">
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                    <span class="error-msg" id="name-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <span class="error-msg" id="email-error"></span>
                 </div>
 
                 <button type="submit" class="signin-btn">Sign In</button>
@@ -324,8 +352,8 @@
         <!-- Welcome Message -->
         <div id="welcome-box" class="welcome-message">
             <div class="success-icon">✓</div>
-            <h2>Welcome <span id="user-name"></span>!</h2>
-            <p>You are successfully signed in</p>
+            <h2 class="wel">Welcome <span id="user-name"></span>!</h2>
+            <p class="p1">You are successfully signed in</p>
             <a href="index.html" class="home-btn">Go to Home</a>
         </div>
     </div>
@@ -345,5 +373,57 @@
 
     <script src="script.js"></script>
 </body>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Your one-stop shop for quality products across all categories. We offer the best selection and
+                competitive prices.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="myaccount.html">My Account</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Track Order</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>📧 Email: support@shop.com</p>
+            <p>📱 Phone: +1 (555) 123-4567</p>
+            <p>📍 Address: 123 Main Street, City, Country</p>
+            <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
+                <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
+                <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Sitemap</a>
+        </div>
+    </div>
+</footer>
 
 </html>
