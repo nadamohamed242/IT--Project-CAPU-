@@ -5,9 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="grocery.css">
-     <link rel="icon" type="image/x-icon" href="logo_copy-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="groceryHtml/grocery.css">
+    <link rel="icon" type="image/x-icon" href="logo_copy-removebg-preview.PNG">
     <title>ShopIT</title>
+    <style>
+        #main-nav {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal by default */
+            gap: 20px;
+            padding: 15px;
+            transition: 0.3s;
+            right: 0px;
+            justify-content: center;
+        }
+
+        /* 2. The Toggle Class */
+        /* We use the #main-nav ID here to ensure higher "specificity" */
+        #main-nav.nav-vertical {
+            flex-direction: column;
+            /* Switches to Vertical */
+            width: fit-content;
+        }
+
+        button {
+            right: 0px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
     <script>
         // Apply saved theme immediately before page renders
         (function () {
@@ -19,9 +47,10 @@
         })();
     </script>
 </head>
+
 <body>
     <div class="header">
-        <a href="index.html"><img class="logo" src="logo.png"></a>
+        <a href="index.html"><img class="logo" src="logo.jpeg"></a>
         <div class="search-box">
             <span class="search-icon"><i class="fa fa-search"></i></span>
             <input type="text" placeholder="What are you looking for.....?">
@@ -40,18 +69,17 @@
             <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
-    <nav>
+    <nav id="main-nav">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown-menu">
                 <a href="clothes.html">Clothes</a>
                 <ul class="dropdown-content">
-                    <li><a href="#men">Men</a></li>
-                    <li><a href="#women">Women</a></li>
-                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="man.html">Men</a></li>
+                    <li><a href="woman.html">Women</a></li>
+                    <li><a href="#kids.html">Kids</a></li>
                 </ul>
             </li>
-
             <li class="dropdown-menu">
                 <a href="jewelry.html">Jewelry</a>
                 <ul class="dropdown-content">
@@ -63,146 +91,97 @@
             <li class="dropdown-menu">
                 <a href="electronics.html">Electronics</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Phones</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Headsets</a></li>
+                    <li><a href="phones.html">Phones</a></li>
+                    <li><a href="laptops&pcs.html">Laptops & PCs</a></li>
+                    <li><a href="smarttablets.html">Smart Tablets</a></li>
+                    <li><a href="smartTVs.html">Smart TVs</a></li>
+                    <li><a href="gamingarea.html">Gaming Area</a></li>
+                    <li><a href="wearables.html">Wearables</a></li>
+                    <li><a href="mobile&laptopaccessories.html">Mobile & Laptop Accessories</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
                 <a href="groceries.html">Groceries</a>
                 <ul class="dropdown-content">
-                        <li><a href="groceryHtml/essentail.html">Grocery Essentials</a></li>
-                        <li><a href="groceryHtml/dairy.html">Dairy & Eggs</a></li>
-                        <li><a href="groceryHtml/frozen.html">Frozen Food</a></li>
-                        <li><a href="groceryHtml/beverage.html">Beverages</a></li>
-                        <li><a href="groceryHtml/vegan.html">Vegeterian products</a></li>
-                        <li><a href="groceryHtml/vegetables.html">Vegetables & Fruits</a></li>
-                        <li><a href="groceryHtml/snacks.html">Snacks & Chocolate</a></li> 
-                        <li><a href="groceryHtml/bakery.html">Bakery & Pastry</a></li>
+                    <li><a href="groceryHtml/essentail.html">Grocery Essentials</a></li>
+                    <li><a href="groceryHtml/dairy.html">Dairy & Eggs</a></li>
+                    <li><a href="groceryHtml/frozen.html">Frozen Food</a></li>
+                    <li><a href="groceryHtml/bakery.html">Beverages</a></li>
+                    <li><a href="groceryHtml/vegan.html">Vegeterian products</a></li>
+                    <li><a href="groceryHtml/vegetables.html">Vegetables & Fruits</a></li>
+                    <li><a href="groceryHtml/snacks.html">Snacks & Chocolate</a></li>
+                    <li><a href="groceryHtml/bakery.html">Bakery & Pastry</a></li>
+                </ul>
+            <li class="dropdown-menu">
+                <a href="Furniture.html">Furniture</a>
+                <ul class="dropdown-content">
+                    <li><a href="bedroom.html"> Bedrooms</a></li>
+                    <li><a href="livingroom.html">Living Rooms</a></li>
+                    <li><a href="outdoors.html">Outdoors</a></li>
+                    <li><a href="diningroom.html">Dining Rooms</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="Cleaners.html">Furniture</a>
+                <a href="main.html">Supplements</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones"> beds</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
-                </ul>
-            </li>
-            <li class="dropdown-menu">
-                <a href="supplements.html">Supplements</a>
-                <ul class="dropdown-content">
-                    <li><a href="#phones">Whey Protien</a></li>
-                    <li><a href="#laptops">Protein bars</a></li>
-                    <li><a href="#tablets">Creatine</a></li>
+                    <li><a href="protein.html">Protien</a></li>
+                    <li><a href="snacks.html">Snacks</a></li>
+                    <li><a href="creatine.html">Creatine</a></li>
+                    <li><a href="amino.html">Amino</a></li>
+                    <li><a href="mass-gainer.html">Mass gainer</a></li>
+                    <li><a href="pre-workout.html">Pre Workout</a></li>
                 </ul>
             </li>
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
+        <button id="menu-btn">Click to Toggle Layout</button>
     </nav>
     <main>
         <div class="heroSection">
             <video class="vidG" autoplay muted loop>
-                <source src="groceries/Video Project .mp4">
+                <source src="https://res.cloudinary.com/dy39yaxml/video/upload/q_auto/f_auto/v1777842772/Video_Project_kc5krj.mp4" type="video/mp4">
             </video>
         </div>
         <div>
             <h2>Your Daily Essentials, Delivered to Your Door.</h2>
             <p style="font-size: x-large; text-align: center;">Shop the freshest groceries, from farm-picked vegetables to pantry staples. Quality you can trust, delivered in minutes.</p>
         </div>
-        <section>
         <div id="groceries">
             <a href="groceryHtml/essentail.html" class="g-card">
-            <img src="groceries/essential.jpg" alt="Grocery Essentials">
+            <img src="https://res.cloudinary.com/dy39yaxml/image/upload/q_auto/f_auto/v1777842517/essential_uast2o.jpg" alt="Grocery Essentials">
             <h3>Grocery Essentials</h3>
         </a>
         <a href="groceryHtml/dairy.html" class="g-card">
-            <img src="groceries/dairy.jpg" alt="Dairy & Eggs">
+            <img src="https://res.cloudinary.com/dy39yaxml/image/upload/q_auto/f_auto/v1777842517/dairy_ic9gks.jpg" alt="Dairy & Eggs">
             <h3>Dairy & Eggs</h3>
         </a>
         <a href="groceryHtml/frozen.html" class="g-card">
-            <img src="groceries/frozen.jpg" alt="Frozen Food">
+            <img src="https://res.cloudinary.com/dy39yaxml/image/upload/q_auto/f_auto/v1777842518/frozen_aqm5fa.jpg" alt="Frozen Food">
             <h3>Frozen Food</h3>
         </a>
         <a href="groceryHtml/beverage.html" class="g-card">
-            <img src="groceries/beverages.jpg" alt="Beverages">
+            <img src="https://res.cloudinary.com/dy39yaxml/image/upload/q_auto/f_auto/v1777841591/beverages_x7xbvh.jpg" alt="Beverages">
             <h3>Beverages</h3>
         </a>
         <a href="groceryHtml/vegan.html" class="g-card">
-            <img src="groceries/vegan.jpg" alt="Vegetarian products">
+            <img src="https://res.cloudinary.com/dy39yaxml/image/upload/q_auto/f_auto/v1777842486/vegan_bzbcmz.jpg" alt="Vegetarian products">
             <h3>Vegetarian products</h3>
         </a>
         <a href="groceryHtml/vegetables.html" class="g-card">
-            <img src="groceries/vegetables.jpg" alt="Vegetables & Fruits">
+            <img src="https://res.cloudinary.com/dy39yaxml/image/upload/q_auto/f_auto/v1777842487/vegetables_l3bhwi.jpg" alt="Vegetables & Fruits">
             <h3>Vegatables & Fruits</h3>
         </a>
         </a>
         <a href="groceryHtml/snacks.html" class="g-card">
-            <img src="groceries/snacks.jpg" alt="Snacks & Chocolate">
+            <img src="https://res.cloudinary.com/dy39yaxml/image/upload/q_auto/f_auto/v1777842486/snacks_oiyo2j.jpg" alt="Snacks & Chocolate">
             <h3>Snacks & Chocolate</h3>
         </a>
         <a href="groceryHtml/bakery.html" class="g-card">
-            <img src="groceries/bakery.jpg" alt="Bakery & Pastry">
+            <img src="https://res.cloudinary.com/dy39yaxml/image/upload/q_auto/f_auto/v1777841376/bakery_fe3akl.jpg" alt="Bakery & Pastry">
             <h3>Bakery & Pastry</h3>
         </a>
-    </div>
-    </section>
-</main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Your one-stop shop for quality products across all categories. We offer the best selection and
-                    competitive prices.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Best Sellers</a></li>
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Customer Service</h3>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Track Order</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>📧 Email: support@shop.com</p>
-                <p>📱 Phone: +1 (555) 123-4567</p>
-                <p>📍 Address: 123 Main Street, City, Country</p>
-                <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
-                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
-                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
-                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
-                </div>
-            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a> |
-                <a href="#">Terms & Conditions</a> |
-                <a href="#">Sitemap</a>
-            </div>
-        </div>
-    </footer>
-
+    </main>
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
@@ -229,28 +208,69 @@
                 </style>
                 <button class="checkout-btn">Proceed to Checkout</button>
             </div>
+        </div>        
+            <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+            <script src="script.js"></script>
+</body>            
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Your one-stop shop for quality products across all categories. We offer the best selection and
+                competitive prices.</p>
         </div>
-    </div>
 
-    <div id="product-modal" class="modal">
-        <div class="modal-content product-modal-content">
-            <span class="close product-close">&times;</span>
-            <div class="product-details-container">
-                <div class="product-details-image">
-                    <img id="modal-product-img" src="" alt="Product Image">
-                </div>
-                <div class="product-details-info">
-                    <h2 id="modal-product-title">Product Title</h2>
-                    <p id="modal-product-price" class="price">$0.00</p>
-                    <p id="modal-product-description">Product description goes here.</p>
-                    <br>
-                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name=""
-                        data-price="">Add to Cart</button>
-                </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothes.html">Clothes</a></li>
+                <li><a href="jewelry.html">Jewelry</a></li>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="groceries.html">Groceries</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="main.html">Supplements</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="signin.html">Sign in</a></li>
+                <li><a href="signup.html">Sign up</a></li>
+                <li><a href="myaccount.html">Account</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>ðŸ“§ Email: support@ShopIt.com</p>
+            <p>ðŸ“± Phone: +20 122985732</p>
+            <p>ðŸ“ Address: 123 Main Street, City, Country</p>
+            <p>â° Hours: Mon-Fri 9AM-6PM</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
+                <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
+                <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
-</body>
 
+    <div class="footer-bottom">
+        <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Sitemap</a>
+        </div>
+    </div>
+   </footer>
 </html>

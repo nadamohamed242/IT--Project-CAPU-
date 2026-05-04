@@ -6,9 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="grocery.css">
-     <link rel="icon" type="image/x-icon" href="logo_copy-removebg-preview.png">
+     <link rel="stylesheet" href="grocery.css">
+     <link rel="icon" type="image/x-icon" href="../logo_copy-removebg-preview.PNG">
     <title>ShopIT</title>
+    <style>
+        #main-nav {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal by default */
+            gap: 20px;
+            padding: 15px;
+            transition: 0.3s;
+            right: 0px;
+            justify-content: center;
+        }
+
+        /* 2. The Toggle Class */
+        /* We use the #main-nav ID here to ensure higher "specificity" */
+        #main-nav.nav-vertical {
+            flex-direction: column;
+            /* Switches to Vertical */
+            width: fit-content;
+        }
+
+        button {
+            right: 0px;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
     <script>
         // Apply saved theme immediately before page renders
         (function () {
@@ -23,7 +50,7 @@
 
 <body>
     <div class="header">
-        <a href="index.html"><img class="logo" src="logo.png"></a>
+        <a href="index.html"><img class="logo" src="../logo.jpeg"></a>
         <div class="search-box">
             <span class="search-icon"><i class="fa fa-search"></i></span>
             <input type="text" placeholder="What are you looking for.....?">
@@ -39,21 +66,20 @@
             <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
                 <i class="fa fa-moon-o"></i>
             </button>
-            <img class="cart" src="cart.png" id="cart-icon" style="cursor: pointer;">
+            <img class="cart" src="../cart.png" id="cart-icon" style="cursor: pointer;">
         </div>
     </div>
-    <nav>
+    <nav id="main-nav">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown-menu">
                 <a href="clothes.html">Clothes</a>
                 <ul class="dropdown-content">
-                    <li><a href="#men">Men</a></li>
-                    <li><a href="#women">Women</a></li>
-                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="man.html">Men</a></li>
+                    <li><a href="woman.html">Women</a></li>
+                    <li><a href="#kids.html">Kids</a></li>
                 </ul>
             </li>
-
             <li class="dropdown-menu">
                 <a href="jewelry.html">Jewelry</a>
                 <ul class="dropdown-content">
@@ -65,43 +91,53 @@
             <li class="dropdown-menu">
                 <a href="electronics.html">Electronics</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Phones</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Headsets</a></li>
+                    <li><a href="phones.html">Phones</a></li>
+                    <li><a href="laptops&pcs.html">Laptops & PCs</a></li>
+                    <li><a href="smarttablets.html">Smart Tablets</a></li>
+                    <li><a href="smartTVs.html">Smart TVs</a></li>
+                    <li><a href="gamingarea.html">Gaming Area</a></li>
+                    <li><a href="wearables.html">Wearables</a></li>
+                    <li><a href="mobile&laptopaccessories.html">Mobile & Laptop Accessories</a></li>
                 </ul>
             </li>
-             <li class="dropdown-menu">
+            <li class="dropdown-menu">
                 <a href="../groceries.html">Groceries</a>
                 <ul class="dropdown-content">
                     <li><a href="essentail.html">Grocery Essentials</a></li>
                     <li><a href="dairy.html">Dairy & Eggs</a></li>
                     <li><a href="frozen.html">Frozen Food</a></li>
-                    <li><a href="beverage.html">Beverages</a></li>
+                    <li><a href="bakery.html">Beverages</a></li>
                     <li><a href="vegan.html">Vegeterian products</a></li>
                     <li><a href="vegetables.html">Vegetables & Fruits</a></li>
-                    <li><a href="snacks.html">Snacks & Chocolate</a></li> 
+                    <li><a href="snacks.html">Snacks & Chocolate</a></li>
                     <li><a href="bakery.html">Bakery & Pastry</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="Cleaners.html">Furniture</a>
+                <a href="Furniture.html">Furniture</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones"> beds</a></li>
-                    <li><a href="#laptops">Laptops</a></li>
-                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="bedroom.html"> Bedrooms</a></li>
+                    <li><a href="livingroom.html">Living Rooms</a></li>
+                    <li><a href="outdoors.html">Outdoors</a></li>
+                    <li><a href="diningroom.html">Dining Rooms</a></li>
                 </ul>
             </li>
             <li class="dropdown-menu">
-                <a href="supplements.html">Supplements</a>
+                <a href="main.html">Supplements</a>
                 <ul class="dropdown-content">
-                    <li><a href="#phones">Whey Protien</a></li>
-                    <li><a href="#laptops">Protein bars</a></li>
-                    <li><a href="#tablets">Creatine</a></li>
+                    <li><a href="protein.html">Protien</a></li>
+                    <li><a href="snacks.html">Snacks</a></li>
+                    <li><a href="creatine.html">Creatine</a></li>
+                    <li><a href="amino.html">Amino</a></li>
+                    <li><a href="mass-gainer.html">Mass gainer</a></li>
+                    <li><a href="pre-workout.html">Pre Workout</a></li>
                 </ul>
             </li>
             <li><a href="contact us.html">Contact Us</a></li>
         </ul>
+        <button id="menu-btn">Click to Toggle Layout</button>
     </nav>
+    <main>
 
     <div class="page-title">
         <h2>Grocery Essentials</h2>
@@ -111,55 +147,55 @@
     </div>
 <div class="product-container">
     <div class="product-card">
-        <img src="../groceries/product2E.jpg" alt="white rice 1K">
+        <img src="https://m.media-amazon.com/images/I/71z7HgX8LFL._AC_SX679_.jpg" alt="white rice 1K">
         <h4>White rice 1K</h4>
         <p class="price">35.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="629" data-name="rise" data-price="35.00">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product16E.jpg" alt="basmati rice 1K">
+        <img src="https://cdn.mafrservices.com/sys-master-root/hac/hd2/49910107570206/20690_main.jpg?im=Resize=480" alt="basmati rice 1K">
         <h4>Basmati rice 1K</h4>
         <p class="price">117.94 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="630" data-name="basmati" data-price="117.94">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product11E.jpg" alt="secret mixture rice">
+        <img src="https://m.media-amazon.com/images/I/71NjljRpWdL._AC_SY741_.jpg" alt="secret mixture rice">
         <h4>secret mixture rice 320g</h4>
         <p class="price">35.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="631" data-name="secret mixture" data-price="35.00">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product12E.jpg" alt="Sayadia rice">
+        <img src="https://m.media-amazon.com/images/I/71x+rX3DyEL._AC_SY741_.jpg" alt="Sayadia rice">
         <h4>Sayadia rice 327g</h4>
         <p class="price">24.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="632" data-name="Sayadia" data-price="24.00">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product9E.jpg" alt="sugar">
+        <img src="https://m.media-amazon.com/images/I/61dMpOPnHoL._AC_SX679_.jpg" alt="sugar">
         <h4>Sugar 1K</h4>
         <p class="price">35.94 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="633" data-name="sugar" data-price="35.94">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product10E.jpg" alt="flour">
+        <img src="https://m.media-amazon.com/images/I/81RIRHWpo0L._AC_SY741_.jpg" alt="flour">
         <h4>Flour 1K</h4>
         <p class="price">34.94 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="634" data-name="flour" data-price="34.94">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product13E.jpg" alt="lemon dill">
+        <img src="https://m.media-amazon.com/images/I/613J-RTF4zL._AC_SY741_.jpg" alt="lemon dill">
         <h4>Lemon Dill 30g</h4>
         <p class="price">31.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="635" data-name="lemon dill" data-price="31.00">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product14E.jpg" alt="Fries">
+        <img src="https://m.media-amazon.com/images/I/61wnIedLgXL._AC_SY741_.jpg" alt="Fries">
         <h4>Fries 30g</h4>
         <p class="price">31.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="636" data-name="fries" data-price="31.00">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product15E.jpg" alt="Black pepper">
+        <img src="https://m.media-amazon.com/images/I/81-4PokcAmL._AC_SY741_.jpg" alt="Black pepper">
         <h4>Black pepper powder 230g</h4>
         <p class="price">220.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="637" data-name="pepper" data-price="220.00">Add to Cart</button>
@@ -168,19 +204,19 @@
           <h3>Oils</h3>
     </div>
     <div class="product-card">
-        <img src="../groceries/product1E.jpg" alt="">
+        <img src="https://m.media-amazon.com/images/I/61iYrOHpfeL._AC_SY741_.jpg" alt="">
          <h4>Corn oil 700ml</h4>
         <p class="price">92.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="638" data-name="corn oil" data-price="92.00">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product8E.jpg" alt="sunflower oil">
+        <img src="https://m.media-amazon.com/images/I/71tl0JemEUL._AC_SY741_.jpg" alt="sunflower oil">
         <h4>Sunflower oil 700ml</h4>
         <p class="price">75.25 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="639" data-name="sunflower oil" data-price="75.25">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product17E.jpg" alt="olive oil">
+        <img src="https://m.media-amazon.com/images/I/71dP1DE29NL._AC_SY741_.jpg" alt="olive oil">
         <h4>Olive oil 1L</h4>
         <p class="price">329.99 EGP</p>  
         <button class="add-to-cart-btn add-to-cart" data-id="640" data-name="olive oil" data-price="329.99">Add to Cart</button>
@@ -189,37 +225,37 @@
         <h3>El Maleka</h3>
     </div>
     <div class="product-card">
-        <img src="../groceries/product4E.jpg" alt="Spaghetti 1K">
+        <img src="https://m.media-amazon.com/images/I/71Q6vP7Em6L._AC_SX679_.jpg" alt="Spaghetti 1K">
         <h4>Spaghetti 1K</h4>
         <p class="price">31.49 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="641" data-name="Spaghetti" data-price="31.49">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product23E.jpg" alt="small ring">
+        <img src="https://m.media-amazon.com/images/I/81HWSuo-mWL._AC_SX679_.jpg" alt="small ring">
          <h4>Small ring pasta 1K</h4>
         <p class="price">31.49 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="642" data-name="small ring" data-price="31.49">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product24E.jpg" alt="vermecelli">
+        <img src="https://m.media-amazon.com/images/I/81c2QuM-xgL._AC_SX679_.jpg" alt="vermecelli">
         <h4>Vermecelli 1K</h4>
         <p class="price">31.49 EGP</p> 
         <button class="add-to-cart-btn add-to-cart" data-id="643" data-name="vermecelli" data-price="31.49">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product25E.jpg" alt="penne">
+        <img src="https://m.media-amazon.com/images/I/61Y5UpJLm8L._AC_SX679_.jpg" alt="penne">
         <h4>Penne 400g</h4>
         <p class="price">15.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="644" data-name="penne" data-price="15.00">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product26E.jpg" alt="elbow">
-        <h4>Elbow 400g</h4>
-        <p class="price">15.00 EGP</p>
-        <button class="add-to-cart-btn add-to-cart" data-id="645" data-name="elbow" data-price="15.00">Add to Cart</button>
+        <img src="https://m.media-amazon.com/images/I/81dnEl54sWL._AC_SX679_.jpg" alt="elbow">
+        <h4>Elbow 1K</h4>
+        <p class="price">31.49 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="645" data-name="elbow" data-price="31.49">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product27E.jpg" alt="risoni">
+        <img src="https://m.media-amazon.com/images/I/61QnNQhDE-L._AC_SY741_.jpg" alt="risoni">
         <h4>Risoni 400g</h4>
         <p class="price">14.95 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="646" data-name="risoni" data-price="14.95">Add to Cart</button>
@@ -228,19 +264,19 @@
         <h3>Maggi</h3>
     </div>
     <div class="product-card">
-        <img src="../groceries/product5E.jpg" alt="Chicken stock 12cube">
+        <img src="https://m.media-amazon.com/images/I/718Fc7pq1UL._AC_SX679_.jpg" alt="Chicken stock 12cube">
         <h4>Chicken stock 12cube</h4>
         <p class="price">18.50 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="647" data-name="chicken stock" data-price="18.50">Add to Cart</button>
     </div>
       <div class="product-card">
-        <img src="../groceries/product20E.jpg" alt="chicken mashawy">
+        <img src="https://m.media-amazon.com/images/I/71dKqr6ejEL._AC_SX679_.jpg" alt="chicken mashawy">
         <h4>Chicken mashawy 30g</h4>
         <p class="price">13.75 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="648" data-name="chicken mashawy" data-price="13.75">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product22E.jpg" alt="kofta">
+        <img src="https://m.media-amazon.com/images/I/71IRRr8jHcL._AC_SX679_.jpg" alt="kofta">
         <h4>Kofta 35g</h4>
         <p class="price">12.45 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="649" data-name="kofta" data-price="12.45">Add to Cart</button>
@@ -249,37 +285,37 @@
         <h3>Sauces</h3>
     </div>
     <div class="product-card">
-        <img src="../groceries/product6E.jpg" alt="Harvest tomato 320gm">
+        <img src="https://m.media-amazon.com/images/I/71ya678vdRL._AC_SX679_.jpg" alt="Harvest tomato 320gm">
         <h4>Harvest tomato 320gm</h4>
-        <p class="price">27.05 EGP</p>
-        <button class="add-to-cart-btn add-to-cart" data-id="650" data-name="harvest" data-price="27.05">Add to Cart</button>
+        <p class="price">34.25 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="650" data-name="harvest" data-price="34.25">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product28E.jpg" alt="barbecue">
+        <img src="https://m.media-amazon.com/images/I/61ywyqtEOXL._AC_SY741_.jpg" alt="barbecue">
         <h4>Barbecue 400ml</h4>
         <p class="price">47.50 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="651" data-name="barbecue" data-price="47.50">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product29E.jpg" alt="sweet chilli">
+        <img src="https://m.media-amazon.com/images/I/61Ecyu5hmzL._AC_SY741_.jpg" alt="sweet chilli">
         <h4>Sweet chilli 400ml</h4>
         <p class="price">49.75 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="652" data-name="sweet chilli" data-price="49.75">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product30E.jpg" alt="katchup">
+        <img src="https://m.media-amazon.com/images/I/51BTjyoFN0L._AC_SX679_.jpg" alt="katchup">
         <h4>Katchup 400ml</h4>
         <p class="price">37,95 EGP</p>  
         <button class="add-to-cart-btn add-to-cart" data-id="653" data-name="katchup" data-price="37.95">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product31E.jpg" alt="ranch">
+        <img src="https://m.media-amazon.com/images/I/51M-ZJwVg8L._AC_SX679_.jpg" alt="ranch">
         <h4>Ranch 400ml</h4>
-        <p class="price">63.00 EGP</p>
-        <button class="add-to-cart-btn add-to-cart" data-id="654" data-name="ranch" data-price="63.00">Add to Cart</button>
+        <p class="price">79.00 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="654" data-name="ranch" data-price="79.00">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product32E.jpg" alt="island dipping">
+        <img src="https://m.media-amazon.com/images/I/61K0ZijrBjL._AC_SY741_.jpg" alt="island dipping">
         <h4>Island dipping 200ml</h4>
         <p class="price">33.99 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="655" data-name="island dipping" data-price="33.99">Add to Cart</button>
@@ -288,58 +324,58 @@
         <h3>Vinegars</h3>
     </div>
     <div class="product-card">
-        <img src="../groceries/product7E.jpg" alt="Rehana natural vinegar 1L">
-        <h4>Rehana natural vinegar 1L</h4>
-        <p class="price">18.00 EGP</p>
-        <button class="add-to-cart-btn add-to-cart" data-id="656" data-name="rehana" data-price="18.00">Add to Cart</button>
+        <img src="https://m.media-amazon.com/images/I/618lVwAHxqL._AC_SX679_.jpg" alt="natural vinegar">
+        <h4>Natural vinegar 1L</h4>
+        <p class="price">17.50 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="656" data-name="natural vinegar" data-price="17.50">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product18E.jpg" alt="Pomegranate Vinegar">
-        <h4>Pomegranate Vinegar 250ml</h4>
-        <p class="price">71.00 EGP</p>
-        <button class="add-to-cart-btn add-to-cart" data-id="657" data-name="Pomegranate Vinegar" data-price="71.00">Add to Cart</button>
+        <img src="https://www.wadi-food.com/storage/products/y8nRijTzkJe3HCxTAAvbdVBpGAKHrqmVWhLEaxSN.png" alt="Balsamic Vinegar">
+        <h4>Balsamic Vinegar 250ml</h4>
+        <p class="price">85.99 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="657" data-name="Balsamic Vinegar" data-price="85.99">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product19E.jpg" alt="Apple vinegar">
-        <h4>Apple vinegar 250ml</h4>
-        <p class="price">54.00 EGP</p>
-        <button class="add-to-cart-btn add-to-cart" data-id="658" data-name="Apple vinegar" data-price="54.00">Add to Cart</button>
+        <img src="https://m.media-amazon.com/images/I/61JwBME5r1L._AC_SX679_.jpg" alt="Apple vinegar">
+        <h4>Apple vinegar 500ml</h4>
+        <p class="price">74.99 EGP</p>
+        <button class="add-to-cart-btn add-to-cart" data-id="658" data-name="Apple vinegar" data-price="74.99">Add to Cart</button>
     </div>
     <div class="sectionG">
         <h3>El Bawadi</h3>
     </div>
     <div class="product-card">
-        <img src="../groceries/product33E.jpg" alt="Tahina">
+        <img src="https://m.media-amazon.com/images/I/6130oUvXdnL._AC_SX679_.jpg" alt="Tahina">
         <h4>Tahina 480g</h4>
         <p class="price">109.99 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="693" data-name="Tahina" data-price="109.99">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product36E.jpg" alt="Molasses">
+        <img src="https://m.media-amazon.com/images/I/71WzbD+IlWL._AC_SX679_.jpg" alt="Molasses">
         <h4>Molasses 680g</h4>
         <p class="price">104.95 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="694" data-name="Molasses" data-price="104.95">Add to Cart</button>
     </div>
      <div class="product-card">
-        <img src="../groceries/product38E.jpg" alt="clover blossom honey">
+        <img src="https://m.media-amazon.com/images/I/7163QTVYKbL._AC_SX679_.jpg" alt="clover blossom honey">
         <h4>Clover Blossom Honey 810g</h4>
         <p class="price">352.41 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="695" data-name="Clover Blossom Honey" data-price="352.41">Add to Cart</button>
     </div>
      <div class="product-card">
-        <img src="../groceries/product34E.jpg" alt="Fig Jam">
+        <img src="https://m.media-amazon.com/images/I/61V89lgxqML._AC_SX679_.jpg" alt="Fig Jam">
         <h4>Fig Jam 650 g</h4>
         <p class="price">100.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="696" data-name="Fig Jam" data-price="100.00">Add to Cart</button>
     </div>
      <div class="product-card">
-        <img src="../groceries/product37E.jpg" alt="Halawa Spread Chocolate">
+        <img src="https://m.media-amazon.com/images/I/71FHFSCGY4L._AC_SX679_.jpg" alt="Halawa Spread Chocolate">
         <h4>Halawa Spread Chocolate 300g</h4>
         <p class="price">131.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="697" data-name="Halawa Spread Chocolate" data-price="131.00">Add to Cart</button>
     </div>
      <div class="product-card">
-        <img src="../groceries/product35E.jpg" alt="Halawa with Hazelnuts">
+        <img src="https://m.media-amazon.com/images/I/51L+Oz1pUML._AC_SX679_.jpg" alt="Halawa with Hazelnuts">
         <h4>Halawa with Hazelnuts 300 g</h4>
         <p class="price">129.99 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="698" data-name="Halawa with Hazelnuts" data-price="129.99">Add to Cart</button>
@@ -348,91 +384,109 @@
         <h3>Mero</h3>
     </div>
     <div class="product-card">
-        <img src="../groceries/product40E.jpg" alt="Milk Powder Full Cream">
+        <img src="https://m.media-amazon.com/images/I/6126u6wT1aL._AC_SX300_SY300_QL70_ML2_.jpg" alt="Milk Powder Full Cream">
         <h4>Milk Powder Full Cream 1.5K</h4>
         <p class="price">586.45 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="701" data-name="Milk Powder Full Cream" data-price="586.45">Add to Cart</button>
     </div>
     <div class="product-card">
-        <img src="../groceries/product39E.jpg" alt="hazelnut spread chocolate">
+        <img src="https://m.media-amazon.com/images/I/81HsrDP9vjL._AC_SX679_.jpg" alt="hazelnut spread chocolate">
         <h4>hazelnut spread chocolate 900g</h4>
         <p class="price">171.00 EGP</p>
         <button class="add-to-cart-btn add-to-cart" data-id="699" data-name="hazelnut spread chocolate" data-price="171.00">Add to Cart</button>
     </div>
 </div>
-
-     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Your one-stop shop for quality products across all categories. We offer the best selection and
-                    competitive prices.</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Best Sellers</a></li>
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Customer Service</h3>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Track Order</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>📧 Email: support@shop.com</p>
-                <p>📱 Phone: +1 (555) 123-4567</p>
-                <p>📍 Address: 123 Main Street, City, Country</p>
-                <p>⏰ Hours: Mon-Fri 9AM-6PM</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
-                    <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
-                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
-                    <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a> |
-                <a href="#">Terms & Conditions</a> |
-                <a href="#">Sitemap</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cart Modal -->
-    <div id="cart-modal" class="modal">
+</main>
+<div id="cart-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close cart-close">&times;</span>
             <h2>Shopping Cart</h2>
             <div id="cart-items"></div>
             <div class="cart-summary">
                 <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="clear-cart-btn">Clear Cart</button>
+                <style>
+                    .clear-cart-btn {
+                        background-color: #cc0000;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        margin-top: 8px;
+                    }
+
+                    .clear-cart-btn:hover {
+                        background-color: #aa0000;
+                    }
+                </style>
                 <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>        
+            <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+            <script src="script.js"></script>
+</body>            
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>Your one-stop shop for quality products across all categories. We offer the best selection and
+                competitive prices.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../clothes.html">Clothes</a></li>
+                <li><a href="../jewelry.html">Jewelry</a></li>
+                <li><a href="../electronics.html">Electronics</a></li>
+                <li><a href="../groceries.html">Groceries</a></li>
+                <li><a href="../furniture.html">Furniture</a></li>
+                <li><a href="../main.html">Supplements</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../signin.html">Sign in</a></li>
+                <li><a href="../signup.html">Sign up</a></li>
+                <li><a href="../myaccount.html">Account</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>ðŸ“§ Email: support@ShopIt.com</p>
+            <p>ðŸ“± Phone: +20 122985732</p>
+            <p>ðŸ“ Address: 123 Main Street, City, Country</p>
+            <p>â° Hours: Mon-Fri 9AM-6PM</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fa fa-facebook"></i> Facebook</a>
+                <a href="#" class="social-icon"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="#" class="social-icon"><i class="fa fa-instagram"></i> Instagram</a>
+                <a href="#" class="social-icon"><i class="fa fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <div class="footer-bottom">
+        <p>&copy; 2026 ShopIt. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Sitemap</a>
+        </div>
+    </div>
+</footer>
 </html>
