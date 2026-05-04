@@ -467,8 +467,6 @@ function scrollDeals(direction) {
     const track = document.getElementById('dealsTrack');
     track.scrollBy({ left: direction * 480, behavior: 'smooth' });
 }
-
-
 // Check if user is logged in
 function checkLoginStatus() {
     const user = localStorage.getItem('currentUser');

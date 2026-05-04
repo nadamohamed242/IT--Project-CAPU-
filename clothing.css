@@ -1,6 +1,4 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; }
-
 .category-container { display: flex; width: 100%; height: 90vh; }
 .category-card {
     flex: 1; position: relative; display: flex;
@@ -27,7 +25,6 @@ body { font-family: Arial, sans-serif; }
 .men-categories {
     padding: 60px 5%;
     background-color: #fafafa;
-    font-family: sans-serif;
 }
 
 .mc-header {
@@ -166,7 +163,6 @@ body { font-family: Arial, sans-serif; }
     padding: 50px 0;
     background-color: #fafafa;
     position: relative;
-    font-family: sans-serif;
 }
 
 .section-header {
