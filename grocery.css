@@ -7,7 +7,7 @@
 .product-container {
     grid-template-columns: repeat(3, 1fr) !important;
     justify-content: center !important;
-    gap: 50px !important;
+    gap: 100px !important;
 }
 .product-card img {
     object-fit: contain; 
