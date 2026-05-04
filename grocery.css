@@ -4,7 +4,9 @@
     margin: 40px 0 20px;
     color: #333;
 }
-
+.product-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
 .product-card img {
     object-fit: contain; 
 }  
