@@ -263,18 +263,33 @@
 </footer>
 
 
-    <!-- Cart Modal -->
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
             <h2>Shopping Cart</h2>
             <div id="cart-items"></div>
             <div class="cart-summary">
-                <h3>Total: EGP <span id="cart-total">0.00</span></h3>
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="clear-cart-btn">Clear Cart</button>
+                <style>
+                    .clear-cart-btn {
+                        background-color: #cc0000;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        margin-top: 8px;
+                    }
+
+                    .clear-cart-btn:hover {
+                        background-color: #aa0000;
+                    }
+                </style>
                 <button class="checkout-btn">Proceed to Checkout</button>
             </div>
         </div>
-    </div>
 
     <!-- Product Modal -->
     <div id="product-modal" class="modal">
