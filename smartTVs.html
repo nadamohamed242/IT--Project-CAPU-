@@ -589,7 +589,6 @@
         </div>
     </div>
 </footer>
-
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
@@ -597,6 +596,23 @@
             <div id="cart-items"></div>
             <div class="cart-summary">
                 <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button class="clear-cart-btn">Clear Cart</button>
+                <style>
+                    .clear-cart-btn {
+                        background-color: #cc0000;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        margin-top: 8px;
+                    }
+
+                    .clear-cart-btn:hover {
+                        background-color: #aa0000;
+                    }
+                </style>
                 <button class="checkout-btn">Proceed to Checkout</button>
             </div>
         </div>
@@ -614,12 +630,14 @@
                     <p id="modal-product-price" class="price">$0.00</p>
                     <p id="modal-product-description">Product description goes here.</p>
                     <br>
-                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name="" data-price="">Add to Cart</button>
+                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name=""
+                        data-price="">Add to Cart</button>
                 </div>
             </div>
         </div>
     </div>
-   <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
