@@ -244,6 +244,42 @@
             </div>
         </div>
     </div>
+    //search functioning
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Read products directly from the existing HTML cards
+    const cards = document.querySelectorAll('.product-card');
+
+    const products = Array.from(cards).map(card => ({
+        name: card.dataset.name,
+        description: card.dataset.description,
+        element: card
+    }));
+
+    const fuse = new Fuse(products, {
+        keys: ['name', 'description'],
+        threshold: 0.35,
+        minMatchCharLength: 2
+    });
+
+    const searchInput = document.querySelector('.search-box input');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim();
+
+        if (query === '') {
+            // show all cards
+            cards.forEach(card => card.style.display = '');
+        } else {
+            // hide all first
+            cards.forEach(card => card.style.display = 'none');
+            // show only matches
+            const results = fuse.search(query);
+            results.forEach(r => r.item.element.style.display = '');
+        }
+    });
+});
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <script src="script.js"></script>
 </body>            
