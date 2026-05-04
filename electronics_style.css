@@ -102,13 +102,6 @@
 }
 
 
-/* Modern Hover: Slight glow and lift */
-.sale-tag:hover {
-    background-color: #e67e22; /* Darker orange on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(255, 159, 67, 0.5);
-}
-
 
 
 /* SHOPIT SCOPED BANNER STYLES */
