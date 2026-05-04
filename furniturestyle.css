@@ -126,21 +126,19 @@ cursor: pointer;
 
 .products-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr));
-    max-width: 500px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .product-card {
-    max-width: 400px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: 0.3s;
     cursor: pointer;
-    position: relative;
 }
 
 .product-card:hover {
@@ -593,11 +591,11 @@ h2 {
 
 .product-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
     gap: 30px;
-    padding: 20px;
+    padding: 30px;
     margin: 0 auto;
 }
 
@@ -804,8 +802,8 @@ h2 {
 .sale-tag {
     /* 1. Positioning: Pins it to the top-right of the card */
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 22px;
+    right: 22px;
     
     /* 2. Modern Orange Styling */
     background-color: #ff9f43; /* A vibrant, modern tech-orange */
