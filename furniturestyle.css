@@ -798,3 +798,44 @@ h2 {
 }
 
 
+/*SALE TAG*/
+.sale-tag {
+    /* 1. Positioning: Pins it to the top-right of the card */
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    
+    /* 2. Modern Orange Styling */
+    background-color: #ff9f43; /* A vibrant, modern tech-orange */
+    color: white;
+    padding: 5px 14px;
+    border-radius: 20px; /* Modern pill shape */
+    
+    /* 3. Typography */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* 4. Effects */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 159, 67, 0.3);
+    z-index: 10;
+}
+
+/* Cleaning up the inner text */
+.sale-tag h4 {
+    color: white;
+    margin: 0; /* Removes extra spacing that breaks the pill shape */
+    font-size: inherit;
+}
+
+/* Modern Hover: Slight glow and lift */
+.sale-tag:hover {
+    background-color: #e67e22; /* Darker orange on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 159, 67, 0.5);
+}
+
+
