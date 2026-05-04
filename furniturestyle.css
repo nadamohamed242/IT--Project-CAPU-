@@ -139,7 +139,7 @@ cursor: pointer;
     overflow: hidden;
     transition: 0.3s;
     cursor: pointer;
-    position:relative;
+    position: relative;
 }
 
 .product-card:hover {
