@@ -117,9 +117,18 @@
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     border: 1px solid rgba(0,0,0,0.05);
 }
+
+
 .product-card img {
-    object-fit: fill;
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+    margin-bottom: 15px !important;
+    background-color: #f5f5f5 !important;
 }
+
+
 /* Dynamic Hover Lift */
 .shopit-split-banner:hover {
     transform: translateY(-5px);
