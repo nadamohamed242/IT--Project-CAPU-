@@ -126,21 +126,20 @@ cursor: pointer;
 
 .products-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .product-card {
-    max-width: 300px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: 0.3s;
     cursor: pointer;
-    position:relative;
+    position: relative;
 }
 
 .product-card:hover {
@@ -603,6 +602,7 @@ h2 {
 
 .product-card {
     width: 380px;
+    position: relative;
     background-color: #fcfcfc;
     border: 1px solid #eaeaea;
     border-radius: 10px;
@@ -838,6 +838,4 @@ h2 {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(255, 159, 67, 0.5);
 }
-
-
 

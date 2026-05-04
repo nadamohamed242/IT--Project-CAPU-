@@ -101,7 +101,9 @@
     opacity: 0.9;
 }
 
-
+.sale-tag {
+    size:10px;
+}
 
 
 /* SHOPIT SCOPED BANNER STYLES */
@@ -378,6 +380,5 @@
     .wearable-headline { font-size: 1.8rem; }
     .banner-left-content { padding: 40px 20px; }
 }
-
 
 
