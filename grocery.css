@@ -6,6 +6,7 @@
 }
 .product-container {
     grid-template-columns: repeat(3, 1fr) !important;
+    justify-content: center !important;
 }
 .product-card img {
     object-fit: contain; 
