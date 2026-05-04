@@ -444,12 +444,12 @@ input {
 
 .modal-content {
     background-color: #f9f9f9;
-    margin: 5% auto;
+    margin: 10% auto;
     padding: 30px;
     border: 1px solid #ddd;
     border-radius: 10px;
     width: 90%;
-    max-width: 800px;
+    max-width: 600px;
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -470,6 +470,7 @@ input {
 }
 
 .modal-content h2 {
+    font-siza:40px;
     color: rgb(232, 121, 17);
     margin-bottom: 20px;
     border-bottom: 2px solid rgb(250, 155, 78);
