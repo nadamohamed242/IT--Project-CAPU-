@@ -262,19 +262,24 @@
     </div>
 </footer>
 
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <span class="close cart-close">&times;</span>
-            <h2>Shopping Cart</h2>
-            <div id="cart-items"></div>
-            <div class="cart-summary">
-                <h3>Total: $<span id="cart-total">0.00</span></h3>
-                <button class="checkout-btn">Proceed to Checkout</button>
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close product-close">&times;</span>
+            <div class="product-details-container">
+                <div class="product-details-image">
+                    <img id="modal-product-img" src="" alt="Product Image">
+                </div>
+                <div class="product-details-info">
+                    <h2 id="modal-product-title">Product Title</h2>
+                    <p id="modal-product-price" class="price">$0.00</p>
+                    <p id="modal-product-description">Product description goes here.</p>
+                    <br>
+                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name="" data-price="">Add to Cart</button>
+                </div>
             </div>
         </div>
     </div>
-
-  <div id="cart-modal" class="modal">
+    <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
             <h2>Shopping Cart</h2>
