@@ -5,10 +5,6 @@
     color: #333;
 }
 
-.hero-section{
-    width: 50%;
-}
-
 .product-container {
     display: flex;
     flex-wrap: wrap;
