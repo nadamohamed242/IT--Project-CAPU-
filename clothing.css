@@ -342,4 +342,14 @@ body.dark-theme .mc-card {
 body.dark-theme .men-categories {
     background-color: transparent;
     color:black;
+} 
+/* cart theme */ 
+.cart-modal input[type="number"], 
+input[type="number"] {
+    color: #ffffff !important;
+    background-color: #333333;
+    border: 1px solid #666666;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2px;
 }
