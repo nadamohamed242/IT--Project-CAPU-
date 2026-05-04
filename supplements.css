@@ -474,8 +474,8 @@ input {
     margin-bottom: 20px;
     border-bottom: 2px solid rgb(250, 155, 78);
     padding-bottom: 10px;
-    font-style: italic;      /* ← ده اللي بيخليها italic زي الصورة */
-    text-align: center;      /* ← ده اللي بيخليها في النص */
+    font-style: italic;     
+    text-align: center;      
 }
 
 #cart-items {
@@ -548,7 +548,8 @@ input {
     margin-bottom: 15px;
     font-size: 2rem;
     color: #333;
-    border-bottom: none;
+    border-bottom: 2px solid rgb(250,155,78);
+    padding-bottom: 10px;
 }
 
 .product-details-info .price {
