@@ -468,13 +468,14 @@ input {
 .close:focus {
     color: #000;
 }
-
 .modal-content h2 {
-    font-siza:40px;
+    font-size: 40px;
     color: rgb(232, 121, 17);
     margin-bottom: 20px;
     border-bottom: 2px solid rgb(250, 155, 78);
     padding-bottom: 10px;
+    font-style: italic;      /* ← ده اللي بيخليها italic زي الصورة */
+    text-align: center;      /* ← ده اللي بيخليها في النص */
 }
 
 #cart-items {
