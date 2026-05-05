@@ -481,6 +481,8 @@ input {
 #cart-items {
     margin-bottom: 30px;
     min-height: 100px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .cart-summary {
