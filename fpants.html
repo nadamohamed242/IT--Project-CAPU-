@@ -38,12 +38,10 @@
         }
     </style>
     <script>
-        // Apply saved theme immediately before page renders
         (function () {
             const savedTheme = localStorage.getItem('theme') || 'light';
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-theme');
-                document.body.classList.add('dark-theme');
             }
         })();
     </script>
@@ -155,37 +153,40 @@
                     data-price="35.00">Add to Cart</button>
             </div>
 
-            <div class="product-card" data-id="602" data-name="Elegant Wide-Leg Trousers" data-price="42.00"
-                data-image="https://images.pexels.com/photos/2043590/pexels-photo-2043590.jpeg?auto=compress&cs=tinysrgb&w=500"
-                data-description="Chic wide-leg trousers perfect for the office or a sophisticated evening out.">
-                <img src="https://images.pexels.com/photos/2043590/pexels-photo-2043590.jpeg?auto=compress&cs=tinysrgb&w=500"
-                    alt="Wide-Leg Trousers" class="product-img">
-                <h4 class="product-title">Elegant Wide-Leg Trousers</h4>
+            <div class="product-card" data-id="602" data-name="Gucci
+Faded boyfriend jeans" data-price="42.00" data-image="https://www.mytheresa.com/image/1094/1238/100/ee/P01119077.jpg"
+                data-description="These boyfriend jeans from Gucci are presented in a relaxed straight silhouette and classic 5-pocket construction. The faded design features a glossy leather patch with embossed logo detailing at the back.">
+                <img src="https://www.mytheresa.com/image/1094/1238/100/ee/P01119077.jpg" alt="Wide-Leg Trousers"
+                    class="product-img">
+                <h4 class="product-title">Gucci
+                    Faded boyfriend jeans</h4>
                 <p class="price">$42.00</p>
-                <button class="add-to-cart-btn add-to-cart" data-id="602" data-name="Elegant Wide-Leg Trousers"
-                    data-price="42.00">Add to Cart</button>
+                <button class="add-to-cart-btn add-to-cart" data-id="602" data-name="Gucci
+Faded boyfriend jeans" data-price="42.00">Add to Cart</button>
             </div>
 
-            <div class="product-card" data-id="603" data-name="Casual Cargo Pants" data-price="38.00"
-                data-image="https://images.pexels.com/photos/1082528/pexels-photo-1082528.jpeg?auto=compress&cs=tinysrgb&w=500"
-                data-description="Trendy and functional cargo pants with multiple pockets for a relaxed streetwear style.">
-                <img src="https://images.pexels.com/photos/1082528/pexels-photo-1082528.jpeg?auto=compress&cs=tinysrgb&w=500"
-                    alt="Cargo Pants" class="product-img">
-                <h4 class="product-title">Casual Cargo Pants</h4>
+            <div class="product-card" data-id="603" data-name="Brunello Cucinelli
+Wide-leg pants" data-price="38.00" data-image="https://www.mytheresa.com/image/1094/1238/100/33/P01143653.jpg"
+                data-description="Brunello Cucinelli's designs are created in Solomeo, a medieval hamlet whose art and traditions are woven into the house's every fiber. These sophisticated pants are rendered in a brown hue and boast a wide-leg silhouette with single front pleats.">
+                <img src="https://www.mytheresa.com/image/1094/1238/100/33/P01143653.jpg" alt="Cargo Pants"
+                    class="product-img">
+                <h4 class="product-title">Brunello Cucinelli
+                    Wide-leg pants</h4>
                 <p class="price">$38.00</p>
-                <button class="add-to-cart-btn add-to-cart" data-id="603" data-name="Casual Cargo Pants"
-                    data-price="38.00">Add to Cart</button>
+                <button class="add-to-cart-btn add-to-cart" data-id="603" data-name="Brunello Cucinelli
+Wide-leg pants" data-price="38.00">Add to Cart</button>
             </div>
 
-            <div class="product-card" data-id="604" data-name="Comfy Lounge Joggers" data-price="28.00"
-                data-image="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=500"
-                data-description="Ultra-soft lounge joggers designed for ultimate relaxation and casual weekends.">
-                <img src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=500"
-                    alt="Lounge Joggers" class="product-img">
-                <h4 class="product-title">Comfy Lounge Joggers</h4>
+            <div class="product-card" data-id="604" data-name="Veronica Beard
+Marbeau wide-leg pants" data-price="28.00" data-image="https://www.mytheresa.com/image/1094/1238/100/12/P01154751.jpg"
+                data-description="Veronica Beard's low-effort, high-impact separates find the perfect balance between casual and chic. The Marbeau pink pants are shaped to a draped, wide-leg silhouette with front pleats.">
+                <img src="https://www.mytheresa.com/image/1094/1238/100/12/P01154751.jpg" alt="Lounge Joggers"
+                    class="product-img">
+                <h4 class="product-title">Veronica Beard
+                    Marbeau wide-leg pants</h4>
                 <p class="price">$28.00</p>
-                <button class="add-to-cart-btn add-to-cart" data-id="604" data-name="Comfy Lounge Joggers"
-                    data-price="28.00">Add to Cart</button>
+                <button class="add-to-cart-btn add-to-cart" data-id="604" data-name="Veronica Beard
+Marbeau wide-leg pants" data-price="28.00">Add to Cart</button>
             </div>
         </div>
     </main>
@@ -251,6 +252,25 @@
             </div>
         </div>
     </footer>
+    </footer>
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close product-close">&times;</span>
+            <div class="product-details-container">
+                <div class="product-details-image">
+                    <img id="modal-product-img" src="" alt="Product Image">
+                </div>
+                <div class="product-details-info">
+                    <h2 id="modal-product-title">Product Title</h2>
+                    <p id="modal-product-price" class="price">$0.00</p>
+                    <p id="modal-product-description">Product description goes here.</p>
+                    <br>
+                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name=""
+                        data-price="">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
@@ -278,8 +298,9 @@
                 <button class="checkout-btn">Proceed to Checkout</button>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-        <script src="script.js"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

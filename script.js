@@ -472,32 +472,45 @@ function checkLoginStatus() {
     const user = localStorage.getItem('currentUser');
     const notLoggedInDiv = document.getElementById('not-logged-in');
     const loggedInDiv = document.getElementById('logged-in');
-
-    if (!user) {
-        notLoggedInDiv.style.display = 'block';
-        loggedInDiv.style.display = 'none';
-        return;
+// Mgemyy 5/5/2026
+    if (notLoggedInDiv && loggedInDiv) {
+        if (!user) {
+            notLoggedInDiv.style.display = 'block';
+            loggedInDiv.style.display = 'none';
+            return;
+        }
+        notLoggedInDiv.style.display = 'none';
+        loggedInDiv.style.display = 'block';
     }
 
-    const userData = JSON.parse(user);
-    notLoggedInDiv.style.display = 'none';
-    loggedInDiv.style.display = 'block';
+    if (user) {
+        const userData = JSON.parse(user);
+        
+        const subtitle = document.getElementById('account-subtitle');
+        if (subtitle) subtitle.textContent = `Welcome, ${userData.name}!`;
 
-    // Display profile information
-    document.getElementById('account-subtitle').textContent = `Welcome, ${userData.name}!`;
-    document.getElementById('profile-name').textContent = userData.name || 'N/A';
-    document.getElementById('profile-email').textContent = userData.email || 'N/A';
-    document.getElementById('profile-phone').textContent = userData.phone || 'Not provided';
+        const nameField = document.getElementById('profile-name');
+        if (nameField) nameField.textContent = userData.name || 'N/A';
 
-    // Display account info
-    const memberSince = userData.signin_time || new Date().toLocaleString();
-    document.getElementById('member-since').textContent = memberSince;
-    document.getElementById('last-login').textContent = new Date().toLocaleString();
+        const emailField = document.getElementById('profile-email');
+        if (emailField) emailField.textContent = userData.email || 'N/A';
 
-    // Display cart as order history
-    displayOrderHistory();
+        const phoneField = document.getElementById('profile-phone');
+        if (phoneField) phoneField.textContent = userData.phone || 'Not provided';
+
+        // عرض تاريخ الحساب
+        const memberSince = document.getElementById('member-since');
+        if (memberSince) memberSince.textContent = userData.signin_time || new Date().toLocaleString();
+
+        const lastLogin = document.getElementById('last-login');
+        if (lastLogin) lastLogin.textContent = new Date().toLocaleString();
+
+        if (typeof displayOrderHistory === "function") {
+            displayOrderHistory();
+        }
+    }
 }
-
+// end of edit 5/5/2026
 function displayOrderHistory() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const orderList = document.getElementById('order-list');

@@ -38,12 +38,10 @@
         }
     </style>
     <script>
-        // Apply saved theme immediately before page renders
         (function () {
             const savedTheme = localStorage.getItem('theme') || 'light';
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-theme');
-                document.body.classList.add('dark-theme');
             }
         })();
     </script>
@@ -154,7 +152,8 @@
             <h3>Limited Time Offer</h3>
             <h1>FASHION CLEARANCE</h1>
             <p>Starting from <strong>199 EGP</strong></p>
-            <button class="banner-btn">Shop the Sale</button>
+            <a href="landing.html" class="banner-btn"
+                style="text-decoration: none; display: inline-block; text-align: center;">Shop the Sale</a>
         </div>
         <div class="banner-image">
             <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1200&q=80" alt="Clearance Sale">
@@ -165,7 +164,8 @@
             <h3>New Members Only</h3>
             <h1>EXTRA 20% OFF</h1>
             <p>Use promo code: <strong>WELCOME20</strong> at checkout.</p>
-            <button class="banner-btn">Claim Discount</button>
+            <a href="landing.html" class="banner-btn"
+                style="text-decoration: none; display: inline-block; text-align: center;">Claim Discount</a>
         </div>
         <div class="banner-image">
             <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80" alt="New Member Promo">
@@ -236,6 +236,25 @@
         </div>
     </footer>
 
+    </footer>
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close product-close">&times;</span>
+            <div class="product-details-container">
+                <div class="product-details-image">
+                    <img id="modal-product-img" src="" alt="Product Image">
+                </div>
+                <div class="product-details-info">
+                    <h2 id="modal-product-title">Product Title</h2>
+                    <p id="modal-product-price" class="price">$0.00</p>
+                    <p id="modal-product-description">Product description goes here.</p>
+                    <br>
+                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name=""
+                        data-price="">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
@@ -263,8 +282,9 @@
                 <button class="checkout-btn">Proceed to Checkout</button>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-        <script src="script.js"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

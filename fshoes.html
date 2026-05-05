@@ -38,12 +38,10 @@
         }
     </style>
     <script>
-        // Apply saved theme immediately before page renders
         (function () {
             const savedTheme = localStorage.getItem('theme') || 'light';
             if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-theme');
-                document.body.classList.add('dark-theme');
             }
         })();
     </script>
@@ -155,26 +153,32 @@
                     data-price="85.00">Add to Cart</button>
             </div>
 
-            <div class="product-card" data-id="702" data-name="Chunky White Sneakers" data-price="70.00"
-                data-image="https://images.pexels.com/photos/794064/pexels-photo-794064.jpeg?auto=compress&cs=tinysrgb&w=500"
+            <div class="product-card" data-id="702" data-name="Gianvito Rossi
+Leather pumps" data-price="70.00" data-image="https://www.mytheresa.com/image/1094/1238/100/85/P00897561.jpg"
                 data-description="Trendy and comfortable chunky sneakers. Perfect for an active lifestyle and casual looks.">
-                <img src="https://images.pexels.com/photos/794064/pexels-photo-794064.jpeg?auto=compress&cs=tinysrgb&w=500"
-                    alt="White Sneakers" class="product-img">
-                <h4 class="product-title">Chunky White Sneakers</h4>
+                <img src="https://www.mytheresa.com/image/1094/1238/100/85/P00897561.jpg" alt="White Sneakers"
+                    class="product-img">
+                <h4 class="product-title">Gianvito Rossi
+                    Leather pumps</h4>
                 <p class="price">$70.00</p>
-                <button class="add-to-cart-btn add-to-cart" data-id="702" data-name="Chunky White Sneakers"
-                    data-price="70.00">Add to Cart</button>
+                <button class="add-to-cart-btn add-to-cart" data-id="702" data-name="Gianvito Rossi
+Leather pumps" data-price="70.00">Add to Cart</button>
             </div>
 
-            <div class="product-card" data-id="703" data-name="Leather Ankle Boots" data-price="110.00"
-                data-image="https://images.pexels.com/photos/1827055/pexels-photo-1827055.jpeg?auto=compress&cs=tinysrgb&w=500"
-                data-description="Premium leather ankle boots with a comfortable block heel. A staple for every season.">
-                <img src="https://images.pexels.com/photos/1827055/pexels-photo-1827055.jpeg?auto=compress&cs=tinysrgb&w=500"
-                    alt="Ankle Boots" class="product-img">
-                <h4 class="product-title">Leather Ankle Boots</h4>
+            <div class="product-card" data-id="703" data-name="
+Gianvito Rossi
+Gianvito 105 patent leather pumps" data-price="110.00"
+                data-image="https://www.mytheresa.com/image/1094/1238/100/50/P01105520.jpg"
+                data-description="As their name insinuates, the Gianvito pumps from Gianvito Rossi are a label-signature design. This style is made from glossy patent leather with pointed toes and sleek 105mm stiletto heels.">
+                <img src="https://www.mytheresa.com/image/1094/1238/100/50/P01105520.jpg" alt="Ankle Boots"
+                    class="product-img">
+                <h4 class="product-title">
+                    Gianvito Rossi
+                    Gianvito 105 patent leather pumps</h4>
                 <p class="price">$110.00</p>
-                <button class="add-to-cart-btn add-to-cart" data-id="703" data-name="Leather Ankle Boots"
-                    data-price="110.00">Add to Cart</button>
+                <button class="add-to-cart-btn add-to-cart" data-id="703" data-name="
+Gianvito Rossi
+Gianvito 105 patent leather pumps" data-price="110.00">Add to Cart</button>
             </div>
 
             <div class="product-card" data-id="704" data-name="Chic Pointed-Toe Flats" data-price="50.00"
@@ -251,6 +255,25 @@
             </div>
         </div>
     </footer>
+    </footer>
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close product-close">&times;</span>
+            <div class="product-details-container">
+                <div class="product-details-image">
+                    <img id="modal-product-img" src="" alt="Product Image">
+                </div>
+                <div class="product-details-info">
+                    <h2 id="modal-product-title">Product Title</h2>
+                    <p id="modal-product-price" class="price">$0.00</p>
+                    <p id="modal-product-description">Product description goes here.</p>
+                    <br>
+                    <button id="modal-add-to-cart" class="add-to-cart-btn add-to-cart" data-id="" data-name=""
+                        data-price="">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close cart-close">&times;</span>
@@ -278,8 +301,9 @@
                 <button class="checkout-btn">Proceed to Checkout</button>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-        <script src="script.js"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
