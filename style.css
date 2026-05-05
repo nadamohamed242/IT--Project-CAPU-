@@ -779,6 +779,8 @@ h2 {
 #cart-items {
     margin-bottom: 30px;
     min-height: 100px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .cart-summary {
@@ -2800,6 +2802,10 @@ body.dark-theme .modal-content h2 {
 }
 
 body.dark-theme #cart-items {
+    margin-bottom: 30px;
+    min-height: 100px;
+    max-height: 200px;
+    overflow-y: auto;
     color: #e0e0e0;
 }
 
